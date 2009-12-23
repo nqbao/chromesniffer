@@ -1,0 +1,19 @@
+{
+	"name": "Sniff",
+	"version": "0.1",
+	"description": "List frameworks used on viewing website.",
+	"background_page": "background.html",
+	"page_action": {
+		"default_icon": "icon.png",
+		"default_title": "Click here to detect frameworks.",
+		"popup": "popup.html"
+	},
+	"content_scripts": [{
+		"matches": ["http://*/*","https://*/*"],
+		"js": ["inject.js"],
+		"run_at": "document_end"
+    }],
+	"permissions": [
+		"tabs"
+	]
+}
