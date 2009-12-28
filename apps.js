@@ -1,3 +1,12 @@
+/**
+ * Chrome AppSniffer
+ *
+ * Web Application definition
+ *
+ * @author Bao Nguyen <contact@nqbao.com>
+ * @license GPLv3
+ **/
+
 var appinfo = {
 	'': { // default
 		icon: 'unknown.jpg',

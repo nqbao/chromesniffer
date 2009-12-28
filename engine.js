@@ -1,3 +1,12 @@
+/**
+ * Chrome AppSniffer
+ *
+ * Generalize framework detection functionality.
+ *
+ * @author Bao Nguyen <contact@nqbao.com>
+ * @license GPLv3
+ **/
+
 var TestEngine = {};
 TestEngine.test = function(name,doc,params)
 {
