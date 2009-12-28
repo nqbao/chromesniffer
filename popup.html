@@ -41,7 +41,11 @@ chrome.tabs.getSelected(null,function(tab){
 			
 			if (info.length < 8) // correct the width for better view
 			{
-				//display.style.width = (info.length*18) + "px !important";
+				display.style.width = (info.length*20) + "px";
+			}
+			else
+			{
+				display.style.width = "160px";
 			}
 		}
 		
@@ -49,6 +53,6 @@ chrome.tabs.getSelected(null,function(tab){
 	});
 });
 </script>
-<div id="app_list" style="width: 160px;">
-	loading ...
+<div id="app_list" style="width: 10px;">
+	
 </div>

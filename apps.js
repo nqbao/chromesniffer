@@ -14,7 +14,8 @@ var appinfo = {
 	},
 	'Drupal': {
 		icon: 'Drupal.ico',
-		url: 'http://drupal.org'
+		url: 'http://drupal.org',
+		priority: 1
 	},
 	'Google Analytics': {
 		icon: 'Google_Analytics.ico',
@@ -25,11 +26,13 @@ var appinfo = {
 	},
 	'WordPress': {
 		icon: 'WordPress.ico',
-		url: 'http://wordpress.org'
+		url: 'http://wordpress.org',
+		priority: 1
 	},
 	'Joomla': {
 		icon: 'Joomla.ico',
-		url: 'http://joomla.org'
+		url: 'http://joomla.org',
+		priority: 1
 	},
 	'vBulletin': {
 		icon: 'vBulletin.ico',
