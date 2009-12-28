@@ -22,8 +22,37 @@ var appinfo = {
 		icon: 'Joomla.ico',
 		url: 'http://joomla.org'
 	},
-	'vBulletin' {
+	'vBulletin': {
 		icon: 'vBulletin.ico',
 		url: 'http://www.vbulletin.com/'
+	},
+	'Prototype': {
+		icon: 'Prototype.ico',
+		url: 'http://www.prototypejs.org/'
+	},
+	'SMF': {
+		title: 'Simple Machines Forum',
+		icon: 'SMF.ico',
+		url: 'http://www.simplemachines.org/'
+	},
+	'phpBB': {
+		icon: 'phpBB.ico',
+		url: 'http://phpbb.org'
+	},
+	'MediaWiki': {
+		icon: 'MediaWiki.ico',
+		url: 'http://www.mediawiki.org/'
+	},
+	'Magento': {
+		icon: 'Magento.ico',
+		url: 'http://www.magentocommerce.com/'
+	},
+	'XOOPS': {
+		icon: 'XOOPS.ico',
+		url: 'http://xoops.org'
+	},
+	'Ubercart': {
+		icon: 'Ubercart.ico',
+		url: 'http://www.ubercart.org/'
 	}
 };
