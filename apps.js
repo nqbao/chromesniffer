@@ -122,7 +122,7 @@ var appinfo = {
 	'jQuery UI': {
 		icon: 'jQuery_UI.ico',
 		url: 'http://jqueryui.com/',
-		priority: 3
+		priority: 1.9
 	},
 	'ExtJS': {
 		icon: 'ExtJS.ico',
@@ -164,7 +164,13 @@ var appinfo = {
 	
 	'Google Analytics': {
 		icon: 'Google_Analytics.ico',
-		url: 'http://www.google.com/analytics/'
+		url: 'http://www.google.com/analytics/',
+		priority: 3
+	},
+	'Disqus': {
+		icon: 'Disqus.ico',
+		url: 'http://disqus.com/',
+		priority: 3
 	},
 	
 	// ==== misc ====
