@@ -38,6 +38,11 @@ var appinfo = {
 		url: 'http://invisionpower.com/',
 		priority: 1
 	},
+	'miniBB': {
+		icon: 'miniBB.ico',
+		url: 'http://www.minibb.com/',
+		priority: 1
+	},
 	
 	'Drupal': {
 		icon: 'Drupal.ico',
@@ -55,20 +60,31 @@ var appinfo = {
 		url: 'http://wordpress.org',
 		priority: 1
 	},
+	'bbPress': {
+		icon: 'bbPress.ico',
+		url: 'http://bbpress.org',
+		priority: 1
+	},
 	'Movable Type': {
 		icon: 'MovableType.ico',
 		url: 'http://www.movabletype.org/',
 		priority: 1
 	},
 	
-	'Joomla': {
-		icon: 'Joomla.ico',
-		url: 'http://joomla.org',
-		priority: 1
-	},
 	'MediaWiki': {
 		icon: 'MediaWiki.ico',
 		url: 'http://www.mediawiki.org/',
+		priority: 1
+	},
+	'DokuWiki': {
+		icon: 'DokuWiki.ico',
+		url: 'http://www.dokuwiki.org/',
+		priority: 1
+	},
+	
+	'Joomla': {
+		icon: 'Joomla.ico',
+		url: 'http://joomla.org',
 		priority: 1
 	},
 	'Magento': {
@@ -115,6 +131,11 @@ var appinfo = {
 	'LifeRay': {
 		icon: 'LifeRay.ico',
 		url: 'http://www.liferay.com',
+		priority: 1
+	},
+	'TYPO3': {
+		icon: 'TYPO3.ico',
+		url: 'http://typo3.org/',
 		priority: 1
 	},
 	
