@@ -138,6 +138,32 @@ var appinfo = {
 		url: 'http://typo3.org/',
 		priority: 1
 	},
+	'PHP-Fusion': {
+		icon: 'PHP-Fusion.ico',
+		url: 'http://php-fusion.co.uk/',
+		priority: 1
+	},
+	'PHP-Nuke': {
+		icon: 'PHP-Nuke.ico',
+		url: 'http://phpnuke.org/',
+		priority: 1
+	},
+	'WebGUI': {
+		icon: 'WebGUI.ico',
+		url: 'http://www.webgui.org/',
+		priority: 1
+	},
+	
+	'DotNetNuke': {
+		icon: 'DotNetNuke.ico',
+		url: 'http://www.dotnetnuke.com/',
+		priority: 1
+	},
+	'Sitefinity': {
+		icon: 'Sitefinity.ico',
+		url: 'http://www.sitefinity.com/',
+		priority: 1
+	},
 	
 	// ==== js framework ====
 	'jQuery': {
