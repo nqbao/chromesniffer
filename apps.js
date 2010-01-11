@@ -224,6 +224,21 @@ var appinfo = {
 		url: 'http://disqus.com/',
 		priority: 3
 	},
+	'GetSatisfaction': {
+		icon: 'GetSatisfaction.gif',
+		url: 'http://getsatisfaction.com',
+		priority: 3
+	},
+	'Wibiya': {
+		icon: 'Wibiya.ico',
+		url: 'http://wibiya.com/',
+		priority: 3
+	},
+	'reCaptcha': {
+		icon: 'reCaptcha.ico',
+		url: 'http://recaptcha.net/',
+		priority: 4
+	},
 	
 	// ==== misc ====
 	'': { // default
