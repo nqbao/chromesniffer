@@ -153,6 +153,11 @@ var appinfo = {
 		url: 'http://www.webgui.org/',
 		priority: 1
 	},
+	'ez Publish': {
+		icon: 'ez.ico',
+		url: 'http://ez.no/',
+		priority: 1
+	},
 	
 	'DotNetNuke': {
 		icon: 'DotNetNuke.ico',
@@ -237,6 +242,11 @@ var appinfo = {
 	'reCaptcha': {
 		icon: 'reCaptcha.ico',
 		url: 'http://recaptcha.net/',
+		priority: 4
+	},
+	'Mollom': {
+		icon: 'mollom.ico',
+		url: 'http://mollom.com',
 		priority: 4
 	},
 	
