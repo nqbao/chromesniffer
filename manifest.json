@@ -4,7 +4,7 @@
 		"48": "icon48.png",
 		"128": "icon128.png"
 	},
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"description": "Detect web frameworks and javascript libraries run on browsing website.",
 	"background_page": "background.html",
 	"page_action": {
