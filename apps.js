@@ -14,6 +14,16 @@ var appinfo = {
 		url: 'http://tumblr.com',
 		priority: 0.9
 	},
+	'TypePad': {
+		icon: 'TypePad.ico',
+		url: 'http://typepad.com',
+		priority: 0.9
+	},
+	'Blogger': {
+		icon: 'Blogger.ico',
+		url: 'http://blogger.com',
+		priority: 0.9
+	},
 
 	// ==== cms or framework ====
 	'vBulletin': {
