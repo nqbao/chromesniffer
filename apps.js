@@ -168,6 +168,11 @@ var appinfo = {
 		url: 'http://ez.no/',
 		priority: 1
 	},
+	'BIGACE': {
+		icon: 'BIGACE.ico',
+		url: 'http://www.bigace.de/',
+		priority: 1
+	},
 	
 	'DotNetNuke': {
 		icon: 'DotNetNuke.ico',
@@ -234,6 +239,11 @@ var appinfo = {
 		url: 'http://www.google.com/analytics/',
 		priority: 3
 	},
+	'Quantcast': {
+		icon: 'Quantcast.ico',
+		url: 'http://www.quantcast.com/',
+		priority: 3
+	},
 	'Disqus': {
 		icon: 'Disqus.ico',
 		url: 'http://disqus.com/',
@@ -258,6 +268,17 @@ var appinfo = {
 		icon: 'mollom.ico',
 		url: 'http://mollom.com',
 		priority: 4
+	},
+	
+	'OpenX': {
+		icon: 'OpenX.ico',
+		url: 'http://openx.org',
+		priority: 5
+	},
+	'AdSense': {
+		icon: 'google.ico',
+		url: 'https://www.google.com/adsense',
+		priority: 5
 	},
 	
 	// ==== misc ====
