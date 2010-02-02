@@ -185,6 +185,17 @@ var appinfo = {
 		priority: 1
 	},
 	
+	'ZenPhoto': {
+		icon: 'ZenPhoto.ico',
+		url: 'http://www.zenphoto.org',
+		priority: 1
+	},
+	'Gallery2': {
+		icon: 'Gallery2.ico',
+		url: 'http://gallery.menalto.com/',
+		priority: 1
+	},
+	
 	// ==== js framework ====
 	'jQuery': {
 		icon: 'jQuery.ico',
