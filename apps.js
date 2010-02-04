@@ -138,7 +138,7 @@ var appinfo = {
 		url: 'http://www.dream4.de/cms/',
 		priority: 1
 	},
-	'LifeRay': {
+	'Liferay': {
 		icon: 'LifeRay.ico',
 		url: 'http://www.liferay.com',
 		priority: 1
