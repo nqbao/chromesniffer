@@ -148,6 +148,11 @@ var appinfo = {
 		url: 'http://typo3.org/',
 		priority: 1
 	},
+	'Fatwire': {
+		icon: 'Fatwire.ico',
+		url: 'http://www.fatwire.com',
+		priority: 1
+	},
 	'PHP-Fusion': {
 		icon: 'PHP-Fusion.ico',
 		url: 'http://php-fusion.co.uk/',
