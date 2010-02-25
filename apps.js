@@ -179,6 +179,12 @@ var appinfo = {
 		priority: 1
 	},
 	
+	'Elgg': {
+		icon: 'Elgg.ico',
+		url: 'http://www.elgg.org/',
+		priority: 1
+	},
+	
 	'DotNetNuke': {
 		icon: 'DotNetNuke.ico',
 		url: 'http://www.dotnetnuke.com/',
@@ -198,6 +204,12 @@ var appinfo = {
 	'Gallery2': {
 		icon: 'Gallery2.ico',
 		url: 'http://gallery.menalto.com/',
+		priority: 1
+	},
+	
+	'PrestaShop': {
+		icon: 'PrestaShop.ico',
+		url: 'http://www.prestashop.com/',
 		priority: 1
 	},
 	
