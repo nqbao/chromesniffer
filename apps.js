@@ -80,6 +80,11 @@ var appinfo = {
 		url: 'http://www.movabletype.org/',
 		priority: 1
 	},
+	'Serendipity': {
+		icon: 'Serendipity.png',
+		url: 'http://www.s9y.org/',
+		priority: 1
+	},
 	
 	'MediaWiki': {
 		icon: 'MediaWiki.ico',
