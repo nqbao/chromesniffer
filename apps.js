@@ -200,6 +200,12 @@ var appinfo = {
 		url: 'http://www.sitefinity.com/',
 		priority: 1
 	},
+	'SharePoint': {
+		icon: 'SharePoint.png',
+		url: 'http://sharepoint.microsoft.com',
+		priority: 1,
+		title: 'Microsoft SharePoint'
+	},
 	
 	'ZenPhoto': {
 		icon: 'ZenPhoto.ico',
