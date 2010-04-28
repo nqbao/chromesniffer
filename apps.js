@@ -138,6 +138,12 @@ var appinfo = {
 		url: 'http://www.amirocms.com/',
 		priority: 1
 	},
+	'JaliosJCMS': {
+		icon: 'JaliosJCMS.ico',
+		url: 'http://www.jalios.com',
+		priority: 1,
+		title: 'Jalios JCMS'
+	},
 	'Koobi': {
 		icon: 'koobi.ico',
 		url: 'http://www.dream4.de/cms/',
