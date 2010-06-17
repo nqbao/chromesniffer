@@ -159,6 +159,11 @@ var appinfo = {
 		url: 'http://typo3.org/',
 		priority: 1
 	},
+	'Contao': {
+		icon: 'contao.ico',
+		url: 'http://www.contao.org',
+		priority: 1
+	},
 	'Fatwire': {
 		icon: 'Fatwire.ico',
 		url: 'http://www.fatwire.com',
@@ -227,6 +232,12 @@ var appinfo = {
 	'PrestaShop': {
 		icon: 'PrestaShop.ico',
 		url: 'http://www.prestashop.com/',
+		priority: 1
+	},
+	
+	'ZenCart': {
+		icon: 'zencart.ico',
+		url: 'http://www.zen-cart.com',
 		priority: 1
 	},
 	
@@ -312,6 +323,23 @@ var appinfo = {
 	'Mollom': {
 		icon: 'mollom.ico',
 		url: 'http://mollom.com',
+		priority: 4
+	},
+	'Typekit': {
+		icon: 'typekit.ico',
+		url: 'http://typekit.com/',
+		priority: 4
+	},
+	'Facebook': {
+		title: 'Facebook Social plugins',
+		icon: 'facebook.ico',
+		url: 'http://developers.facebook.com/',
+		priority: 4
+	},
+	'GoogleFontApi': {
+		title: 'Google Font API',
+		icon: 'google-font-api.gif',
+		url: 'http://code.google.com/apis/webfonts/',
 		priority: 4
 	},
 	

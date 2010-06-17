@@ -16,7 +16,6 @@
 	var scripts = doc.getElementsByTagName("script");
 	
 	var script_tests = {
-		'jQuery': /jquery/i,
 		'jQuery UI': /jquery[-.]ui/i,
 		'Google Analytics': /google-analytics.com\/(ga|urchin).js/i,
 		'Quantcast': /quantserve\.com\/quant\.js/i,
@@ -30,7 +29,6 @@
 		'MooTools': /mootools/i,
 		'Dojo': /dojo(\.xd)?\.js/i,
 		'script.aculo.us': /scriptaculous\.js/i,
-		'YUI': /\/yui\/|yui\.yahooapis\.com/i,
 		'Disqus': /disqus.com\/forums/i,
 		'GetSatisfaction': /getsatisfaction\.com\/feedback/i,
 		'Wibiya': /wibiya\.com\/Loaders\//i,
@@ -85,7 +83,8 @@
 			'Blogger': /blogger/i,
 			'PrestaShop': /PrestaShop/i,
 			'SharePoint': /SharePoint/,
-			'JaliosJCMS': /Jalios JCMS/i
+			'JaliosJCMS': /Jalios JCMS/i,
+			'ZenCart': /zen-cart/i
 		},
 		'copyright': {
 			'phpBB': /phpBB/i
@@ -118,7 +117,7 @@
 	// 3: detect by domains
 
 	// 4: detect by regexp
-	var text = document.documentElement.innerHTML;
+	var text = document.documentElement.outerHTML;
 	var text_tests = {
 		'SMF': /<script .+\s+var smf_/i,
 		'Magento': /var BLANK_URL = '[^>]+js\/blank\.html'/i,
@@ -133,6 +132,8 @@
 		'OpenX': /(href|src)=["'].*delivery\/(afr|ajs|avw|ck)\.php[^"']*/,
 		'GetSatisfaction': /asset_host\s*\+\s*"javascripts\/feedback.*\.js/igm, // better recognization
 		'Fatwire': /\/Satellite\?|\/ContentServer\?/s,
+		'Contao': /powered by (TYPOlight|Contao)/is,
+		'GoogleFontApi': /ref=["']?http:\/\/fonts.googleapis.com\//i
 	};
 
 	for (t in text_tests)
@@ -148,6 +149,18 @@
 	var js_tests = {
 		'Drupal': function() {
 			return window.Drupal != null;
+		},
+		'YUI': function() {
+			return window.YAHOO != null;
+		},
+		'jQuery': function() {
+			return window.jQuery != null;
+		},
+		'Typekit': function() {
+			return window.Typekit != null;
+		},
+		'Facebook': function() {
+			return window.FB != null;
 		}
 	};
 	
