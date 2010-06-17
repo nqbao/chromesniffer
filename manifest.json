@@ -12,12 +12,21 @@
 		"default_title": "Click for more details.",
 		"popup": "popup.html"
 	},
-	"content_scripts": [{
-		"matches": ["http://*/*","https://*/*"],
-		"js": ["inject.js"],
-		"run_at": "document_end"
-    }],
+	"content_scripts": [
+		{
+			"matches": ["http://*/*","https://*/*"],
+			"js": ["inject.js"],
+			"run_at": "document_end"
+		},
+		{
+			"matches": ["http://*/*","https://*/*"],
+			"js": ["trigger.js"],
+			"run_at": "document_idle"
+		}
+	],
 	"permissions": [
-		"tabs"
+		"tabs",
+        "http://*/*",
+        "https://*/*"
 	]
 }

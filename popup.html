@@ -6,43 +6,37 @@ chrome.tabs.getSelected(null,function(tab){
 	chrome.extension.sendRequest({msg: "get",tab: tab.id}, function(response){
 		var display = document.getElementById('app_list');
 	
-		var info = response.info;
+		var apps = response.apps;
 		var html = '';
 		
-		if (!info || info.length == 0)
+		var appinfo = bg.appinfo;
+		var count = 0;
+	
+		for (var appid in apps)
 		{
-			html = '<em>No framework detected</em>';
+			app = appinfo[appid] ? appinfo[appid] : {};
+			
+			// i'm lazy to fill all kind of the information :(
+			if (!app.title) app.title = appid;
+			if (!app.url) app.url = appinfo[''].url.replace('%s',appid); // it's google one
+			if (!app.icon) app.icon = appinfo[''].icon;
+		
+			html += '<a target="_blank" title="' + app.title + '" href="' + app.url + '">';
+			html += '<img alt="' + app.title + '" width=16 height=16 src="apps/' + app.icon + '"/>';
+			html += '</a>';
+			
+			// space
+			html += ' ';
+			count++;
+		}
+		
+		if (count < 8) // correct the width for better view
+		{
+			display.style.width = (count*20) + "px";
 		}
 		else
 		{
-			var appinfo = bg.appinfo;
-		
-			for (var i = 0;i < info.length;i++)
-			{
-				appid = info[i];
-				app = appinfo[appid] ? appinfo[appid] : {};
-				
-				// i'm lazy to fill all kind of the information :(
-				if (!app.title) app.title = appid;
-				if (!app.url) app.url = appinfo[''].url.replace('%s',appid); // it's google one
-				if (!app.icon) app.icon = appinfo[''].icon;
-			
-				html += '<a target="_blank" title="' + app.title + '" href="' + app.url + '">';
-				html += '<img alt="' + app.title + '" width=16 height=16 src="apps/' + app.icon + '"/>';
-				html += '</a>';
-				
-				// space
-				html += ' ';
-			}
-			
-			if (info.length < 8) // correct the width for better view
-			{
-				display.style.width = (info.length*20) + "px";
-			}
-			else
-			{
-				display.style.width = "160px";
-			}
+			display.style.width = "160px";
 		}
 		
 		display.innerHTML = html;
