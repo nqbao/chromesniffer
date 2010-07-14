@@ -240,6 +240,12 @@ var appinfo = {
 		url: 'http://www.zen-cart.com',
 		priority: 1
 	},
+
+	'Moodle': {
+		icon: 'moodle.png',
+		url: 'http://moodle.org',
+		priority: 1
+	},
 	
 	// ==== js framework ====
 	'jQuery': {

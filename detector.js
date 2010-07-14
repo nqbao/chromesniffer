@@ -133,6 +133,7 @@
 		'GetSatisfaction': /asset_host\s*\+\s*"javascripts\/feedback.*\.js/igm, // better recognization
 		'Fatwire': /\/Satellite\?|\/ContentServer\?/s,
 		'Contao': /powered by (TYPOlight|Contao)/is,
+                'Moodle' : /<link[^>]*\/theme\/standard\/styles.php".*>/,
 		'GoogleFontApi': /ref=["']?http:\/\/fonts.googleapis.com\//i
 	};
 
