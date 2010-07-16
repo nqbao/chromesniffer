@@ -295,7 +295,22 @@ var appinfo = {
 	},
 	
 	// ==== js tools ====
-	
+	'Typekit': {
+		icon: 'typekit.ico',
+		url: 'http://typekit.com/',
+		priority: 2.9
+	},
+	'Modernizr': {
+		icon: 'modernizr.ico',
+		url: 'http://www.modernizr.com/',
+		priority: 2.9
+	},
+	'Facebook': {
+		title: 'Facebook Social plugins',
+		icon: 'facebook.ico',
+		url: 'http://developers.facebook.com/',
+		priority: 2.9
+	},
 	'Google Analytics': {
 		icon: 'Google_Analytics.ico',
 		url: 'http://www.google.com/analytics/',
@@ -329,17 +344,6 @@ var appinfo = {
 	'Mollom': {
 		icon: 'mollom.ico',
 		url: 'http://mollom.com',
-		priority: 4
-	},
-	'Typekit': {
-		icon: 'typekit.ico',
-		url: 'http://typekit.com/',
-		priority: 4
-	},
-	'Facebook': {
-		title: 'Facebook Social plugins',
-		icon: 'facebook.ico',
-		url: 'http://developers.facebook.com/',
 		priority: 4
 	},
 	'GoogleFontApi': {

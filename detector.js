@@ -16,13 +16,11 @@
 	var scripts = doc.getElementsByTagName("script");
 	
 	var script_tests = {
-		'jQuery UI': /jquery[-.]ui/i,
 		'Google Analytics': /google-analytics.com\/(ga|urchin).js/i,
 		'Quantcast': /quantserve\.com\/quant\.js/i,
 		'Prototype': /prototype\.js/i,
 		'Joomla': /\/components\/com_/,
 		'Ubercart': /uc_cart/i,
-		'ExtJS': /ext\-base\.js/i,
 		'Closure': /\/goog\/base\.js/i,
 		'IPB': /ipb.*js/,
 		'MODx': /\/min\/.*f=.*/,
@@ -133,7 +131,7 @@
 		'GetSatisfaction': /asset_host\s*\+\s*"javascripts\/feedback.*\.js/igm, // better recognization
 		'Fatwire': /\/Satellite\?|\/ContentServer\?/s,
 		'Contao': /powered by (TYPOlight|Contao)/is,
-                'Moodle' : /<link[^>]*\/theme\/standard\/styles.php".*>/,
+		'Moodle' : /<link[^>]*\/theme\/standard\/styles.php".*>/,
 		'GoogleFontApi': /ref=["']?http:\/\/fonts.googleapis.com\//i
 	};
 
@@ -157,11 +155,20 @@
 		'jQuery': function() {
 			return window.jQuery != null;
 		},
+		'jQuery UI': function() {
+			return window.jQuery != null && window.jQuery.ui != null;
+		},
 		'Typekit': function() {
 			return window.Typekit != null;
 		},
 		'Facebook': function() {
 			return window.FB != null;
+		},
+		'ExtJS': function() {
+			return window.Ext != null;
+		},
+		'Modernizr': function() {
+			return window.Modernizr != null;
 		}
 	};
 	
