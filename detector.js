@@ -149,6 +149,12 @@
 		'Drupal': function() {
 			return window.Drupal != null;
 		},
+		'ErainCart': function() {
+			return window.fn_register_hooks != null;
+		},
+		'SugarCRM': function() {
+			return window.SUGAR != null;
+		},
 		'YUI': function() {
 			return window.YAHOO != null;
 		},
@@ -169,6 +175,9 @@
 		},
 		'Modernizr': function() {
 			return window.Modernizr != null;
+		},
+		'Raphael': function() {
+			return window.Raphael != null;
 		}
 	};
 	

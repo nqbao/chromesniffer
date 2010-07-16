@@ -240,10 +240,20 @@ var appinfo = {
 		url: 'http://www.zen-cart.com',
 		priority: 1
 	},
+	'ErainCart': {
+		icon: 'eraincart.ico',
+		url: 'http://eraincart.com',
+		priority: 1
+	},
 
 	'Moodle': {
 		icon: 'moodle.png',
 		url: 'http://moodle.org',
+		priority: 1
+	},
+	'SugarCRM': {
+		icon: 'sugarcrm.ico',
+		url: 'http://www.sugarcrm.com',
 		priority: 1
 	},
 	
@@ -295,6 +305,11 @@ var appinfo = {
 	},
 	
 	// ==== js tools ====
+	'Raphael': {
+		icon: 'raphael.ico',
+		url: 'http://raphaeljs.com/',
+		priority: 2.9
+	},
 	'Typekit': {
 		icon: 'typekit.ico',
 		url: 'http://typekit.com/',
