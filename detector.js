@@ -11,49 +11,8 @@
 (function(){
 	var _apps = {};
 	var doc = document.documentElement;
-
-	// 1: detect by script tags
-	var scripts = doc.getElementsByTagName("script");
 	
-	var script_tests = {
-		'Google Analytics': /google-analytics.com\/(ga|urchin).js/i,
-		'Quantcast': /quantserve\.com\/quant\.js/i,
-		'Prototype': /prototype\.js/i,
-		'Joomla': /\/components\/com_/,
-		'Ubercart': /uc_cart/i,
-		'Closure': /\/goog\/base\.js/i,
-		'IPB': /ipb.*js/,
-		'MODx': /\/min\/.*f=.*/,
-		'MooTools': /mootools/i,
-		'Dojo': /dojo(\.xd)?\.js/i,
-		'script.aculo.us': /scriptaculous\.js/i,
-		'Disqus': /disqus.com\/forums/i,
-		'GetSatisfaction': /getsatisfaction\.com\/feedback/i,
-		'Wibiya': /wibiya\.com\/Loaders\//i,
-		'reCaptcha': /api\.recaptcha\.net\//i,
-		'Mollom': /mollom\/mollom\.js/i, // only work on Drupal now
-		'ZenPhoto': /zp-core\/js/i,
-		'Gallery2': /main\.php\?.*g2_.*/i,
-		'AdSense': /pagead\/show_ads\.js/
-	};
-
-	for (var idx in scripts)
-	{
-		var s = scripts[idx];
-		if (!s.src) continue;
-		s = s.src;
-
-		for (var t in script_tests)
-		{
-			if (t in _apps) continue;
-			if (script_tests[t].test(s))
-			{
-				_apps[t] = 1;
-			}
-		}
-	}
-
-	// 2: detect by meta tags
+	// 1: detect by meta tags
 	var metas = doc.getElementsByTagName("meta");
 	var meta_tests = {
 		'generator': {
@@ -106,6 +65,47 @@
 		{
 			if (t in _apps) continue;
 			if (meta_tests[name][t].test(m.content))
+			{
+				_apps[t] = 1;
+			}
+		}
+	}
+
+	// 2: detect by script tags
+	var scripts = doc.getElementsByTagName("script");
+	
+	var script_tests = {
+		'Google Analytics': /google-analytics.com\/(ga|urchin).js/i,
+		'Quantcast': /quantserve\.com\/quant\.js/i,
+		'Prototype': /prototype\.js/i,
+		'Joomla': /\/components\/com_/,
+		'Ubercart': /uc_cart/i,
+		'Closure': /\/goog\/base\.js/i,
+		'IPB': /ipb.*js/,
+		'MODx': /\/min\/.*f=.*/,
+		'MooTools': /mootools/i,
+		'Dojo': /dojo(\.xd)?\.js/i,
+		'script.aculo.us': /scriptaculous\.js/i,
+		'Disqus': /disqus.com\/forums/i,
+		'GetSatisfaction': /getsatisfaction\.com\/feedback/i,
+		'Wibiya': /wibiya\.com\/Loaders\//i,
+		'reCaptcha': /api\.recaptcha\.net\//i,
+		'Mollom': /mollom\/mollom\.js/i, // only work on Drupal now
+		'ZenPhoto': /zp-core\/js/i,
+		'Gallery2': /main\.php\?.*g2_.*/i,
+		'AdSense': /pagead\/show_ads\.js/
+	};
+
+	for (var idx in scripts)
+	{
+		var s = scripts[idx];
+		if (!s.src) continue;
+		s = s.src;
+
+		for (var t in script_tests)
+		{
+			if (t in _apps) continue;
+			if (script_tests[t].test(s))
 			{
 				_apps[t] = 1;
 			}
@@ -178,7 +178,10 @@
 		},
 		'Raphael': function() {
 			return window.Raphael != null;
-		}
+		},
+		'Xiti': function() {
+			return window.xtsite != null && window.xtpage != null;
+		},
 	};
 	
 	for (t in js_tests)

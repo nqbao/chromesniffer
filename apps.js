@@ -336,6 +336,12 @@ var appinfo = {
 		url: 'http://www.quantcast.com/',
 		priority: 3
 	},
+	'Xiti': {
+		title: 'Xiti Tracker',
+		icon: 'xiti.ico',
+		url: 'http://xiti.com/',
+		priority: 3
+	},
 	'Disqus': {
 		icon: 'Disqus.ico',
 		url: 'http://disqus.com/',
