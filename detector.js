@@ -8,7 +8,6 @@
  * @license GPLv3
  **/
 
-
 var SNIFFER = SNIFFER || {};
 
 
@@ -111,6 +110,7 @@ SNIFFER.InlineMatcher = function() {
 
 
 function log(msg) {
+  // Do logging for Chrome's Speed Tracer Extension.
   var logger = window.console;
   if (logger && logger.markTimeline) {
     logger.markTimeline(msg);
@@ -138,6 +138,8 @@ SNIFFER.matchers = [
 ];
 
 if ('apps' in SNIFFER) {  // 'apps' is not set for unit tests
-  SNIFFER.matchers.forEach(function(matcher) { log('Init matcher'); matcher.init(); });
+  SNIFFER.matchers.forEach(function(matcher) {
+      matcher.init();
+  });
   SNIFFER.Detector(SNIFFER.apps, SNIFFER.matchers);
 }

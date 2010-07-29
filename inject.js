@@ -22,8 +22,4 @@
 	
 	head.appendChild(meta);
 	body.appendChild(script);
-	
-	/*chrome.extension.sendRequest({msg: "sniff",info: _apps_array}, function(response) {
-	  // nothing
-	});*/
 })();
