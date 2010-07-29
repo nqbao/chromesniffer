@@ -7,187 +7,137 @@
  * @author Bao Nguyen <contact@nqbao.com>
  * @license GPLv3
  **/
- 
-(function(){
-	var _apps = {};
-	var doc = document.documentElement;
 
-	// 1: detect by script tags
-	var scripts = doc.getElementsByTagName("script");
-	
-	var script_tests = {
-		'jQuery UI': /jquery[-.]ui/i,
-		'Google Analytics': /google-analytics.com\/(ga|urchin).js/i,
-		'Quantcast': /quantserve\.com\/quant\.js/i,
-		'Prototype': /prototype\.js/i,
-		'Joomla': /\/components\/com_/,
-		'Ubercart': /uc_cart/i,
-		'ExtJS': /ext\-base\.js/i,
-		'Closure': /\/goog\/base\.js/i,
-		'IPB': /ipb.*js/,
-		'MODx': /\/min\/.*f=.*/,
-		'MooTools': /mootools/i,
-		'Dojo': /dojo(\.xd)?\.js/i,
-		'script.aculo.us': /scriptaculous\.js/i,
-		'Disqus': /disqus.com\/forums/i,
-		'GetSatisfaction': /getsatisfaction\.com\/feedback/i,
-		'Wibiya': /wibiya\.com\/Loaders\//i,
-		'reCaptcha': /api\.recaptcha\.net\//i,
-		'Mollom': /mollom\/mollom\.js/i, // only work on Drupal now
-		'ZenPhoto': /zp-core\/js/i,
-		'Gallery2': /main\.php\?.*g2_.*/i,
-		'AdSense': /pagead\/show_ads\.js/
-	};
 
-	for (var idx in scripts)
-	{
-		var s = scripts[idx];
-		if (!s.src) continue;
-		s = s.src;
+var SNIFFER = SNIFFER || {};
 
-		for (var t in script_tests)
-		{
-			if (t in _apps) continue;
-			if (script_tests[t].test(s))
-			{
-				_apps[t] = 1;
-			}
-		}
-	}
 
-	// 2: detect by meta tags
-	var metas = doc.getElementsByTagName("meta");
-	var meta_tests = {
-		'generator': {
-			'Joomla': /joomla/i,
-			'vBulletin': /vBulletin/i,
-			'WordPress': /wordPress/i,
-			'XOOPS': /xoops/i,
-			'Plone': /plone/i,
-			'MediaWiki': /MediaWiki/i,
-			'CMSMadeSimple': /CMS Made Simple/i,
-			'SilverStripe': /SilverStripe/i,
-			'Movable Type': /Movable Type/i,
-			'Amiro.CMS': /Amiro/i,
-			'Koobi': /koobi/i,
-			'bbPress': /bbPress/i,
-			'DokuWiki': /dokuWiki/i,
-			'TYPO3': /TYPO3/i,
-			'PHP-Nuke': /PHP-Nuke/i,
-			'DotNetNuke': /DotNetNuke/i,
-			'Sitefinity': /Sitefinity/i,
-			'WebGUI': /WebGUI/i,
-			'ez Publish': /eZ\s*Publish/i,
-			'BIGACE': /BIGACE/i,
-			'TypePad': /typepad\.com/i,
-			'Blogger': /blogger/i,
-			'PrestaShop': /PrestaShop/i,
-			'SharePoint': /SharePoint/,
-			'JaliosJCMS': /Jalios JCMS/i,
-			'ZenCart': /zen-cart/i
-		},
-		'copyright': {
-			'phpBB': /phpBB/i
-		},
-		'elggrelease': {
-			'Elgg': /.+/
-		},
-		'powered-by': {
-			'Serendipity': /Serendipity/i,
-		}
-	};
+SNIFFER.MetaMatcher = function() {
+  var test_key = "match_meta";
+  var meta_pairs;
 
-	for (var idx in metas)
-	{
-		var m = metas[idx];
-		var name = m.name ? m.name.toLowerCase() : "";
+  return {
+    init: function(metas) {
+      meta_pairs = [];
+      if (metas === undefined) {
+        metas = document.documentElement.getElementsByTagName("meta");
+      }
+      for (var i = 0; i < metas.length; i++) {
+        var meta = metas[i];
+        var name = meta.name || "";
+        name = name.toLowerCase();
+        if (name != "") {
+          meta_pairs.push([name, meta.content]);
+        }
+      }
+    },
 
-		if (!meta_tests[name]) continue;
-		
-		for (var t in meta_tests[name])
-		{
-			if (t in _apps) continue;
-			if (meta_tests[name][t].test(m.content))
-			{
-				_apps[t] = 1;
-			}
-		}
-	}
+    is_match: function(app) {
+      if (!(test_key in app) || meta_pairs.length == 0) {
+        return false;
+      }
+      var name = app[test_key][0];
+      var content_re = app[test_key][1];
+      return meta_pairs.some(
+          function(pair) {
+            return name == pair[0] && content_re.test(pair[1]);
+          });
+    }
+  };
+}();
 
-	// 3: detect by domains
 
-	// 4: detect by regexp
-	var text = document.documentElement.outerHTML;
-	var text_tests = {
-		'SMF': /<script .+\s+var smf_/i,
-		'Magento': /var BLANK_URL = '[^>]+js\/blank\.html'/i,
-		'Tumblr': /<iframe src=("|')http:\/\/www\.tumblr\.com/i,
-		'WordPress': /<link rel=("|')stylesheet("|') [^>]+wp-content/i,
-		'Closure': /<script[^>]*>.*goog\.require/is,
-		'Liferay': /<script[^>]*>.*LifeRay\.currentURL/is,
-		'vBulletin': /vbmenu_control/i,
-		'MODx': /(<a[^>]+>Powered by MODx<\/a>|var el= \$\('modxhost'\);|<script type=("|')text\/javascript("|')>var MODX_MEDIA_PATH = "media";)/i,
-		'miniBB': /<a href=("|')[^>]+minibb.+\s*<!--End of copyright link/is,
-		'PHP-Fusion': /(href|src)=["']?infusions\//i, // @todo: recheck this pattern again
-		'OpenX': /(href|src)=["'].*delivery\/(afr|ajs|avw|ck)\.php[^"']*/,
-		'GetSatisfaction': /asset_host\s*\+\s*"javascripts\/feedback.*\.js/igm, // better recognization
-		'Fatwire': /\/Satellite\?|\/ContentServer\?/s,
-		'Contao': /powered by (TYPOlight|Contao)/is,
-		'GoogleFontApi': /ref=["']?http:\/\/fonts.googleapis.com\//i
-	};
+SNIFFER.ScriptSrcMatcher = function() {
+  var test_key = "match_script_src";
+  var script_srcs;
 
-	for (t in text_tests)
-	{
-		if (t in _apps) continue;
-		if (text_tests[t].test(text))
-		{
-			_apps[t] = 1;
-		}
-	}
-	
-	// 5: detect by inline javascript
-	var js_tests = {
-		'Drupal': function() {
-			return window.Drupal != null;
-		},
-		'YUI': function() {
-			return window.YAHOO != null;
-		},
-		'jQuery': function() {
-			return window.jQuery != null;
-		},
-		'Typekit': function() {
-			return window.Typekit != null;
-		},
-		'Facebook': function() {
-			return window.FB != null;
-		}
-	};
-	
-	for (t in js_tests)
-	{
-		if (t in _apps) continue;
-		if (js_tests[t]())
-		{
-			_apps[t] = 1;
-		}
-	}
-	
+  return {
+    init: function(scripts) {
+      script_srcs = [];
+      if (scripts === undefined) {
+        scripts = document.documentElement.getElementsByTagName("script");
+      }
+      for (var i = 0; i < scripts.length; i++) {
+        var script = scripts[i];
+        if (script.src) {
+          script_srcs.push(script.src);
+        }
+      }
+    },
 
-	// 6: detect by header
-	// @todo
+    is_match: function(app) {
+      if (!(test_key in app)) {
+        return false;
+      }
+      var script_src_re = app[test_key];
+      return script_srcs.some(
+          function(src) { return script_src_re.test(src); });
+    }
+  };
+}();
 
-	// 7: detect based on built-in database
-	// @todo
 
-	// convert to array
-	
-	var encodedString = "";
-	for (var a in _apps) {
-		encodedString += encodeURIComponent(a) + "=" + encodeURIComponent(1) + "&";
-	}
+SNIFFER.HtmlMatcher = function() {
+  var test_key = "match_html";
+  var html;
 
-	// send back to background page
-	
-	document.getElementById('chromesniffer_meta').content = encodedString;
-})();
+  return {
+    init: function(forced_html) {
+      if (forced_html === undefined) {
+        html = document.documentElement.outerHTML;
+      } else {
+        html = forced_html;
+      }
+    },
+
+    is_match: function(app) {
+      return test_key in app && app[test_key].test(html);
+    }
+  };
+}();
+
+
+SNIFFER.InlineMatcher = function() {
+  var test_key = "match_inline";
+
+  return {
+    init: function() {},
+
+    is_match: function(app) {
+      return test_key in app && app[test_key]();
+    }
+  };
+}();
+
+
+function log(msg) {
+  var logger = window.console;
+  if (logger && logger.markTimeline) {
+    logger.markTimeline(msg);
+  }
+}
+
+SNIFFER.Detector = function(apps, matchers) {
+  var matched_apps = apps.filter(
+      function(app) {
+          log('test: ' + app['name']);
+          return matchers.some(
+              function(matcher) { return matcher.is_match(app); });
+      });
+  if (matched_apps.length > 0) {
+    chrome.extension.sendRequest({matched_apps: matched_apps});
+  }
+};
+
+
+SNIFFER.matchers = [
+      SNIFFER.MetaMatcher,
+      SNIFFER.ScriptSrcMatcher,
+      SNIFFER.HtmlMatcher,
+      SNIFFER.InlineMatcher
+];
+
+if ('apps' in SNIFFER) {  // 'apps' is not set for unit tests
+  SNIFFER.matchers.forEach(function(matcher) { log('Init matcher'); matcher.init(); });
+  SNIFFER.Detector(SNIFFER.apps, SNIFFER.matchers);
+}

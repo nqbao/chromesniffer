@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>JsUnit Codelab Tests</title>
+    <base href="..">
+    <link rel="stylesheet" type="text/css" href="jsunit/css/jsUnitStyle.css">
+    <script type="text/javascript" src="jsunit/app/jsUnitCore.js"></script>
+    <script type="text/javascript" src="apps.js"></script>
+<script type="text/javascript">
+
+function suite() {
+  var result = new top.jsUnitTestSuite();
+  // Paths are relative to testRunner.html.
+  result.addTestPage("../tests/apps_test.html");
+  result.addTestPage("../tests/detector_test.html");
+  return result;
+}
+
+</script>
+</head>
+</html>

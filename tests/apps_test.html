@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>JsUnit Codelab Tests: apps_test.html</title>
+    <base href="..">
+    <link rel="stylesheet" type="text/css" href="jsunit/css/jsUnitStyle.css">
+    <script type="text/javascript" src="jsunit/app/jsUnitCore.js"></script>
+    <script type="text/javascript" src="apps.js"></script>
+<script type="text/javascript">
+
+function assertFieldInAllApps(field_name) {
+  var bad_apps = SNIFFER.apps.filter(
+      function(app) { return !(field_name in app); });
+  assertEquals(
+      // Note: JSON.stringify does not output the regex's.
+      "Apps without '" + field_name + "': " + JSON.stringify(bad_apps),
+      0, bad_apps.length);
+}
+
+function testAppsHaveRequiredFields() {
+  assertFieldInAllApps('name');
+  assertFieldInAllApps('title'); // may default to 'name'
+  assertFieldInAllApps('icon');
+  assertFieldInAllApps('url');
+}
+
+function testAppsIconsExist() {
+  for (var i = 0; i < SNIFFER.apps.length; i++) {
+    var app = SNIFFER.apps[i];
+    if ('icon' in app) {
+      var req = new XMLHttpRequest();
+      req.open('GET', app.icon, false);
+      req.send(null);
+      assertNotEquals(app.name + ": " + app.icon, 0, req.responseText.length);
+    }
+  }
+}
+
+</script>
+</head>
+</html>

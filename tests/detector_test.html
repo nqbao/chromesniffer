@@ -1,0 +1,154 @@
+<html>
+  <head>
+    <title>JsUnit Codelab Tests: detector.js</title>
+    <base href="..">
+    <link rel="stylesheet" type="text/css" href="jsunit/css/jsUnitStyle.css">
+    <script type="text/javascript" src="jsunit/app/jsUnitCore.js"></script>
+    <script type="text/javascript" src="detector.js"></script>
+<script type="text/javascript">
+
+
+// ScriptSrcMatcher
+
+function testScriptSrcMatcherNoScriptsMeanNoMatch() {
+  SNIFFER.ScriptSrcMatcher.init([]);
+  var app = {
+    match_script_src: /.*/
+  };
+  assertFalse(SNIFFER.ScriptSrcMatcher.is_match(app));
+}
+
+function testScriptSrcMatcherNoTestMeansNoMatch() {
+  SNIFFER.ScriptSrcMatcher.init([{src: 'bar/foo.js'}]);
+  var app = {
+    name: "no match_script_src"
+  };
+  assertFalse(SNIFFER.ScriptSrcMatcher.is_match(app));
+}
+
+function testScriptSrcMatcherBasicMatch() {
+  SNIFFER.ScriptSrcMatcher.init([{src: 'bar/foo.js'}]);
+  var app = {
+    match_script_src: /\/foo\.js/,
+  };
+  assertTrue(SNIFFER.ScriptSrcMatcher.is_match(app));
+}
+
+function testScriptSrcMatcherNoMatch() {
+  SNIFFER.ScriptSrcMatcher.init([{src: 'bar/foo.js'}]);
+  var app = {
+    match_script_src: /\/foot\.js/
+  };
+  assertFalse(SNIFFER.ScriptSrcMatcher.is_match(app));
+}
+
+function testScriptSrcMatcherMultiMatch() {
+  SNIFFER.ScriptSrcMatcher.init(
+      [{src: 'aaa.js'}, {src: 'bar/foo.js'}, {src: 'ccc.js'}]);
+  var app = {
+    match_script_src: /\/foo\.js/
+  };
+  assertTrue(SNIFFER.ScriptSrcMatcher.is_match(app));
+}
+
+
+// MetaMatcher
+
+function testMetaMatcherNoMetasMeansNoMatch() {
+  SNIFFER.MetaMatcher.init([]);
+  var app = {
+    match_meta: ['a', /./]
+  };
+  assertFalse(SNIFFER.MetaMatcher.is_match(app));
+}
+
+function testMetaMatcherNoTestMeansNoMatch() {
+  SNIFFER.MetaMatcher.init([{name: 'da name', content: 'da content'}]);
+  var app = {
+    name: "no match_meta"
+  };
+  assertFalse(SNIFFER.MetaMatcher.is_match(app));
+}
+
+function testMetaMatcherBasicMatch() {
+  SNIFFER.MetaMatcher.init([{name: 'generator', content: 'Awesomer 11.0'}]);
+  var app = {
+    match_meta: ['generator', /Awesomer/i],
+  };
+  assertTrue(SNIFFER.MetaMatcher.is_match(app));
+}
+
+function testMetaMatcherNoMatch() {
+  SNIFFER.MetaMatcher.init([{name: 'generator', content: 'Awesomer 11.0'}]);
+  var app = {
+    match_meta: ['generator', /Loserer/i],
+  };
+  assertFalse(SNIFFER.MetaMatcher.is_match(app));
+}
+
+function testMetaMatcherMultiMatch() {
+  SNIFFER.MetaMatcher.init([
+      {name: 'n1', content: 'c1'},
+      {name: 'generator', content: 'Awesomer'},
+      {name: 'n3', content: 'c3'}
+  ]);
+  var app = {
+    match_meta: ['generator', /Awesomer/i],
+  };
+  assertTrue(SNIFFER.MetaMatcher.is_match(app));
+}
+
+
+// HtmlMatcher
+
+function testHtmlMatcherNoTestMeansNoMatch() {
+  SNIFFER.HtmlMatcher.init("<html></html>");
+  var app = {
+    name: "no match_html"
+  };
+  assertFalse(SNIFFER.HtmlMatcher.is_match(app));
+}
+
+function testHtmlMatcherMatchBasic() {
+  SNIFFER.HtmlMatcher.init("<html>foo</html>");
+  var app = {
+    match_html: /foo/,
+  };
+  assertTrue(SNIFFER.HtmlMatcher.is_match(app));
+}
+
+function testHtmlMatcherNoMatch() {
+  SNIFFER.HtmlMatcher.init("<html>foo</html>");
+  var app = {
+    match_html: /bar/,
+  };
+  assertFalse(SNIFFER.HtmlMatcher.is_match(app));
+}
+
+
+// InlineMatcher
+
+function testHtmlMatcherNoTestMeansNoMatch() {
+  var app = {
+    name: "no match_line"
+  };
+  assertFalse(SNIFFER.InlineMatcher.is_match(app));
+}
+
+function testInlineMatcherMatchBasic() {
+  var app = {
+    match_inline: function () { return true; },
+  };
+  assertTrue(SNIFFER.InlineMatcher.is_match(app));
+}
+
+function testInlineMatcherNoMatch() {
+  var app = {
+    match_inline: function () { return false; },
+  };
+  assertFalse(SNIFFER.InlineMatcher.is_match(app));
+}
+
+</script>
+</head>
+</html>

@@ -6,5 +6,8 @@
  * @author Bao Nguyen <contact@nqbao.com>
  * @license GPLv3
  **/
- 
-// to be added ...
+
+// Declare the namespace.
+if (SNIFFER == null || typeof SNIFFER != "object") {
+  var SNIFFER = {};
+}

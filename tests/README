@@ -1,0 +1,6 @@
+How to run all the tests Chrome without a web server:
+
+  cd chromesniffer
+  chrome --user-data-dir=/tmp/chrome \
+    --allow-file-access-from-files \
+    "file:///`pwd`/jsunit/testRunner.html?testPage=`pwd`/tests/test_all.html&autoRun=true"
