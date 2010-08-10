@@ -70,6 +70,12 @@ var appinfo = {
 		url: 'http://wordpress.org',
 		priority: 1
 	},
+	'WPML': {
+		icon: 'WPML.ico',
+		url: 'http://wpml.org/',
+		priority: 1.1
+	},
+	
 	'bbPress': {
 		icon: 'bbPress.ico',
 		url: 'http://bbpress.org',
@@ -342,6 +348,12 @@ var appinfo = {
 		url: 'http://xiti.com/',
 		priority: 3
 	},
+	'Piwik': {
+		icon: 'Piwik.ico',
+		url: 'http://piwik.org/',
+		priority: 3
+	},
+	
 	'Disqus': {
 		icon: 'Disqus.ico',
 		url: 'http://disqus.com/',

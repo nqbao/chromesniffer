@@ -41,7 +41,8 @@
 			'PrestaShop': /PrestaShop/i,
 			'SharePoint': /SharePoint/,
 			'JaliosJCMS': /Jalios JCMS/i,
-			'ZenCart': /zen-cart/i
+			'ZenCart': /zen-cart/i,
+			'WPML': /WPML/i
 		},
 		'copyright': {
 			'phpBB': /phpBB/i
@@ -182,6 +183,9 @@
 		'Xiti': function() {
 			return window.xtsite != null && window.xtpage != null;
 		},
+		'Piwik': function() {
+			return window.Piwik != null;
+		}
 	};
 	
 	for (t in js_tests)
