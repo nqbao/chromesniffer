@@ -82,8 +82,7 @@
 		'Joomla': /\/components\/com_/,
 		'Ubercart': /uc_cart/i,
 		'Closure': /\/goog\/base\.js/i,
-		'IPB': /ipb.*js/,
-		'MODx': /\/min\/.*f=.*/,
+		'MODx': /\/min\/b=.*f=.*/,
 		'MooTools': /mootools/i,
 		'Dojo': /dojo(\.xd)?\.js/i,
 		'script.aculo.us': /scriptaculous\.js/i,
@@ -185,6 +184,9 @@
 		},
 		'Piwik': function() {
 			return window.Piwik != null;
+		},
+		'IPB': function() {
+			return window.IPBoard != null;
 		}
 	};
 	
