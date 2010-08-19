@@ -20,6 +20,9 @@
 	meta.name = 'chromesniffer';
 	meta.id = 'chromesniffer_meta';
 	
-	head.appendChild(meta);
-	body.appendChild(script);
+	// for bad HTML
+	if (head && body) {
+		head.appendChild(meta);
+		body.appendChild(script);
+	}
 })();

@@ -1,4 +1,9 @@
 <script type="text/javascript" src="common.js"></script>
+<style type="text/css">
+#app_list a {
+	margin-right: 4px;
+}
+</style>
 <script language="javascript">
 var bg = chrome.extension.getBackgroundPage();
 
@@ -21,12 +26,22 @@ chrome.tabs.getSelected(null,function(tab){
 			if (!app.url) app.url = appinfo[''].url.replace('%s',appid); // it's google one
 			if (!app.icon) app.icon = appinfo[''].icon;
 		
-			html += '<a target="_blank" title="' + app.title + '" href="' + app.url + '">';
-			html += '<img alt="' + app.title + '" width=16 height=16 src="apps/' + app.icon + '"/>';
-			html += '</a>';
+			// use DOM to avoid error
+			var link = document.createElement('a');
+			var icon = document.createElement('img');
 			
-			// space
-			html += ' ';
+			link.target = "_blank";
+			link.title = app.title;
+			link.href = app.url;
+			
+			icon.alt = app.title;
+			icon.width = 16;
+			icon.height = 16;
+			icon.src = "apps/" + app.icon;
+			
+			link.appendChild(icon);
+			display.appendChild(link);
+			
 			count++;
 		}
 		
@@ -38,8 +53,6 @@ chrome.tabs.getSelected(null,function(tab){
 		{
 			display.style.width = "160px";
 		}
-		
-		display.innerHTML = html;
 	});
 });
 </script>
