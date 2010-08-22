@@ -187,6 +187,9 @@
 		},
 		'IPB': function() {
 			return window.IPBoard != null;
+		},
+		'Clicky': function() {
+			return window.clicky != null;
 		}
 	};
 	

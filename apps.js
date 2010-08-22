@@ -353,6 +353,11 @@ var appinfo = {
 		url: 'http://piwik.org/',
 		priority: 3
 	},
+	'Clicky': {
+		icon: 'clicky.ico',
+		url: 'http://getclicky.com/',
+		priority: 3
+	},
 	
 	'Disqus': {
 		icon: 'Disqus.ico',
