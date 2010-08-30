@@ -321,6 +321,16 @@ var appinfo = {
 		url: 'http://typekit.com/',
 		priority: 2.9
 	},
+	'Cufon': {
+		icon: 'cufon.ico',
+		url: 'http://cufon.shoqolate.com/',
+		priority: 2.9
+	},
+	'sIFR': {
+		icon: 'sIFR.gif',
+		url: 'http://www.mikeindustries.com/blog/sifr/',
+		priority: 2.9
+	},
 	'Modernizr': {
 		icon: 'modernizr.ico',
 		url: 'http://www.modernizr.com/',

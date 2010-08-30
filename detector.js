@@ -179,6 +179,12 @@
 		'Raphael': function() {
 			return window.Raphael != null;
 		},
+		'Cufon': function() {
+			return window.Cufon != null;
+		},
+		'sIFR': function() {
+			return window.sIFR != null;
+		},
 		'Xiti': function() {
 			return window.xtsite != null && window.xtpage != null;
 		},
