@@ -93,7 +93,8 @@
 		'Mollom': /mollom\/mollom\.js/i, // only work on Drupal now
 		'ZenPhoto': /zp-core\/js/i,
 		'Gallery2': /main\.php\?.*g2_.*/i,
-		'AdSense': /pagead\/show_ads\.js/
+		'AdSense': /pagead\/show_ads\.js/,
+		'XenForo': /js\/xenforo\//i
 	};
 
 	for (var idx in scripts)
