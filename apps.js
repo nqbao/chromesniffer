@@ -39,7 +39,7 @@ var appinfo = {
 	},
 	'phpBB': {
 		icon: 'phpBB.ico',
-		url: 'http://phpbb.org',
+		url: 'http://www.phpbb.com',
 		priority: 1
 	},
 	'IPB': {
