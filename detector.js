@@ -135,6 +135,7 @@ window.addEventListener('load', function(){
 		'Contao': /powered by (TYPOlight|Contao)/is,
 		'Moodle' : /<link[^>]*\/theme\/standard\/styles.php".*>/,
 		'1c-bitrix' : /<link[^>]*\/bitrix\/.*?>/i,
+		'OpenCMS' : /<link[^>]*\.opencms\..*?>/i,
 		'GoogleFontApi': /ref=["']?http:\/\/fonts.googleapis.com\//i
 	};
 

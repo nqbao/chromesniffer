@@ -205,6 +205,11 @@ var appinfo = {
 		url: 'http://www.bigace.de/',
 		priority: 1
 	},
+	'OpenCMS': {
+		icon: 'opencms.ico',
+		url: 'http://www.opencms.org/',
+		priority: 1
+	},
 	'1c-bitrix': {
 		icon: '1c-bitrix.ico',
 		url: 'http://www.1c-bitrix.ru/',
