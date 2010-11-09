@@ -9,20 +9,17 @@
  **/
 
 (function(){
-	var body = document.getElementsByTagName('body')[0];
 	var head = document.getElementsByTagName('head')[0];
-	
-	var script = document.createElement('script');
-	script.type = 'text/javascript';
-	script.src = chrome.extension.getURL('detector.js');
-	
-	var meta = document.createElement('meta');
-	meta.name = 'chromesniffer';
-	meta.id = 'chromesniffer_meta';
-	
-	// for bad HTML
-	if (head && body) {
+
+	if (head) {
+		var script = document.createElement('script');
+		script.type = 'text/javascript';
+		script.src = chrome.extension.getURL('detector.js');
+
+		var meta = document.createElement('meta');
+		meta.name = 'chromesniffer';
+		meta.id = 'chromesniffer_meta';
 		head.appendChild(meta);
-		body.appendChild(script);
+		head.appendChild(script);
 	}
 })();

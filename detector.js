@@ -8,7 +8,7 @@
  * @license GPLv3
  **/
  
-(function(){
+window.addEventListener('load', function(){
 	var _apps = {};
 	var doc = document.documentElement;
 	
@@ -228,4 +228,4 @@
 	// send back to background page
 	
 	document.getElementById('chromesniffer_meta').content = encodedString;
-})();
+}, false);

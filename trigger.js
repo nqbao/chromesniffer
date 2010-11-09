@@ -8,15 +8,15 @@
  * @license GPLv3
  **/
 
-(function(){
+window.addEventListener('load', function(){
 	var meta = document.getElementById('chromesniffer_meta');
-	
+
 	if (meta) {
 		var apps = {};
 		var count = 0;
 		
 		var raw = meta.content.split("&");
-		
+
 		for (var i in raw) {
 			var piece = raw[i].split("=");
 			
@@ -35,4 +35,4 @@
 			});
 		}
 	}
-})();
+});
