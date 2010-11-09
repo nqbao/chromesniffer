@@ -318,6 +318,11 @@ var appinfo = {
 		url: 'http://developer.yahoo.com/yui/',
 		priority: 2
 	},
+	'Cappuccino': {
+		icon: 'cappuccino.png',
+		url: 'http://cappuccino.org/',
+		priority: 2
+	},
 	
 	// ==== js tools ====
 	'Raphael': {
