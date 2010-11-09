@@ -205,6 +205,11 @@ var appinfo = {
 		url: 'http://www.bigace.de/',
 		priority: 1
 	},
+	'1c-bitrix': {
+		icon: '1c-bitrix.ico',
+		url: 'http://www.1c-bitrix.ru/',
+		priority: 1
+	},
 	
 	'Elgg': {
 		icon: 'Elgg.ico',
@@ -245,7 +250,6 @@ var appinfo = {
 		url: 'http://www.prestashop.com/',
 		priority: 1
 	},
-	
 	'ZenCart': {
 		icon: 'zencart.ico',
 		url: 'http://www.zen-cart.com',
