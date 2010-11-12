@@ -361,6 +361,11 @@ var appinfo = {
 		url: 'http://developers.facebook.com/',
 		priority: 2.9
 	},
+	'Woopra': {
+		icon: 'woopra.ico',
+		url: 'http://www.woopra.com',
+		priority: 3
+	},
 	'Google Analytics': {
 		icon: 'Google_Analytics.ico',
 		url: 'http://www.google.com/analytics/',

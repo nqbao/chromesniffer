@@ -200,7 +200,10 @@ window.addEventListener('load', function(){
 		},
 		'Clicky': function() {
 			return window.clicky != null;
-		}
+		},
+        'Woopra': function() {
+            return window.woopraTracker != null;
+        }
 	};
 	
 	for (t in js_tests)
