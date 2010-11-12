@@ -276,6 +276,11 @@ var appinfo = {
 		url: 'http://www.sugarcrm.com',
 		priority: 1
 	},
+	'PivotX': {
+		icon: 'pivotx.ico',
+		url: 'http://pivotx.net',
+		priority: 1
+	},	
 	
 	// ==== js framework ====
 	'jQuery': {

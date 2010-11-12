@@ -42,7 +42,8 @@ window.addEventListener('load', function(){
 			'SharePoint': /SharePoint/,
 			'JaliosJCMS': /Jalios JCMS/i,
 			'ZenCart': /zen-cart/i,
-			'WPML': /WPML/i
+			'WPML': /WPML/i,
+			'PivotX': /PivotX/i
 		},
 		'copyright': {
 			'phpBB': /phpBB/i
@@ -232,4 +233,4 @@ window.addEventListener('load', function(){
 	// send back to background page
 	
 	document.getElementById('chromesniffer_meta').content = encodedString;
-}, false);
+})();
