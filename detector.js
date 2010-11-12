@@ -173,7 +173,7 @@ window.addEventListener('load', function(){
 			return window.Typekit != null;
 		},
 		'Facebook': function() {
-			return window.FB != null;
+			return window.FB != null && window.FB.api != null;
 		},
 		'ExtJS': function() {
 			return window.Ext != null;
