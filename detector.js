@@ -199,6 +199,9 @@ window.addEventListener('load', function(){
 		'IPB': function() {
 			return window.IPBoard != null;
 		},
+		'MyBB': function() {
+			return window.MyBB != null;
+		},
 		'Clicky': function() {
 			return window.clicky != null;
 		},

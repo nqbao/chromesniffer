@@ -53,12 +53,17 @@ var appinfo = {
 		url: 'http://www.minibb.com/',
 		priority: 1
 	},
+	'MyBB': {
+		icon: 'mybb.ico',
+		url: 'http://www.mybb.com/',
+		priority: 1
+	},
 	'XenForo': {
 		icon: 'xenforo.ico',
 		url: 'http://xenforo.com',
 		priority: 1
 	},
-	
+
 	'Drupal': {
 		icon: 'Drupal.ico',
 		url: 'http://drupal.org',
