@@ -236,4 +236,4 @@ window.addEventListener('load', function(){
 	// send back to background page
 	
 	document.getElementById('chromesniffer_meta').content = encodedString;
-})();
+});
