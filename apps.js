@@ -112,7 +112,13 @@ var appinfo = {
 		url: 'http://www.dokuwiki.org/',
 		priority: 1
 	},
-	
+
+	'OpenACS': {
+		icon: 'openacs.ico',
+		url: 'http://openacs.org',
+		priority: 1
+	},
+
 	'Joomla': {
 		icon: 'Joomla.ico',
 		url: 'http://joomla.org',

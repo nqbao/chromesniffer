@@ -43,7 +43,8 @@ window.addEventListener('load', function(){
 			'JaliosJCMS': /Jalios JCMS/i,
 			'ZenCart': /zen-cart/i,
 			'WPML': /WPML/i,
-			'PivotX': /PivotX/i
+			'PivotX': /PivotX/i,
+            'OpenACS': /OpenACS/i
 		},
 		'copyright': {
 			'phpBB': /phpBB/i
