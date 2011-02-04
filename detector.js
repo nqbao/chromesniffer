@@ -54,6 +54,9 @@ window.addEventListener('load', function(){
 		},
 		'powered-by': {
 			'Serendipity': /Serendipity/i,
+		},
+		'author': {
+			'Avactis': /Avactis Team/i
 		}
 	};
 
@@ -97,7 +100,8 @@ window.addEventListener('load', function(){
 		'Gallery2': /main\.php\?.*g2_.*/i,
 		'AdSense': /pagead\/show_ads\.js/,
 		'XenForo': /js\/xenforo\//i,
-		'Cappuccino': /Frameworks\/Objective-J\/Objective-J\.js/
+		'Cappuccino': /Frameworks\/Objective-J\/Objective-J\.js/,
+		'Avactis': /\/avactis-themes\//i
 	};
 
 	for (var idx in scripts)
@@ -138,7 +142,8 @@ window.addEventListener('load', function(){
 		'Moodle' : /<link[^>]*\/theme\/standard\/styles.php".*>/,
 		'1c-bitrix' : /<link[^>]*\/bitrix\/.*?>/i,
 		'OpenCMS' : /<link[^>]*\.opencms\..*?>/i,
-		'GoogleFontApi': /ref=["']?http:\/\/fonts.googleapis.com\//i
+		'GoogleFontApi': /ref=["']?http:\/\/fonts.googleapis.com\//i,
+		'Prostores' : /ProStores\.redirectWithTracking/
 	};
 
 	for (t in text_tests)

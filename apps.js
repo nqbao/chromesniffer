@@ -261,9 +261,19 @@ var appinfo = {
 		priority: 1
 	},
 	
+	'Avactis': {
+		icon: 'avactis.ico',
+		url: 'http://www.avactis.com',
+		priority: 1
+	},
 	'PrestaShop': {
 		icon: 'PrestaShop.ico',
 		url: 'http://www.prestashop.com/',
+		priority: 1
+	},
+	'Prostores': {
+		icon: 'prostores.ico',
+		url: 'http://www.prostores.com',
 		priority: 1
 	},
 	'ZenCart': {
