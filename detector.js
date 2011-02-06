@@ -269,6 +269,10 @@ window.addEventListener('load', function(){
 		'Modernizr': function() {
 			if(window.Modernizr != null && Modernizr._version!=undefined)
 				return Modernizr._version
+		},
+		'Raphael': function() {
+			if(window.Raphael != null && Raphael.version!=undefined)
+				return Raphael.version
 		}
 	};
 	
