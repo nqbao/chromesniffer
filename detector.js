@@ -11,7 +11,8 @@
 window.addEventListener('load', function(){
 	var _apps = {};
 	var doc = document.documentElement;
-	
+	var a
+	var r
 	// 1: detect by meta tags
 	var metas = doc.getElementsByTagName("meta");
 	var meta_tests = {
@@ -69,7 +70,7 @@ window.addEventListener('load', function(){
 			if (t in _apps) continue;
 			if (meta_tests[name][t].test(m.content))
 			{
-				_apps[t] = 1;
+				_apps[t] = -1;
 			}
 		}
 	}
@@ -111,7 +112,7 @@ window.addEventListener('load', function(){
 			if (t in _apps) continue;
 			if (script_tests[t].test(s))
 			{
-				_apps[t] = 1;
+				_apps[t] = -1;
 			}
 		}
 	}
@@ -146,7 +147,7 @@ window.addEventListener('load', function(){
 		if (t in _apps) continue;
 		if (text_tests[t].test(text))
 		{
-			_apps[t] = 1;
+			_apps[t] = -1;
 		}
 	}
 	
@@ -208,6 +209,9 @@ window.addEventListener('load', function(){
 		},
         'Woopra': function() {
             return window.woopraTracker != null;
+        },
+        'RightJS': function() {		
+            return window.RightJS != null;
         }
 	};
 	
@@ -216,22 +220,75 @@ window.addEventListener('load', function(){
 		if (t in _apps) continue;
 		if (js_tests[t]())
 		{
-			_apps[t] = 1;
+			_apps[t] = -1;
 		}
 	}
 	
+	
 
-	// 6: detect by header
+	// 6: detect some script version when available
+	var js_versions = {		
+		'Prototype': function() {
+			if('Prototype' in window && Prototype.Version!=undefined)
+				return window.Prototype.Version			
+		},
+		'script.aculo.us': function() {
+			if('Scriptaculous' in window && Scriptaculous.Version!=undefined)
+				return window.Scriptaculous.Version			
+		},
+		'jQuery': function() {
+			if(typeof jQuery == 'function' && jQuery.prototype.jquery!=undefined )
+				return jQuery.prototype.jquery
+		},
+		'jQuery UI': function() {
+			if(typeof jQuery == 'function' && jQuery.ui && jQuery.ui.version!=undefined )
+				return jQuery.ui.version
+		},
+		'Dojo': function() {
+			if(typeof dojo == 'object' && dojo.version.toString()!=undefined)
+				return dojo.version				
+		},
+		'YUI': function() {
+			if(typeof YAHOO == 'object' && typeof YAHOO.evn == 'object' && YAHOO.env.getVersion('yahoo').version!=undefined )
+				return YAHOO.env.getVersion('yahoo').version
+			if('YUI' in window && typeof YUI == 'function' && YUI().version!=undefined)
+				return YUI().version
+		},
+		'MooTools': function() {
+			 if(typeof MooTools == 'object' && MooTools.version!=undefined)
+				return MooTools.version
+		},
+		'ExtJS': function() {
+			if(typeof Ext === 'object' && Ext.version!=undefined)
+				return Ext.version
+		},
+		'RightJS': function() {
+			if('RightJS' in window && RightJS.version!=undefined)
+				return RightJS.version
+		}
+	};
+	
+	for (a in _apps)
+	{		
+		if (_apps[a]==-1 && js_versions[a])
+		{
+			
+			r = js_versions[a]()
+			_apps[a] = r?r:-1
+		}
+	}
+
+	// 7: detect by header
 	// @todo
 
-	// 7: detect based on built-in database
+	// 8: detect based on built-in database
 	// @todo
 
 	// convert to array
 	
 	var encodedString = "";
-	for (var a in _apps) {
-		encodedString += encodeURIComponent(a) + "=" + encodeURIComponent(1) + "&";
+	for (a in _apps) {
+		encodedString += encodeURIComponent(a) + "=" + encodeURIComponent(_apps[a]) + "&";
 	}
 
 	// send back to background page
