@@ -265,6 +265,10 @@ window.addEventListener('load', function(){
 		'RightJS': function() {
 			if('RightJS' in window && RightJS.version!=undefined)
 				return RightJS.version
+		},
+		'Modernizr': function() {
+			if(window.Modernizr != null && Modernizr._version!=undefined)
+				return Modernizr._version
 		}
 	};
 	
