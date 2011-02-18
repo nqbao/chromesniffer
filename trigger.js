@@ -7,10 +7,8 @@
  * @author Bao Nguyen <contact@nqbao.com>
  * @license GPLv3
  **/
-
-window.addEventListener('load', function(){
-	var meta = document.getElementById('chromesniffer_meta');
-
+var meta = document.getElementById('chromesniffer_meta');
+meta.addEventListener('ready', function(){
 	if (meta) {
 		var apps = {};
 		var count = 0;

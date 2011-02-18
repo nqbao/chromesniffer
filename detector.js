@@ -241,5 +241,10 @@ window.addEventListener('load', function(){
 
 	// send back to background page
 	
-	document.getElementById('chromesniffer_meta').content = encodedString;
+	var meta = document.getElementById('chromesniffer_meta');
+	meta.content = encodedString;
+	//Notify Background Page
+	var done = document.createEvent('Event');
+	done.initEvent('ready', true, true);
+	meta.dispatchEvent(done);
 });
