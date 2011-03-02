@@ -354,6 +354,11 @@ var appinfo = {
 		url: 'http://cappuccino.org/',
 		priority: 2
 	},
+	'RightJS': {
+		icon: 'rightjs.png',
+		url: 'http://RightJS.org/',
+		priority: 2
+	},
 	
 	// ==== js tools ====
 	'Raphael': {

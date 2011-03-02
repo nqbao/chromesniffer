@@ -25,16 +25,19 @@ chrome.tabs.getSelected(null,function(tab){
 			if (!app.title) app.title = appid;
 			if (!app.url) app.url = appinfo[''].url.replace('%s',appid); // it's google one
 			if (!app.icon) app.icon = appinfo[''].icon;
-		
+			
+			if( apps[appid] != "-1")
+				app.title += ' ' + apps[appid] 
+			
 			// use DOM to avoid error
 			var link = document.createElement('a');
 			var icon = document.createElement('img');
 			
 			link.target = "_blank";
-			link.title = app.title;
+			link.title = app.title
 			link.href = app.url;
 			
-			icon.alt = app.title;
+			icon.alt = app.title
 			icon.width = 16;
 			icon.height = 16;
 			icon.src = "apps/" + app.icon;
