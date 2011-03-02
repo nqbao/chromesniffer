@@ -127,7 +127,7 @@ window.addEventListener('load', function(){
 	var text_tests = {
 		'SMF': /<script .+\s+var smf_/i,
 		'Magento': /var BLANK_URL = '[^>]+js\/blank\.html'/i,
-		'Tumblr': /<iframe src=("|')http:\/\/www\.tumblr\.com/i,
+		'Tumblr': /<iframe src=("|')http:\/\/\S+\.tumblr\.com/i,
 		'WordPress': /<link rel=("|')stylesheet("|') [^>]+wp-content/i,
 		'Closure': /<script[^>]*>.*goog\.require/is,
 		'Liferay': /<script[^>]*>.*LifeRay\.currentURL/is,
