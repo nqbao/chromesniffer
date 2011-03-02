@@ -397,6 +397,11 @@ var appinfo = {
 		url: 'http://www.woopra.com',
 		priority: 3
 	},
+	'OpenWebAnalytics': {
+		icon: 'owa.ico',
+		url: 'http://www.openwebanalytics.com',
+		priority: 3
+	},
 	'Google Analytics': {
 		icon: 'Google_Analytics.ico',
 		url: 'http://www.google.com/analytics/',

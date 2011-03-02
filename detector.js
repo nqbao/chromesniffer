@@ -217,7 +217,10 @@ window.addEventListener('load', function(){
         },
         'RightJS': function() {		
             return window.RightJS != null;
-        }
+        },
+		'OpenWebAnalytics': function() {
+			return window.owa_baseUrl != null;
+		}
 	};
 	
 	for (t in js_tests)
@@ -228,8 +231,6 @@ window.addEventListener('load', function(){
 			_apps[t] = -1;
 		}
 	}
-	
-	
 
 	// 6: detect some script version when available
 	var js_versions = {		
