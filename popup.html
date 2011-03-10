@@ -28,7 +28,7 @@ chrome.tabs.getSelected(null,function(tab){
 			
 			if( apps[appid] != "-1")
 			{
-				app.title += ' ' + apps[appid] 
+				app.title = appid + ' ' + apps[appid] 
 			}
 			
 			// use DOM to avoid error

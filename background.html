@@ -45,11 +45,24 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 				}
 			}
 		}
-		
-		if (appinfo[mainapp]) // lazy bug
+
+		var mainappinfo = appinfo[mainapp]
+		if (mainappinfo) // lazy bug
 		{
-			chrome.pageAction.setIcon({tabId: sender.tab.id, path: 'apps/' + appinfo[mainapp].icon});
-			chrome.pageAction.setTitle({tabId: sender.tab.id, title: (appinfo[mainapp].title ? appinfo[mainapp].title : mainapp) + (request.apps[app]!='-1'?' ' + request.apps[app]:'')});
+			if (mainappinfo.title)
+			{
+				var apptitle = mainappinfo.title
+			}
+			else
+			{
+				var apptitle = mainapp
+			}
+			if (request.apps[mainapp] != "-1")
+			{
+				apptitle = mainapp + ' ' + request.apps[mainapp]
+			}
+			chrome.pageAction.setIcon({tabId: sender.tab.id, path: 'apps/' + mainappinfo.icon});
+			chrome.pageAction.setTitle({tabId: sender.tab.id, title: apptitle});
 		}
 		
 		chrome.pageAction.show(sender.tab.id);
