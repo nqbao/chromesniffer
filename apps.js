@@ -286,6 +286,11 @@ var appinfo = {
 		url: 'http://eraincart.com',
 		priority: 1
 	},
+	'Volusion': {
+		icon: 'volusion.ico',
+		url: 'http://www.volusion.com',
+		priority: 1
+	},
 
 	'Moodle': {
 		icon: 'moodle.png',
@@ -392,6 +397,11 @@ var appinfo = {
 		url: 'http://developers.facebook.com/',
 		priority: 2.9
 	},
+	'AddThis': {
+		icon: 'addthis.ico',
+		url: 'http://www.addthis.com',
+		priority: 2.9
+	},
 	'Woopra': {
 		icon: 'woopra.ico',
 		url: 'http://www.woopra.com',
@@ -458,6 +468,11 @@ var appinfo = {
 		title: 'Google Font API',
 		icon: 'google-font-api.gif',
 		url: 'http://code.google.com/apis/webfonts/',
+		priority: 4
+	},
+	'SWFObject': {
+		icon: 'SWFObject.ico',
+		url: 'http://code.google.com/p/swfobject/',
 		priority: 4
 	},
 	

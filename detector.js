@@ -102,7 +102,9 @@ window.addEventListener('load', function(){
 		'AdSense': /pagead\/show_ads\.js/,
 		'XenForo': /js\/xenforo\//i,
 		'Cappuccino': /Frameworks\/Objective-J\/Objective-J\.js/,
-		'Avactis': /\/avactis-themes\//i
+		'Avactis': /\/avactis-themes\//i,
+		'Volusion': /a\/j\/javascripts\.js/,
+		'AddThis': /addthis\.com\/js/
 	};
 
 	for (var idx in scripts)
@@ -220,7 +222,10 @@ window.addEventListener('load', function(){
         },
 		'OpenWebAnalytics': function() {
 			return window.owa_baseUrl != null;
-		}
+		},
+		'SWFObject': function() {
+            return window.swfobject != null;
+        }
 	};
 	
 	for (t in js_tests)
