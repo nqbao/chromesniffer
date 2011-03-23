@@ -291,6 +291,11 @@ var appinfo = {
 		url: 'http://www.volusion.com',
 		priority: 1
 	},
+	'osCommerce': {
+		icon: 'osCommerce.ico',
+		url: 'http://www.oscommerce.com',
+		priority: 1
+	},	
 
 	'Moodle': {
 		icon: 'moodle.png',

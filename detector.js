@@ -146,7 +146,8 @@ window.addEventListener('load', function(){
 		'1c-bitrix' : /<link[^>]*\/bitrix\/.*?>/i,
 		'OpenCMS' : /<link[^>]*\.opencms\..*?>/i,
 		'GoogleFontApi': /ref=["']?http:\/\/fonts.googleapis.com\//i,
-		'Prostores' : /ProStores\.redirectWithTracking/
+		'Prostores' : /ProStores\.redirectWithTracking/,
+		'osCommerce': /(product_info\.php\?products_id|_eof \/\/-->)/
 	};
 
 	for (t in text_tests)
