@@ -459,6 +459,12 @@ var appinfo = {
 		url: 'http://wibiya.com/',
 		priority: 3
 	},
+	'Prettify': {
+		title: 'Google Code Prettify',
+		icon: 'google.ico',
+		url: 'http://code.google.com/p/google-code-prettify/',
+		priority: 3
+	},
 	'reCaptcha': {
 		icon: 'reCaptcha.ico',
 		url: 'http://recaptcha.net/',
@@ -487,7 +493,7 @@ var appinfo = {
 		priority: 5
 	},
 	'AdSense': {
-		icon: 'google.ico',
+		icon: 'AdSense.gif',
 		url: 'https://www.google.com/adsense',
 		priority: 5
 	},

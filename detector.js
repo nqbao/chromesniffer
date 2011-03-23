@@ -224,6 +224,9 @@ window.addEventListener('load', function(){
 		'OpenWebAnalytics': function() {
 			return window.owa_baseUrl != null;
 		},
+		'Prettify': function() {
+			return window.prettyPrint != null;
+		},
 		'SWFObject': function() {
             return window.swfobject != null;
         }
