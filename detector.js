@@ -264,8 +264,8 @@ window.addEventListener('load', function(){
 				return dojo.version				
 		},
 		'YUI': function() {
-			if(typeof YAHOO == 'object' && typeof YAHOO.evn == 'object' && YAHOO.env.getVersion('yahoo').version!=undefined )
-				return YAHOO.env.getVersion('yahoo').version
+			if(typeof YAHOO == 'object' && YAHOO.VERSION!=undefined )
+				return YAHOO.VERSION
 			if('YUI' in window && typeof YUI == 'function' && YUI().version!=undefined)
 				return YUI().version
 		},
