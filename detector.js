@@ -147,7 +147,8 @@ window.addEventListener('load', function(){
 		'OpenCMS' : /<link[^>]*\.opencms\..*?>/i,
 		'GoogleFontApi': /ref=["']?http:\/\/fonts.googleapis.com\//i,
 		'Prostores' : /ProStores\.redirectWithTracking/,
-		'osCommerce': /(product_info\.php\?products_id|_eof \/\/-->)/
+		'osCommerce': /(product_info\.php\?products_id|_eof \/\/-->)/,
+		'OpenCart': /index.php\?route=product\/product/
 	};
 
 	for (t in text_tests)
@@ -215,12 +216,12 @@ window.addEventListener('load', function(){
 		'Clicky': function() {
 			return window.clicky != null;
 		},
-        'Woopra': function() {
-            return window.woopraTracker != null;
-        },
-        'RightJS': function() {		
-            return window.RightJS != null;
-        },
+		'Woopra': function() {
+			return window.woopraTracker != null;
+		},
+		'RightJS': function() {		
+			return window.RightJS != null;
+		},
 		'OpenWebAnalytics': function() {
 			return window.owa_baseUrl != null;
 		},
@@ -228,8 +229,8 @@ window.addEventListener('load', function(){
 			return window.prettyPrint != null;
 		},
 		'SWFObject': function() {
-            return window.swfobject != null;
-        }
+			return window.swfobject != null;
+		}
 	};
 	
 	for (t in js_tests)
