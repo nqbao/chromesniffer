@@ -151,7 +151,8 @@ window.addEventListener('load', function(){
 		'GoogleFontApi': /ref=["']?http:\/\/fonts.googleapis.com\//i,
 		'Prostores' : /ProStores\.redirectWithTracking/,
 		'osCommerce': /(product_info\.php\?products_id|_eof \/\/-->)/,
-		'OpenCart': /index.php\?route=product\/product/
+		'OpenCart': /index.php\?route=product\/product/,
+                'Shibboleth': /<form action="\/idp\/Authn\/UserPassword" method="post">/
 	};
 
 	for (t in text_tests)
