@@ -145,6 +145,7 @@ window.addEventListener('load', function(){
 		'Fatwire': /\/Satellite\?|\/ContentServer\?/s,
 		'Contao': /powered by (TYPOlight|Contao)/is,
 		'Moodle' : /<link[^>]*\/theme\/standard\/styles.php".*>/,
+		'Moodle2' : /<link[^>]*\/theme\/styles.php\?theme=.*".*>/,
 		'1c-bitrix' : /<link[^>]*\/bitrix\/.*?>/i,
 		'OpenCMS' : /<link[^>]*\.opencms\..*?>/i,
 		'GoogleFontApi': /ref=["']?http:\/\/fonts.googleapis.com\//i,

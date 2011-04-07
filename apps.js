@@ -307,6 +307,11 @@ var appinfo = {
 		url: 'http://moodle.org',
 		priority: 1
 	},
+        'Moodle2': {
+                icon: 'moodle.png',
+                url: 'http://moodle.org',
+                priority: 1
+        },
 	'SugarCRM': {
 		icon: 'sugarcrm.ico',
 		url: 'http://www.sugarcrm.com',
