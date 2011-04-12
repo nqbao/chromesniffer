@@ -227,6 +227,18 @@ window.addEventListener('load', function(){
 		'Prettify': function() {
 			return window.prettyPrint != null;
 		},
+		'SiteCatalyst': function() {
+			return window.s_account != null;
+		},
+		'Twitter': function() {
+			return window.twttr != null;
+		},
+		'Coremetrics': function() {
+			return window.cmCreatePageviewTag != null;
+		},
+		'Buzz': function() {
+			return window.google_buzz__base_url != null;
+		},
 		'SWFObject': function() {
             return window.swfobject != null;
         }

@@ -402,6 +402,18 @@ var appinfo = {
 		url: 'http://developers.facebook.com/',
 		priority: 2.9
 	},
+	'Twitter': {
+		title: 'Twitter plugins',
+		icon: 'twitter.ico',
+		url: 'http://dev.twitter.com',
+		priority: 2.9
+	},
+	'Buzz': {
+		title: 'Google Buzz Button',
+		icon: 'buzz.png',
+		url: 'http://www.google.com/buzz/stuff',
+		priority: 2.9
+	},
 	'AddThis': {
 		icon: 'addthis.ico',
 		url: 'http://www.addthis.com',
@@ -420,6 +432,16 @@ var appinfo = {
 	'Google Analytics': {
 		icon: 'Google_Analytics.ico',
 		url: 'http://www.google.com/analytics/',
+		priority: 3
+	},
+	'SiteCatalyst': {
+		icon: 'SiteCatalyst.ico',
+		url: 'http://www.omniture.com',
+		priority: 3
+	},
+	'Coremetrics': {
+		icon: 'coremetrics.ico',
+		url: 'http://www.coremetrics.com',
 		priority: 3
 	},
 	'Quantcast': {
