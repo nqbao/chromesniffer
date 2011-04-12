@@ -295,7 +295,12 @@ var appinfo = {
 		icon: 'osCommerce.ico',
 		url: 'http://www.oscommerce.com',
 		priority: 1
-	},	
+	},
+	'OpenCart': {
+		icon: 'opencart.png',
+		url: 'http://www.opencart.com',
+		priority: 1
+	},
 
 	'Moodle': {
 		icon: 'moodle.png',

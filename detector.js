@@ -12,8 +12,8 @@ window.addEventListener('load', function(){
 	var _apps = {};
 	var doc = document.documentElement;
 	var a
-	var r
-	// 1: detect by meta tags
+	
+	// 1: detect by meta tags, the first matching group will be version
 	var metas = doc.getElementsByTagName("meta");
 	var meta_tests = {
 		'generator': {
@@ -33,7 +33,7 @@ window.addEventListener('load', function(){
 			'TYPO3': /TYPO3/i,
 			'PHP-Nuke': /PHP-Nuke/i,
 			'DotNetNuke': /DotNetNuke/i,
-			'Sitefinity': /Sitefinity/i,
+			'Sitefinity': /Sitefinity\s+(.*)/i,
 			'WebGUI': /WebGUI/i,
 			'ez Publish': /eZ\s*Publish/i,
 			'BIGACE': /BIGACE/i,
@@ -45,7 +45,7 @@ window.addEventListener('load', function(){
 			'ZenCart': /zen-cart/i,
 			'WPML': /WPML/i,
 			'PivotX': /PivotX/i,
-            'OpenACS': /OpenACS/i
+			'OpenACS': /OpenACS/i
 		},
 		'copyright': {
 			'phpBB': /phpBB/i
@@ -71,9 +71,11 @@ window.addEventListener('load', function(){
 		for (var t in meta_tests[name])
 		{
 			if (t in _apps) continue;
-			if (meta_tests[name][t].test(m.content))
+			
+			var r = meta_tests[name][t].exec(m.content);
+			if (r)
 			{
-				_apps[t] = -1;
+				_apps[t] = r[1] ? r[1] : -1;
 			}
 		}
 	}
@@ -147,7 +149,8 @@ window.addEventListener('load', function(){
 		'OpenCMS' : /<link[^>]*\.opencms\..*?>/i,
 		'GoogleFontApi': /ref=["']?http:\/\/fonts.googleapis.com\//i,
 		'Prostores' : /ProStores\.redirectWithTracking/,
-		'osCommerce': /(product_info\.php\?products_id|_eof \/\/-->)/
+		'osCommerce': /(product_info\.php\?products_id|_eof \/\/-->)/,
+		'OpenCart': /index.php\?route=product\/product/
 	};
 
 	for (t in text_tests)
@@ -215,12 +218,12 @@ window.addEventListener('load', function(){
 		'Clicky': function() {
 			return window.clicky != null;
 		},
-        'Woopra': function() {
-            return window.woopraTracker != null;
-        },
-        'RightJS': function() {		
-            return window.RightJS != null;
-        },
+		'Woopra': function() {
+			return window.woopraTracker != null;
+		},
+		'RightJS': function() {		
+			return window.RightJS != null;
+		},
 		'OpenWebAnalytics': function() {
 			return window.owa_baseUrl != null;
 		},
@@ -240,8 +243,8 @@ window.addEventListener('load', function(){
 			return window.google_buzz__base_url != null;
 		},
 		'SWFObject': function() {
-            return window.swfobject != null;
-        }
+			return window.swfobject != null;
+		}
 	};
 	
 	for (t in js_tests)
@@ -307,8 +310,7 @@ window.addEventListener('load', function(){
 	{		
 		if (_apps[a]==-1 && js_versions[a])
 		{
-			
-			r = js_versions[a]()
+			var r = js_versions[a]()
 			_apps[a] = r?r:-1
 		}
 	}
