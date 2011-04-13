@@ -148,7 +148,7 @@ window.addEventListener('load', function(){
 		'1c-bitrix' : /<link[^>]*\/bitrix\/.*?>/i,
 		'OpenCMS' : /<link[^>]*\.opencms\..*?>/i,
 		'GoogleFontApi': /ref=["']?http:\/\/fonts.googleapis.com\//i,
-		'Prostores' : /ProStores\.redirectWithTracking/,
+		'Prostores' : /-legacycss\/Asset">/,
 		'osCommerce': /(product_info\.php\?products_id|_eof \/\/-->)/,
 		'OpenCart': /index.php\?route=product\/product/
 	};
@@ -174,7 +174,7 @@ window.addEventListener('load', function(){
 			return window.SUGAR != null;
 		},
 		'YUI': function() {
-			return window.YAHOO != null;
+			return window.YAHOO|window.YUI != null;
 		},
 		'jQuery': function() {
 			return window.jQuery != null;
@@ -241,6 +241,9 @@ window.addEventListener('load', function(){
 		},
 		'Buzz': function() {
 			return window.google_buzz__base_url != null;
+		},
+		'Google Loader': function() {
+			return window.google&&window.google.load != null;
 		},
 		'SWFObject': function() {
 			return window.swfobject != null;

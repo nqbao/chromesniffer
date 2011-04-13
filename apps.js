@@ -492,6 +492,11 @@ var appinfo = {
 		url: 'http://code.google.com/p/google-code-prettify/',
 		priority: 3
 	},
+	'Google Loader': {
+		icon: 'google.ico',
+		url: 'http://code.google.com/apis/loader',
+		priority: 4
+	},
 	'reCaptcha': {
 		icon: 'reCaptcha.ico',
 		url: 'http://recaptcha.net/',
