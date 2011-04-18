@@ -15,13 +15,7 @@
 	"content_scripts": [
 		{
 			"matches": ["http://*/*","https://*/*"],
-			"js": ["inject.js"],
-			"run_at": "document_end"
-		},
-		{
-			"matches": ["http://*/*","https://*/*"],
-			"js": ["trigger.js"],
-			"run_at": "document_idle"
+			"js": ["main.js"]
 		}
 	],
 	"permissions": [

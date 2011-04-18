@@ -8,7 +8,7 @@
  * @license GPLv3
  **/
  
-window.addEventListener('load', function(){
+(function () {
 	var _apps = {};
 	var doc = document.documentElement;
 	var a
@@ -339,4 +339,4 @@ window.addEventListener('load', function(){
 	var done = document.createEvent('Event');
 	done.initEvent('ready', true, true);
 	meta.dispatchEvent(done);
-});
+})();
