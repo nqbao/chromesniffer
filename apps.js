@@ -497,6 +497,11 @@ var appinfo = {
 		url: 'http://code.google.com/apis/loader',
 		priority: 4
 	},
+	'Head JS': {
+		icon: 'headjs.gif',
+		url: 'http://headjs.com',
+		priority: 4
+	},
 	'reCaptcha': {
 		icon: 'reCaptcha.ico',
 		url: 'http://recaptcha.net/',

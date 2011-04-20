@@ -245,6 +245,9 @@
 		'Google Loader': function() {
 			return window.google&&window.google.load != null;
 		},
+		'Head JS': function() {
+			return window.head&&window.head.js != null;
+		},
 		'SWFObject': function() {
 			return window.swfobject != null;
 		}
