@@ -392,7 +392,7 @@ var appinfo = {
 		priority: 2.9
 	},
 	'sIFR': {
-		icon: 'sIFR.gif',
+		icon: 'sifr.gif',
 		url: 'http://www.mikeindustries.com/blog/sifr/',
 		priority: 2.9
 	},
