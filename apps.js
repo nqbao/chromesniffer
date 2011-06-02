@@ -167,7 +167,7 @@ var appinfo = {
 		title: 'Jalios JCMS'
 	},
 	'Koobi': {
-		icon: 'koobi.ico',
+		icon: 'Koobi.ico',
 		url: 'http://www.dream4.de/cms/',
 		priority: 1
 	},
@@ -207,7 +207,7 @@ var appinfo = {
 		priority: 1
 	},
 	'ez Publish': {
-		icon: 'ez.ico',
+		icon: 'eZ.ico',
 		url: 'http://ez.no/',
 		priority: 1
 	},
@@ -350,7 +350,7 @@ var appinfo = {
 		priority: 2
 	},
 	'Dojo': {
-		icon: 'Dojo.ico',
+		icon: 'dojo.ico',
 		url: 'http://www.dojotoolkit.org/',
 		priority: 2
 	},
