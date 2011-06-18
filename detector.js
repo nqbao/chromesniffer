@@ -19,7 +19,7 @@
 		'generator': {
 			'Joomla': /joomla/i,
 			'vBulletin': /vBulletin/i,
-			'WordPress': /wordPress/i,
+			'WordPress': /WordPress\s*(.*)/i,
 			'XOOPS': /xoops/i,
 			'Plone': /plone/i,
 			'MediaWiki': /MediaWiki/i,
