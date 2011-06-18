@@ -145,12 +145,14 @@
 		'Fatwire': /\/Satellite\?|\/ContentServer\?/s,
 		'Contao': /powered by (TYPOlight|Contao)/is,
 		'Moodle' : /<link[^>]*\/theme\/standard\/styles.php".*>/,
+		'Moodle2' : /<link[^>]*\/theme\/styles.php\?theme=.*".*>/,
 		'1c-bitrix' : /<link[^>]*\/bitrix\/.*?>/i,
 		'OpenCMS' : /<link[^>]*\.opencms\..*?>/i,
 		'GoogleFontApi': /ref=["']?http:\/\/fonts.googleapis.com\//i,
 		'Prostores' : /-legacycss\/Asset">/,
 		'osCommerce': /(product_info\.php\?products_id|_eof \/\/-->)/,
-		'OpenCart': /index.php\?route=product\/product/
+		'OpenCart': /index.php\?route=product\/product/,
+                'Shibboleth': /<form action="\/idp\/Authn\/UserPassword" method="post">/
 	};
 
 	for (t in text_tests)
