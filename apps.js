@@ -307,6 +307,11 @@ var appinfo = {
 		url: 'http://moodle.org',
 		priority: 1
 	},
+        'Moodle2': {
+                icon: 'moodle.png',
+                url: 'http://moodle.org',
+                priority: 1
+        },
 	'SugarCRM': {
 		icon: 'sugarcrm.ico',
 		url: 'http://www.sugarcrm.com',
@@ -534,6 +539,11 @@ var appinfo = {
 		url: 'https://www.google.com/adsense',
 		priority: 5
 	},
+        'Shibboleth': {
+                icon: 'shibboleth.png',
+                url:  'http://shibboleth.internet2.edu/',
+                priority: 1
+        },
 	
 	// ==== misc ====
 	'': { // default
