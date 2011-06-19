@@ -307,11 +307,6 @@ var appinfo = {
 		url: 'http://moodle.org',
 		priority: 1
 	},
-        'Moodle2': {
-                icon: 'moodle.png',
-                url: 'http://moodle.org',
-                priority: 1
-        },
 	'SugarCRM': {
 		icon: 'sugarcrm.ico',
 		url: 'http://www.sugarcrm.com',
@@ -322,6 +317,12 @@ var appinfo = {
 		url: 'http://pivotx.net',
 		priority: 1
 	},	
+	
+	'Shibboleth': {
+		icon: 'shibboleth.png',
+		url:  'http://shibboleth.internet2.edu/',
+		priority: 1
+	},
 	
 	// ==== js framework ====
 	'jQuery': {
@@ -429,6 +430,17 @@ var appinfo = {
 		url: 'http://www.addthis.com',
 		priority: 2.9
 	},
+	'Head JS': {
+		icon: 'headjs.gif',
+		url: 'http://headjs.com',
+		priority: 2.9
+	},
+	'Google Loader': {
+		icon: 'google.ico',
+		url: 'http://code.google.com/apis/loader',
+		priority: 2.9
+	},
+	
 	'Woopra': {
 		icon: 'woopra.ico',
 		url: 'http://www.woopra.com',
@@ -497,16 +509,6 @@ var appinfo = {
 		url: 'http://code.google.com/p/google-code-prettify/',
 		priority: 3
 	},
-	'Google Loader': {
-		icon: 'google.ico',
-		url: 'http://code.google.com/apis/loader',
-		priority: 4
-	},
-	'Head JS': {
-		icon: 'headjs.gif',
-		url: 'http://headjs.com',
-		priority: 4
-	},
 	'reCaptcha': {
 		icon: 'reCaptcha.ico',
 		url: 'http://recaptcha.net/',
@@ -539,11 +541,12 @@ var appinfo = {
 		url: 'https://www.google.com/adsense',
 		priority: 5
 	},
-        'Shibboleth': {
-                icon: 'shibboleth.png',
-                url:  'http://shibboleth.internet2.edu/',
-                priority: 1
-        },
+	
+	'HumansTxt': {
+		icon: 'humanstxt.ico',
+		url: 'http://humanstxt.org/',
+		priority: 5
+	},
 	
 	// ==== misc ====
 	'': { // default

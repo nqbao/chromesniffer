@@ -144,15 +144,15 @@
 		'GetSatisfaction': /asset_host\s*\+\s*"javascripts\/feedback.*\.js/igm, // better recognization
 		'Fatwire': /\/Satellite\?|\/ContentServer\?/s,
 		'Contao': /powered by (TYPOlight|Contao)/is,
-		'Moodle' : /<link[^>]*\/theme\/standard\/styles.php".*>/,
-		'Moodle2' : /<link[^>]*\/theme\/styles.php\?theme=.*".*>/,
+		'Moodle' : /<link[^>]*\/theme\/standard\/styles.php".*>|<link[^>]*\/theme\/styles.php\?theme=.*".*>/,
 		'1c-bitrix' : /<link[^>]*\/bitrix\/.*?>/i,
 		'OpenCMS' : /<link[^>]*\.opencms\..*?>/i,
+		'HumansTxt': /<link[^>]*rel=['"]?author['"]?/i,
 		'GoogleFontApi': /ref=["']?http:\/\/fonts.googleapis.com\//i,
 		'Prostores' : /-legacycss\/Asset">/,
 		'osCommerce': /(product_info\.php\?products_id|_eof \/\/-->)/,
 		'OpenCart': /index.php\?route=product\/product/,
-                'Shibboleth': /<form action="\/idp\/Authn\/UserPassword" method="post">/
+		'Shibboleth': /<form action="\/idp\/Authn\/UserPassword" method="post">/
 	};
 
 	for (t in text_tests)
@@ -163,6 +163,8 @@
 			_apps[t] = -1;
 		}
 	}
+	
+	// TODO: merge inline detector with version detector
 	
 	// 5: detect by inline javascript
 	var js_tests = {
@@ -245,10 +247,10 @@
 			return window.google_buzz__base_url != null;
 		},
 		'Google Loader': function() {
-			return window.google&&window.google.load != null;
+			return window.google && window.google.load != null;
 		},
 		'Head JS': function() {
-			return window.head&&window.head.js != null;
+			return window.head && window.head.js != null;
 		},
 		'SWFObject': function() {
 			return window.swfobject != null;
@@ -330,16 +332,15 @@
 	// @todo
 
 	// convert to array
-	
 	var encodedString = "";
 	for (a in _apps) {
 		encodedString += encodeURIComponent(a) + "=" + encodeURIComponent(_apps[a]) + "&";
 	}
 
 	// send back to background page
-	
 	var meta = document.getElementById('chromesniffer_meta');
 	meta.content = encodedString;
+
 	//Notify Background Page
 	var done = document.createEvent('Event');
 	done.initEvent('ready', true, true);
