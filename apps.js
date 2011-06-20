@@ -425,11 +425,18 @@ var appinfo = {
 		url: 'http://www.google.com/buzz/stuff',
 		priority: 2.9
 	},
+	'Plus1': {
+		title: 'Google Plus 1',
+		icon: 'plus1.png',
+		url: 'http://www.google.com/+1/button/',
+		priority: 2.9
+	},
 	'AddThis': {
 		icon: 'addthis.ico',
 		url: 'http://www.addthis.com',
 		priority: 2.9
 	},
+	
 	'Head JS': {
 		icon: 'headjs.gif',
 		url: 'http://headjs.com',
@@ -539,6 +546,16 @@ var appinfo = {
 	'AdSense': {
 		icon: 'AdSense.gif',
 		url: 'https://www.google.com/adsense',
+		priority: 5
+	},
+	'Chitika': {
+		icon: 'chitika.ico',
+		url: 'http://chitika.com/',
+		priority: 5
+	},
+	'BuySellAds': {
+		icon: 'buysellads.ico',
+		url: 'http://buysellads.com/',
 		priority: 5
 	},
 	

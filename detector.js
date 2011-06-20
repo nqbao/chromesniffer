@@ -106,7 +106,8 @@
 		'Cappuccino': /Frameworks\/Objective-J\/Objective-J\.js/,
 		'Avactis': /\/avactis-themes\//i,
 		'Volusion': /a\/j\/javascripts\.js/,
-		'AddThis': /addthis\.com\/js/
+		'AddThis': /addthis\.com\/js/,
+		'BuySellAds': /buysellads.com\/.*bsa\.js/
 	};
 
 	for (var idx in scripts)
@@ -246,6 +247,9 @@
 		'Buzz': function() {
 			return window.google_buzz__base_url != null;
 		},
+		'Plus1': function() {
+			return window.gapi && window.gapi.plusone;
+		},
 		'Google Loader': function() {
 			return window.google && window.google.load != null;
 		},
@@ -254,6 +258,9 @@
 		},
 		'SWFObject': function() {
 			return window.swfobject != null;
+		},
+		'Chitika': function() {
+			return window.ch_client && window.ch_write_iframe;
 		}
 	};
 	
