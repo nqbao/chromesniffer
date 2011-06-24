@@ -80,6 +80,11 @@ var appinfo = {
 		url: 'http://www.mego.com.vn',
 		priority: 1
 	},
+	'TomatoCMS': {
+		icon: 'tomatocms.ico',
+		url: 'http://www.tomatocms.com/',
+		priority: 1
+	},
 	
 	'WordPress': {
 		icon: 'WordPress.ico',

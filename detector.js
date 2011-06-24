@@ -17,7 +17,7 @@
 	var metas = doc.getElementsByTagName("meta");
 	var meta_tests = {
 		'generator': {
-			'Joomla': /joomla/i,
+			'Joomla': /joomla!?\s*([\d\.]+)?/i,
 			'vBulletin': /vBulletin/i,
 			'WordPress': /WordPress\s*(.*)/i,
 			'XOOPS': /xoops/i,
@@ -172,6 +172,9 @@
 	var js_tests = {
 		'Drupal': function() {
 			return window.Drupal != null;
+		},
+		'TomatoCMS': function() {
+			return window.Tomato != null;
 		},
 		'ErainCart': function() {
 			return window.fn_register_hooks != null;
