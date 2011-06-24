@@ -45,7 +45,8 @@
 			'ZenCart': /zen-cart/i,
 			'WPML': /WPML/i,
 			'PivotX': /PivotX/i,
-			'OpenACS': /OpenACS/i
+			'OpenACS': /OpenACS/i,
+			'AlphaCMS': /alphacms\s+(.*)/i
 		},
 		'copyright': {
 			'phpBB': /phpBB/i

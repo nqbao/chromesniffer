@@ -75,6 +75,12 @@ var appinfo = {
 		priority: 0.9 // higher priority compared with Drupal
 	},
 	
+	'AlphaCMS': {
+		icon: 'alphacms.ico',
+		url: 'http://www.mego.com.vn',
+		priority: 1
+	},
+	
 	'WordPress': {
 		icon: 'WordPress.ico',
 		url: 'http://wordpress.org',
