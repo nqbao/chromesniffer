@@ -98,7 +98,7 @@
 		'Disqus': /disqus.com\/forums/i,
 		'GetSatisfaction': /getsatisfaction\.com\/feedback/i,
 		'Wibiya': /wibiya\.com\/Loaders\//i,
-		'reCaptcha': /api\.recaptcha\.net\//i,
+		'reCaptcha': /(google\.com\/recaptcha|api\.recaptcha\.net\/)/i,
 		'Mollom': /mollom\/mollom\.js/i, // only work on Drupal now
 		'ZenPhoto': /zp-core\/js/i,
 		'Gallery2': /main\.php\?.*g2_.*/i,
