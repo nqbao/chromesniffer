@@ -46,7 +46,8 @@
 			'WPML': /WPML/i,
 			'PivotX': /PivotX/i,
 			'OpenACS': /OpenACS/i,
-			'AlphaCMS': /alphacms\s+(.*)/i
+			'AlphaCMS': /alphacms\s+(.*)/i,
+			'concrete5': /concrete5 -\s*(.*)$/
 		},
 		'copyright': {
 			'phpBB': /phpBB/i

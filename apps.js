@@ -112,6 +112,11 @@ var appinfo = {
 		url: 'http://www.s9y.org/',
 		priority: 1
 	},
+	'concrete5': {
+		icon: 'concrete5.gif',
+		url: 'http://www.concrete5.org',
+		priority: 1
+	},
 	
 	'MediaWiki': {
 		icon: 'MediaWiki.ico',
