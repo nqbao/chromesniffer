@@ -24,6 +24,37 @@ var appinfo = {
 		url: 'http://blogger.com',
 		priority: 0.9
 	},
+	
+	'Webs': {
+		icon: 'webs.ico',
+		url: 'http://www.webs.com/',
+		priority: 0.9
+	},
+	'Weeby': {
+		icon: 'weeby.ico',
+		url: 'http://www.weebly.com/',
+		priority: 0.9
+	},
+	'Webnode': {
+		icon: 'webnode.ico',
+		url: 'http://www.webnode.com/',
+		priority: 0.9
+	},
+	'Jimdo': {
+		icon: 'jimdo.ico',
+		url: 'http://www.jimdo.com',
+		priority: 0.9
+	},
+	'Jigsy': {
+		icon: 'jigsy.ico',
+		url: 'http://jigsy.com',
+		priority: 0.9
+	},
+	'Yola': {
+		icon: 'yola.ico',
+		url: 'http://www.yola.com/',
+		priority: 0.9
+	},
 
 	// ==== cms or framework ====
 	'vBulletin': {

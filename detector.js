@@ -47,7 +47,8 @@
 			'PivotX': /PivotX/i,
 			'OpenACS': /OpenACS/i,
 			'AlphaCMS': /alphacms\s+(.*)/i,
-			'concrete5': /concrete5 -\s*(.*)$/
+			'concrete5': /concrete5 -\s*(.*)$/,
+			'Webnode': /Webnode/
 		},
 		'copyright': {
 			'phpBB': /phpBB/i
@@ -109,7 +110,10 @@
 		'Avactis': /\/avactis-themes\//i,
 		'Volusion': /a\/j\/javascripts\.js/,
 		'AddThis': /addthis\.com\/js/,
-		'BuySellAds': /buysellads.com\/.*bsa\.js/
+		'BuySellAds': /buysellads.com\/.*bsa\.js/,
+		'Weeby': /weebly\.com\/weebly\//,
+		'Jigsy': /javascripts\/asterion\.js/, // may change later
+		'Yola': /analytics\.yola\.net/ // may change later
 	};
 
 	for (var idx in scripts)
@@ -266,6 +270,12 @@
 		},
 		'Chitika': function() {
 			return window.ch_client && window.ch_write_iframe;
+		},
+		'Jimdo': function() {
+			return window.jimdoData != null;
+		},
+		'Webs': function() {
+			return window.webs != null;
 		}
 	};
 	
