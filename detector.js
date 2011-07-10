@@ -48,7 +48,8 @@
 			'OpenACS': /OpenACS/i,
 			'AlphaCMS': /alphacms\s+(.*)/i,
 			'concrete5': /concrete5 -\s*(.*)$/,
-			'Webnode': /Webnode/
+			'Webnode': /Webnode/,
+			'GetSimple': /GetSimple/,
 		},
 		'copyright': {
 			'phpBB': /phpBB/i
@@ -180,6 +181,9 @@
 		},
 		'TomatoCMS': function() {
 			return window.Tomato != null;
+		},
+		'MojoMotor': function() {
+			return window.Mojo != null;
 		},
 		'ErainCart': function() {
 			return window.fn_register_hooks != null;

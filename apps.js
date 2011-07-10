@@ -273,6 +273,21 @@ var appinfo = {
 		url: 'http://www.1c-bitrix.ru/',
 		priority: 1
 	},
+	'MojoMotor': {
+		icon: 'mojomotor.ico',
+		url: '	http://mojomotor.com',
+		priority: 1
+	},
+	'GetSimple': {
+		icon: 'getsimple.png',
+		url: '	http://get-simple.info/',
+		priority: 1
+	},
+	'Perch': { // not yet supported
+		icon: 'perch.ico',
+		url: 'http://grabaperch.com/',
+		priority: 1
+	},
 	
 	'Elgg': {
 		icon: 'Elgg.ico',
