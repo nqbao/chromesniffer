@@ -18,7 +18,7 @@
 	var meta_tests = {
 		'generator': {
 			'Joomla': /joomla!?\s*([\d\.]+)?/i,
-			'vBulletin': /vBulletin/i,
+			'vBulletin': /vBulletin\s*(.*)/i,
 			'WordPress': /WordPress\s*(.*)/i,
 			'XOOPS': /xoops/i,
 			'Plone': /plone/i,
