@@ -150,7 +150,7 @@
 		'PHP-Fusion': /(href|src)=["']?infusions\//i, // @todo: recheck this pattern again
 		'OpenX': /(href|src)=["'].*delivery\/(afr|ajs|avw|ck)\.php[^"']*/,
 		'GetSatisfaction': /asset_host\s*\+\s*"javascripts\/feedback.*\.js/igm, // better recognization
-		'Fatwire': /\/Satellite\?|\/ContentServer\?/s,
+		'Fatwire': /\/Satellite\?|\/ContentServer\?/,
 		'Contao': /powered by (TYPOlight|Contao)/i,
 		'Moodle' : /<link[^>]*\/theme\/standard\/styles.php".*>|<link[^>]*\/theme\/styles.php\?theme=.*".*>/,
 		'1c-bitrix' : /<link[^>]*\/bitrix\/.*?>/i,
