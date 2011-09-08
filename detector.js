@@ -280,6 +280,10 @@
 		},
 		'Webs': function() {
 			return window.webs != null;
+		},
+		'Underscore.js': function() {
+			return window._ && typeof(window._.identity) === 'function' 
+				&& window._.identity('abc') === 'abc';
 		}
 	};
 	
@@ -339,6 +343,10 @@
 		'Raphael': function() {
 			if(window.Raphael != null && Raphael.version!=undefined)
 				return Raphael.version
+		},
+		'Underscore.js': function() {
+			if (window._ && window._.VERSION)
+				return window._.VERSION;
 		}
 	};
 	
