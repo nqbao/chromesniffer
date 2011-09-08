@@ -498,6 +498,16 @@ var appinfo = {
 		url: 'http://www.addthis.com',
 		priority: 2.9
 	},
+	'Backbone.js': {
+		icon: 'Backbone.png',
+		url: 'http://documentcloud.github.com/backbone/',
+		priority: 2.9
+	},
+	'Underscore.js': {
+		icon: 'Underscore.png',
+		url: 'http://documentcloud.github.com/underscore/',
+		priority: 2.9
+	},
 	
 	'Head JS': {
 		icon: 'headjs.gif',
