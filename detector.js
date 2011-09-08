@@ -281,6 +281,9 @@
 		'Webs': function() {
 			return window.webs != null;
 		},
+		'Backbone.js': function() {
+			return window.Backbone && typeof(window.Backbone.sync) === 'function';
+		},
 		'Underscore.js': function() {
 			return window._ && typeof(window._.identity) === 'function' 
 				&& window._.identity('abc') === 'abc';
@@ -343,6 +346,10 @@
 		'Raphael': function() {
 			if(window.Raphael != null && Raphael.version!=undefined)
 				return Raphael.version
+		},
+		'Backbone.js': function() {
+			if (window.Backbone && window.Backbone.VERSION)
+				return window.Backbone.VERSION;
 		},
 		'Underscore.js': function() {
 			if (window._ && window._.VERSION)
