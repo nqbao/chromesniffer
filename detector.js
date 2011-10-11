@@ -373,14 +373,10 @@
 	// @todo
 
 	// convert to array
-	var encodedString = "";
-	for (a in _apps) {
-		encodedString += encodeURIComponent(a) + "=" + encodeURIComponent(_apps[a]) + "&";
-	}
-
+	var jsonString = JSON.stringify(_apps);
 	// send back to background page
 	var meta = document.getElementById('chromesniffer_meta');
-	meta.content = encodedString;
+	meta.content = jsonString;
 
 	//Notify Background Page
 	var done = document.createEvent('Event');

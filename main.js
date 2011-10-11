@@ -24,27 +24,10 @@
 	}
 	meta.addEventListener('ready', function(){
 		if (meta) {
-			var apps = {};
-			var count = 0;
+			var apps = JSON.parse(meta.content)
 			
-			var raw = meta.content.split("&");
-
-			for (var i in raw) {
-				var piece = raw[i].split("=");
-				
-				if (piece.length != 2) continue;
-				piece[0] = decodeURIComponent(piece[0]);
-				piece[1] = decodeURIComponent(piece[1]);
-				
-				// temporary hack
-				apps[piece[0]] = piece[1];
-				count++;
-			}
-			
-			if (count > 0) {
-				chrome.extension.sendRequest({msg: "result",apps: apps}, function(response) {
-					// nothing
-				});
+			if (Object.keys(apps).length > 0) {
+				chrome.extension.sendRequest({msg: "result",apps: apps});
 			}
 		}
 	});
