@@ -30,8 +30,8 @@ var appinfo = {
 		url: 'http://www.webs.com/',
 		priority: 0.9
 	},
-	'Weeby': {
-		icon: 'weeby.ico',
+	'Weebly': {
+		icon: 'weebly.ico',
 		url: 'http://www.weebly.com/',
 		priority: 0.9
 	},

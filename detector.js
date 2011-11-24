@@ -112,7 +112,7 @@
 		'Volusion': /a\/j\/javascripts\.js/,
 		'AddThis': /addthis\.com\/js/,
 		'BuySellAds': /buysellads.com\/.*bsa\.js/,
-		'Weeby': /weebly\.com\/weebly\//,
+		'Weebly': /weebly\.com\/weebly\//,
 		'Jigsy': /javascripts\/asterion\.js/, // may change later
 		'Yola': /analytics\.yola\.net/ // may change later
 	};
