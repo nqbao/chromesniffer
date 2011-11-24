@@ -266,6 +266,9 @@
 		'Google Loader': function() {
 			return window.google && window.google.load != null;
 		},
+		'GoogleMapApi': function() {
+			return window.google && window.google.maps != null;
+		},
 		'Head JS': function() {
 			return window.head && window.head.js != null;
 		},

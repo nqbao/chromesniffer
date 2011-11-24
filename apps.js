@@ -604,6 +604,12 @@ var appinfo = {
 		url: 'http://code.google.com/apis/webfonts/',
 		priority: 4
 	},
+	'GoogleMapApi': {
+		title: 'Google Map API',
+		icon: 'gmap.png',
+		url: 'http://code.google.com/apis/maps/',
+		priority: 4
+	},
 	'SWFObject': {
 		icon: 'SWFObject.ico',
 		url: 'http://code.google.com/p/swfobject/',
