@@ -50,6 +50,7 @@
 			'concrete5': /concrete5 -\s*(.*)$/,
 			'Webnode': /Webnode/,
 			'GetSimple': /GetSimple/,
+			'DataLifeEngine': /DataLife Engine/,
 		},
 		'copyright': {
 			'phpBB': /phpBB/i

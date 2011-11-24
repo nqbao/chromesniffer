@@ -288,6 +288,12 @@ var appinfo = {
 		url: 'http://grabaperch.com/',
 		priority: 1
 	},
+	'DataLifeEngine': {
+		title: 'DataLife Engine',
+		icon: 'datalife.ico',
+		url: 'http://dle-news.ru/',
+		priority: 1,
+	},
 	
 	'Elgg': {
 		icon: 'Elgg.ico',
