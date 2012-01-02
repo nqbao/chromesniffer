@@ -392,6 +392,12 @@ var appinfo = {
 		priority: 1
 	},
 	
+	'ClanSphere': {
+		icon: 'ClanSphere.png',
+		url:  'http://csphere.eu',
+		priority: 1
+	},
+	
 	// ==== js framework ====
 	'jQuery': {
 		icon: 'jQuery.ico',

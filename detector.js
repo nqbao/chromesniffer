@@ -51,6 +51,7 @@
 			'Webnode': /Webnode/,
 			'GetSimple': /GetSimple/,
 			'DataLifeEngine': /DataLife Engine/,
+			'ClanSphere': /ClanSphere/,
 		},
 		'copyright': {
 			'phpBB': /phpBB/i
