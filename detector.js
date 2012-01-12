@@ -115,7 +115,8 @@
 		'BuySellAds': /buysellads.com\/.*bsa\.js/,
 		'Weebly': /weebly\.com\/weebly\//,
 		'Jigsy': /javascripts\/asterion\.js/, // may change later
-		'Yola': /analytics\.yola\.net/ // may change later
+		'Yola': /analytics\.yola\.net/, // may change later
+        'Alfresco': /(alfresco)+(-min)?(\/scripts\/menu)?\.js/ // both Alfresco Share and Explorer apps
 	};
 
 	for (var idx in scripts)
