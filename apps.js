@@ -9,6 +9,11 @@
 
 var appinfo = {
 	// ==== services ====
+	'Squarespace': {
+		icon: 'squarespace.ico',
+		url: 'http://squarespace.com',
+		priority: 0.9
+	},
 	'Tumblr': {
 		icon: 'Tumblr.ico',
 		url: 'http://tumblr.com',

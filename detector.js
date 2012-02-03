@@ -177,6 +177,9 @@
 	
 	// 5: detect by inline javascript
 	var js_tests = {
+		'Squarespace': function() {
+			return window.Squarespace != null;
+		},
 		'Drupal': function() {
 			return window.Drupal != null;
 		},
