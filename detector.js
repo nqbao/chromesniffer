@@ -114,6 +114,7 @@
 		'AddThis': /addthis\.com\/js/,
 		'BuySellAds': /buysellads.com\/.*bsa\.js/,
 		'Weebly': /weebly\.com\/weebly\//,
+		'Bootstrap': /bootstrap-.*\.js/,
 		'Jigsy': /javascripts\/asterion\.js/, // may change later
 		'Yola': /analytics\.yola\.net/ // may change later
 	};
@@ -161,7 +162,8 @@
 		'Prostores' : /-legacycss\/Asset">/,
 		'osCommerce': /(product_info\.php\?products_id|_eof \/\/-->)/,
 		'OpenCart': /index.php\?route=product\/product/,
-		'Shibboleth': /<form action="\/idp\/Authn\/UserPassword" method="post">/
+		'Shibboleth': /<form action="\/idp\/Authn\/UserPassword" method="post">/,
+		'Bootstrap': /<link.*href=\".*bootstrap.*\.css\" rel=\"stylesheet\"/
 	};
 
 	for (t in text_tests)

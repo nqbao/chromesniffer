@@ -648,7 +648,13 @@ var appinfo = {
 		url: 'http://humanstxt.org/',
 		priority: 5
 	},
-	
+
+	'Bootstrap': {
+		icon: 'bootstrap.ico',    
+		url: 'http://twitter.github.com/bootstrap/',
+		priority: 5
+	},
+
 	// ==== misc ====
 	'': { // default
 		icon: 'unknown.jpg',
