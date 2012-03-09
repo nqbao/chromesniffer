@@ -448,6 +448,11 @@ var appinfo = {
 		url: 'http://RightJS.org/',
 		priority: 2
 	},
+	'Spine': {
+		icon: 'spine.ico',
+		url: 'http://spinejs.com',
+		priority: 2
+	},
 	
 	// ==== js tools ====
 	'Raphael': {
