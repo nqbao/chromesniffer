@@ -114,6 +114,7 @@
 		'AddThis': /addthis\.com\/js/,
 		'BuySellAds': /buysellads.com\/.*bsa\.js/,
 		'Weebly': /weebly\.com\/weebly\//,
+		'Bootstrap': /bootstrap-.*\.js/,
 		'Jigsy': /javascripts\/asterion\.js/, // may change later
 		'Yola': /analytics\.yola\.net/ // may change later
 	};
@@ -375,6 +376,45 @@
 
 	// 8: detect based on built-in database
 	// @todo
+
+	// 9: detect based on defined css classes
+	var cssClasses = {
+		'Bootstrap': ['hero-unit', '.carousel-control', '[class^="icon-"]:last-child']
+	};
+
+	for (t in cssClasses) {
+		if (t in _apps) continue;
+
+		var found = true;
+		for(css in cssClasses[t]) {
+			var act = false;
+			var name = cssClasses[t][css];
+			
+			/* Iterate through all registered css classes and check for presence */
+			for(cssFile in document.styleSheets) {
+				for(cssRule in document.styleSheets[cssFile].cssRules) {
+					var style = document.styleSheets[cssFile].cssRules[cssRule];
+
+					if (typeof style === "undefined") continue;
+					if (typeof style.selectorText === "undefined") continue;
+
+					if (style.selectorText.indexOf(name) != -1) {
+						act = true;
+						break;
+					}
+				}
+				if (act === true) break;
+			}
+
+			found = found & act;
+		}
+
+		if(found == true) {
+			_apps[t] = -1;
+		} else {
+			break;
+		}
+	}
 
 	// convert to array
 	var jsonString = JSON.stringify(_apps);
