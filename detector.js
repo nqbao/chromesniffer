@@ -292,6 +292,9 @@
 		'Underscore.js': function() {
 			return window._ && typeof(window._.identity) === 'function' 
 				&& window._.identity('abc') === 'abc';
+		},
+		'Spine': function() {
+			return window.Spine != null;
 		}
 	};
 	
@@ -359,6 +362,10 @@
 		'Underscore.js': function() {
 			if (window._ && window._.VERSION)
 				return window._.VERSION;
+		},
+		'Spine': function() {
+			if(window.Spine && window.Spine.version)
+				return window.Spine.version;	
 		}
 	};
 	
