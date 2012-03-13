@@ -391,6 +391,11 @@ var appinfo = {
 		url:  'http://shibboleth.internet2.edu/',
 		priority: 1
 	},
+    'Alfresco': {
+        icon: 'Alfresco.png',
+        url: 'http://www.alfresco.com',
+        priority: 1
+    },
 	
 	'ClanSphere': {
 		icon: 'ClanSphere.png',
