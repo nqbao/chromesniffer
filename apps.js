@@ -391,12 +391,12 @@ var appinfo = {
 		url:  'http://shibboleth.internet2.edu/',
 		priority: 1
 	},
-    'Alfresco': {
-        icon: 'Alfresco.png',
-        url: 'http://www.alfresco.com',
-        priority: 1
-    },
-	
+	'Alfresco': {
+		icon: 'Alfresco.png',
+		url: 'http://www.alfresco.com',
+		priority: 1
+	},
+
 	'ClanSphere': {
 		icon: 'ClanSphere.png',
 		url:  'http://csphere.eu',
@@ -462,7 +462,7 @@ var appinfo = {
 	'Spine': {
 		icon: 'spine.ico',
 		url: 'http://spinejs.com',
-		priority: 2
+		priority: 1.9
 	},
 	
 	// ==== js tools ====
@@ -523,7 +523,7 @@ var appinfo = {
 	'Backbone.js': {
 		icon: 'Backbone.png',
 		url: 'http://documentcloud.github.com/backbone/',
-		priority: 2.9
+		priority: 1.9
 	},
 	'Underscore.js': {
 		icon: 'Underscore.png',
