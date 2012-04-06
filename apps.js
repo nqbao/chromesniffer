@@ -402,8 +402,7 @@ var appinfo = {
 		url:  'http://csphere.eu',
 		priority: 1
 	},
-	'MuraCMS': {
-		title: 'Mura CMS',
+	'Mura CMS': {
 		icon: 'MuraCMS.png',
 		url: 'http://www.getmura.com/',
 		priority: 1

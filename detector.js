@@ -52,7 +52,7 @@
 			'GetSimple': /GetSimple/,
 			'DataLifeEngine': /DataLife Engine/,
 			'ClanSphere': /ClanSphere/,
-			'MuraCMS': /Mura CMS/i
+			'Mura CMS': /Mura CMS\s*(.*)/i
 		},
 		'copyright': {
 			'phpBB': /phpBB/i
