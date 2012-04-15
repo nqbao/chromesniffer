@@ -52,6 +52,7 @@
 			'GetSimple': /GetSimple/,
 			'DataLifeEngine': /DataLife Engine/,
 			'ClanSphere': /ClanSphere/,
+			'Tiki Wiki CMS Groupware': /Tiki/i,
 		},
 		'copyright': {
 			'phpBB': /phpBB/i
@@ -119,6 +120,7 @@
 		'Jigsy': /javascripts\/asterion\.js/, // may change later
 		'Yola': /analytics\.yola\.net/, // may change later
 		'Alfresco': /(alfresco)+(-min)?(\/scripts\/menu)?\.js/ // both Alfresco Share and Explorer apps
+		'Tiki Wiki CMS Groupware': /tiki-js/,
 	};
 
 	for (var idx in scripts)
