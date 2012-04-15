@@ -403,7 +403,13 @@ var appinfo = {
 		priority: 1
 	},
 	
-	// ==== js framework ====
+	'Tiki Wiki CMS Groupware': {
+		icon: 'http://tiki.org/favicon.ico',
+		url:  'http://tiki.org',
+		priority: 1
+	},
+
+// ==== js framework ====
 	'jQuery': {
 		icon: 'jQuery.ico',
 		url: 'http://jquery.com',
