@@ -404,7 +404,7 @@ var appinfo = {
 	},
 	
 	'Tiki Wiki CMS Groupware': {
-		icon: 'tiki.ico',
+		icon: 'http://tiki.org/tiki.ico',
 		url:  'http://tiki.org',
 		priority: 1
 	},
