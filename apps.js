@@ -588,7 +588,11 @@ var appinfo = {
 		url: 'http://getclicky.com/',
 		priority: 3
 	},
-	
+	'New Relic': {
+		icon: 'newrelic.ico',
+		url: 'http://newrelic.com/',
+		priority: 3
+	},
 	'Disqus': {
 		icon: 'Disqus.ico',
 		url: 'http://disqus.com/',
