@@ -599,6 +599,11 @@ var appinfo = {
 		url: 'http://getsatisfaction.com',
 		priority: 3
 	},
+	'UserVoice': {
+		icon: 'uservoice.ico',
+		url: 'http://www.uservoice.com',
+		priority: 3
+	},
 	'Wibiya': {
 		icon: 'Wibiya.ico',
 		url: 'http://wibiya.com/',

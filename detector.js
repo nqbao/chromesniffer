@@ -118,7 +118,8 @@
 		'Bootstrap': /bootstrap-.*\.js/,
 		'Jigsy': /javascripts\/asterion\.js/, // may change later
 		'Yola': /analytics\.yola\.net/, // may change later
-		'Alfresco': /(alfresco)+(-min)?(\/scripts\/menu)?\.js/ // both Alfresco Share and Explorer apps
+		'Alfresco': /(alfresco)+(-min)?(\/scripts\/menu)?\.js/, // both Alfresco Share and Explorer apps
+		'UserVoice': /widget\.uservoice\.com.*\.js/
 	};
 
 	for (var idx in scripts)
