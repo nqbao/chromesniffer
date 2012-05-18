@@ -671,6 +671,12 @@ var appinfo = {
 		priority: 5
 	},
 
+  'OpenTag': {
+    icon: 'OpenTag.ico',
+    url: 'http://opentag.qubitproducts.com',
+    priority: 5
+  },
+
 	// ==== misc ====
 	'': { // default
 		icon: 'unknown.jpg',
