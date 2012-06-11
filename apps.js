@@ -671,6 +671,12 @@ var appinfo = {
 		priority: 5
 	},
 
+	'SPDY': {
+		icon: 'spdy.ico',
+		url: 'http://www.chromium.org/spdy',
+		priority: 5
+	},
+
 	// ==== misc ====
 	'': { // default
 		icon: 'unknown.jpg',

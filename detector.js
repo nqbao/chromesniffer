@@ -297,6 +297,9 @@
 		},
 		'Spine': function() {
 			return window.Spine != null;
+		},
+		'SPDY': function() {
+			return window.chrome.loadTimes().wasFetchedViaSpdy;
 		}
 	};
 	
