@@ -301,11 +301,14 @@
 		'Spine': function() {
 			return window.Spine != null;
 		},
-        'AngularJS': function() {
-            return window.angular != null;
-        },
+		'AngularJS': function() {
+			return window.angular != null;
+		},
 		'SPDY': function() {
 			return window.chrome.loadTimes().wasFetchedViaSpdy;
+		},
+		'Ember.js': function() {
+			return window.Ember != null || window.Em != null;
 		}
 	};
 	
@@ -378,17 +381,23 @@
 			if(window.Spine && window.Spine.version)
 				return window.Spine.version;	
 		},
-        'AngularJS': function() {
-            if (window.angular) {
-                function checkVersion() {
-                    if (!window.angular.version) {
-                        return setTimeout(checkVersion, 0);
-                    }
-                    return window.angular.version.full;
-                }
-                checkVersion();
-            }
-        }
+		'AngularJS': function() {
+			if (window.angular) {
+				function checkVersion() {
+					if (!window.angular.version) {
+						return setTimeout(checkVersion, 0);
+					}
+					return window.angular.version.full;
+				}
+				checkVersion();
+			}
+		},
+		'Ember.js': function() {
+			var ember = window.Ember || window.Em;
+			if (ember && ember.VERSION != undefined) {
+				return ember.VERSION;
+			}
+		}
 	};
 	
 	for (a in _apps)

@@ -470,6 +470,11 @@ var appinfo = {
 		url: 'http://spinejs.com',
 		priority: 1.9
 	},
+	'Ember.js': {
+		icon: 'ember.png',
+		url: 'http://emberjs.com',
+		priority: 1.9
+	},
 	
 	// ==== js tools ====
 	'Raphael': {
@@ -536,12 +541,11 @@ var appinfo = {
 		url: 'http://documentcloud.github.com/underscore/',
 		priority: 2.9
 	},
-    'AngularJS': {
-        icon: 'AngularJS.ico',
-        url: 'http://www.angularjs.org',
-        priority: 1.9
-    },
-	
+	'AngularJS': {
+		icon: 'AngularJS.ico',
+		url: 'http://www.angularjs.org',
+		priority: 1.9
+	},	
 	'Head JS': {
 		icon: 'headjs.gif',
 		url: 'http://headjs.com',
@@ -551,8 +555,7 @@ var appinfo = {
 		icon: 'google.ico',
 		url: 'http://code.google.com/apis/loader',
 		priority: 2.9
-	},
-	
+	},	
 	'Woopra': {
 		icon: 'woopra.ico',
 		url: 'http://www.woopra.com',
@@ -677,20 +680,17 @@ var appinfo = {
 		icon: 'buysellads.ico',
 		url: 'http://buysellads.com/',
 		priority: 5
-	},
-	
+	},	
 	'HumansTxt': {
 		icon: 'humanstxt.ico',
 		url: 'http://humanstxt.org/',
 		priority: 5
 	},
-
 	'Bootstrap': {
 		icon: 'bootstrap.ico',    
 		url: 'http://twitter.github.com/bootstrap/',
 		priority: 5
 	},
-
 	'SPDY': {
 		icon: 'spdy.ico',
 		url: 'http://www.chromium.org/spdy',
