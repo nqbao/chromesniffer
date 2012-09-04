@@ -51,7 +51,7 @@
 			'Webnode': /Webnode/,
 			'GetSimple': /GetSimple/,
 			'DataLifeEngine': /DataLife Engine/,
-			'ClanSphere': /ClanSphere/,
+			'ClanSphere': /ClanSphere/
 		},
 		'copyright': {
 			'phpBB': /phpBB/i
@@ -60,7 +60,7 @@
 			'Elgg': /.+/
 		},
 		'powered-by': {
-			'Serendipity': /Serendipity/i,
+			'Serendipity': /Serendipity/i
 		},
 		'author': {
 			'Avactis': /Avactis Team/i
@@ -121,19 +121,17 @@
 		'Alfresco': /(alfresco)+(-min)?(\/scripts\/menu)?\.js/ // both Alfresco Share and Explorer apps
 	};
 
-	for (var idx in scripts)
-	{
+	for (var idx in scripts) {
 		var s = scripts[idx];
-		if (!s.src) continue;
+		if (!s.src)
+			continue;
 		s = s.src;
 
-		for (var t in script_tests)
-		{
-			if (t in _apps) continue;
+		for (var t in script_tests){
+			if (t in _apps)
+				continue;
 			if (script_tests[t].test(s))
-			{
 				_apps[t] = -1;
-			}
 		}
 	}
 
@@ -145,7 +143,7 @@
 		'SMF': /<script .+\s+var smf_/i,
 		'Magento': /var BLANK_URL = '[^>]+js\/blank\.html'/i,
 		'Tumblr': /<iframe src=("|')http:\/\/\S+\.tumblr\.com/i,
-		'WordPress': RegExp( location.host.replace( /^www./, "" ).replace( /([.?*+^$[\]\\(){}-])/g, "\\$1" ) + '\\S*\/wp-content\\S*\\"', 'i' ),
+		'WordPress': RegExp( location.host.replace( /^www\./, "" ).replace( /([.?*+^$[\]\\(){}-])/g, "\\$1" ) + '\\S*\/wp-content\\S*\\"', 'i' ),
 		'Closure': /<script[^>]*>.*goog\.require/i,
 		'Liferay': /<script[^>]*>.*LifeRay\.currentURL/i,
 		'vBulletin': /vbmenu_control/i,
@@ -164,16 +162,14 @@
 		'Prostores' : /-legacycss\/Asset">/,
 		'osCommerce': /(product_info\.php\?products_id|_eof \/\/-->)/,
 		'OpenCart': /index.php\?route=product\/product/,
-		'Shibboleth': /<form action="\/idp\/Authn\/UserPassword" method="post">/,
+		'Shibboleth': /<form action="\/idp\/Authn\/UserPassword" method="post">/
 	};
 
-	for (t in text_tests)
-	{
-		if (t in _apps) continue;
+	for (t in text_tests) {
+		if (t in _apps)
+			continue;
 		if (text_tests[t].test(text))
-		{
 			_apps[t] = -1;
-		}
 	}
 
 	// TODO: merge inline detector with version detector
