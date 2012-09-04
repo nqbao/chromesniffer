@@ -4,7 +4,7 @@
  * Detect apps run on current page and send back to background page.
  * Some part of this script was refered from Wappalyzer Firefox Addon.
  *
- * @author Bao Nguyen <contact@nqbao.com>
+ * @author Evan Solomon (forked from Bao Nguyen)
  * @license GPLv3
  **/
 

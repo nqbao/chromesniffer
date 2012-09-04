@@ -3,7 +3,7 @@
  *
  * Shared functions among scripts
  *
- * @author Bao Nguyen <contact@nqbao.com>
+ * @author Evan Solomon (forked from Bao Nguyen)
  * @license GPLv3
  **/
  
