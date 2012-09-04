@@ -61,6 +61,7 @@ var appinfo = {
 		priority: 0.9
 	},
 
+
 	// ==== cms or framework ====
 	'vBulletin': {
 		icon: 'vBulletin.ico',
@@ -471,6 +472,11 @@ var appinfo = {
 	},
 	
 	// ==== js tools ====
+	'Kissmetrics': {
+		icon: 'Kissmetrics.ico',
+		url: 'http://kissmetrics.com',
+		priority: 2.9
+	},
 	'Raphael': {
 		icon: 'raphael.ico',
 		url: 'http://raphaeljs.com/',

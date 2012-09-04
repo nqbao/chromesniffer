@@ -180,6 +180,9 @@
 	
 	// 5: detect by inline javascript
 	var js_tests = {
+		'Kissmetrics': function() {
+			return window.KM != null && window.KM.cp != null;
+		},
 		'Squarespace': function() {
 			return window.Squarespace != null && window.Squarespace.Constants != null;
 		},
