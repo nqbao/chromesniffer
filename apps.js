@@ -402,6 +402,12 @@ var appinfo = {
 		url:  'http://csphere.eu',
 		priority: 1
 	},
+
+	'HubSpot': {
+		icon: 'hubspot.ico',
+		url: 'http://www.hubspot.com',
+		priority: 1
+	},
 	
 	// ==== js framework ====
 	'jQuery': {
