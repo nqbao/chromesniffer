@@ -4,7 +4,7 @@
  * Detect apps run on current page and send back to background page.
  * Some part of this script was refered from Wappalyzer Firefox Addon.
  *
- * @author Bao Nguyen <contact@nqbao.com>
+ * @author Evan Solomon (forked from Bao Nguyen)
  * @license GPLv3
  **/
 
@@ -24,10 +24,10 @@
 	}
 	meta.addEventListener('ready', function(){
 		if (meta) {
-			var apps = JSON.parse(meta.content)
-			
+			var apps = JSON.parse(meta.content);
+
 			if (Object.keys(apps).length > 0) {
-				chrome.extension.sendRequest({msg: "result",apps: apps});
+				chrome.extension.sendMessage({msg: "result",apps: apps});
 			}
 		}
 	});
