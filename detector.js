@@ -303,7 +303,10 @@
 		},
         'AngularJS': function() {
             return window.angular != null;
-        }
+        },
+		'SPDY': function() {
+			return window.chrome.loadTimes().wasFetchedViaSpdy;
+		}
 	};
 	
 	for (t in js_tests)
