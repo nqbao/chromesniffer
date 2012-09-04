@@ -300,7 +300,10 @@
 		},
 		'Spine': function() {
 			return window.Spine != null;
-		}
+		},
+        'AngularJS': function() {
+            return window.angular != null;
+        }
 	};
 	
 	for (t in js_tests)
@@ -371,7 +374,18 @@
 		'Spine': function() {
 			if(window.Spine && window.Spine.version)
 				return window.Spine.version;	
-		}
+		},
+        'AngularJS': function() {
+            if (window.angular) {
+                function checkVersion() {
+                    if (!window.angular.version) {
+                        return setTimeout(checkVersion, 0);
+                    }
+                    return window.angular.version.full;
+                }
+                checkVersion();
+            }
+        }
 	};
 	
 	for (a in _apps)

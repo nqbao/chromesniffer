@@ -536,6 +536,11 @@ var appinfo = {
 		url: 'http://documentcloud.github.com/underscore/',
 		priority: 2.9
 	},
+    'AngularJS': {
+        icon: 'AngularJS.ico',
+        url: 'http://www.angularjs.org',
+        priority: 1.9
+    },
 	
 	'Head JS': {
 		icon: 'headjs.gif',
