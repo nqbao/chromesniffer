@@ -67,22 +67,18 @@
 		}
 	};
 
-	for (var idx in metas)
-	{
+	for (var idx in metas) {
 		var m = metas[idx];
 		var name = m.name ? m.name.toLowerCase() : "";
 
 		if (!meta_tests[name]) continue;
 
-		for (var t in meta_tests[name])
-		{
+		for (var t in meta_tests[name]) {
 			if (t in _apps) continue;
 
 			var r = meta_tests[name][t].exec(m.content);
 			if (r)
-			{
 				_apps[t] = r[1] ? r[1] : -1;
-			}
 		}
 	}
 
@@ -127,7 +123,7 @@
 			continue;
 		s = s.src;
 
-		for (var t in script_tests){
+		for (var t in script_tests) {
 			if (t in _apps)
 				continue;
 			if (script_tests[t].test(s))
@@ -302,13 +298,11 @@
 		}
 	};
 
-	for (t in js_tests)
-	{
-		if (t in _apps) continue;
+	for (t in js_tests) {
+		if (t in _apps)
+			continue;
 		if (js_tests[t]())
-		{
 			_apps[t] = -1;
-		}
 	}
 
 	// 6: detect some script version when available
@@ -373,10 +367,8 @@
 		}
 	};
 
-	for (a in _apps)
-	{
-		if (_apps[a]==-1 && js_versions[a])
-		{
+	for (a in _apps) {
+		if (_apps[a]==-1 && js_versions[a]) {
 			var r = js_versions[a]()
 			_apps[a] = r?r:-1
 		}
@@ -406,8 +398,10 @@
 				for(cssRule in document.styleSheets[cssFile].cssRules) {
 					var style = document.styleSheets[cssFile].cssRules[cssRule];
 
-					if (typeof style === "undefined") continue;
-					if (typeof style.selectorText === "undefined") continue;
+					if (typeof style === "undefined")
+						continue;
+					if (typeof style.selectorText === "undefined")
+						continue;
 
 					if (style.selectorText.indexOf(name) != -1) {
 						act = true;
@@ -420,11 +414,10 @@
 			found = found & act;
 		}
 
-		if(found == true) {
+		if(found == true)
 			_apps[t] = -1;
-		} else {
+		else
 			break;
-		}
 	}
 
 	// convert to array
