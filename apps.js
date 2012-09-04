@@ -29,7 +29,7 @@ var appinfo = {
 		url: 'http://blogger.com',
 		priority: 0.9
 	},
-	
+
 	'Webs': {
 		icon: 'webs.ico',
 		url: 'http://www.webs.com/',
@@ -111,7 +111,7 @@ var appinfo = {
 		url: 'http://www.ubercart.org/',
 		priority: 0.9 // higher priority compared with Drupal
 	},
-	
+
 	'AlphaCMS': {
 		icon: 'alphacms.ico',
 		url: 'http://www.mego.com.vn',
@@ -122,7 +122,7 @@ var appinfo = {
 		url: 'http://www.tomatocms.com/',
 		priority: 1
 	},
-	
+
 	'WordPress': {
 		icon: 'WordPress.ico',
 		url: 'http://wordpress.org',
@@ -133,7 +133,7 @@ var appinfo = {
 		url: 'http://wpml.org/',
 		priority: 1.1
 	},
-	
+
 	'bbPress': {
 		icon: 'bbPress.ico',
 		url: 'http://bbpress.org',
@@ -154,7 +154,7 @@ var appinfo = {
 		url: 'http://www.concrete5.org',
 		priority: 1
 	},
-	
+
 	'MediaWiki': {
 		icon: 'MediaWiki.ico',
 		url: 'http://www.mediawiki.org/',
@@ -300,13 +300,13 @@ var appinfo = {
 		url: 'http://dle-news.ru/',
 		priority: 1,
 	},
-	
+
 	'Elgg': {
 		icon: 'Elgg.ico',
 		url: 'http://www.elgg.org/',
 		priority: 1
 	},
-	
+
 	'DotNetNuke': {
 		icon: 'DotNetNuke.ico',
 		url: 'http://www.dotnetnuke.com/',
@@ -323,7 +323,7 @@ var appinfo = {
 		priority: 1,
 		title: 'Microsoft SharePoint'
 	},
-	
+
 	'ZenPhoto': {
 		icon: 'ZenPhoto.ico',
 		url: 'http://www.zenphoto.org',
@@ -334,7 +334,7 @@ var appinfo = {
 		url: 'http://gallery.menalto.com/',
 		priority: 1
 	},
-	
+
 	'Avactis': {
 		icon: 'avactis.ico',
 		url: 'http://www.avactis.com',
@@ -390,8 +390,8 @@ var appinfo = {
 		icon: 'pivotx.ico',
 		url: 'http://pivotx.net',
 		priority: 1
-	},	
-	
+	},
+
 	'Shibboleth': {
 		icon: 'shibboleth.png',
 		url:  'http://shibboleth.internet2.edu/',
@@ -408,7 +408,7 @@ var appinfo = {
 		url:  'http://csphere.eu',
 		priority: 1
 	},
-	
+
 	// ==== js framework ====
 	'jQuery': {
 		icon: 'jQuery.ico',
@@ -470,7 +470,7 @@ var appinfo = {
 		url: 'http://spinejs.com',
 		priority: 1.9
 	},
-	
+
 	// ==== js tools ====
 	'Kissmetrics': {
 		icon: 'Kissmetrics.ico',
@@ -541,7 +541,7 @@ var appinfo = {
 		url: 'http://documentcloud.github.com/underscore/',
 		priority: 2.9
 	},
-	
+
 	'Head JS': {
 		icon: 'headjs.gif',
 		url: 'http://headjs.com',
@@ -552,7 +552,7 @@ var appinfo = {
 		url: 'http://code.google.com/apis/loader',
 		priority: 2.9
 	},
-	
+
 	'Woopra': {
 		icon: 'woopra.ico',
 		url: 'http://www.woopra.com',
@@ -599,7 +599,7 @@ var appinfo = {
 		url: 'http://getclicky.com/',
 		priority: 3
 	},
-	
+
 	'Disqus': {
 		icon: 'Disqus.ico',
 		url: 'http://disqus.com/',
@@ -648,7 +648,7 @@ var appinfo = {
 		url: 'http://code.google.com/p/swfobject/',
 		priority: 4
 	},
-	
+
 	'OpenX': {
 		icon: 'OpenX.ico',
 		url: 'http://openx.org',
@@ -669,7 +669,7 @@ var appinfo = {
 		url: 'http://buysellads.com/',
 		priority: 5
 	},
-	
+
 	'HumansTxt': {
 		icon: 'humanstxt.ico',
 		url: 'http://humanstxt.org/',
@@ -677,7 +677,7 @@ var appinfo = {
 	},
 
 	'Bootstrap': {
-		icon: 'bootstrap.ico',    
+		icon: 'bootstrap.ico',
 		url: 'http://twitter.github.com/bootstrap/',
 		priority: 5
 	},
