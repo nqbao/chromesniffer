@@ -5,7 +5,7 @@
 		"48": "icon48.png",
 		"128": "icon128.png"
 	},
-	"version": "0.2.13",
+	"version": "0.3-evansolomon",
 	"description": "Detect web applications and javascript libraries run on browsing website.",
 	"background": {
 		"page": "background.html"
