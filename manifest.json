@@ -23,8 +23,8 @@
 	],
 	"permissions": [
 		"tabs",
-        "http://*/*",
-        "https://*/*"
+    "http://*/*",
+    "https://*/*"
 	],
 	"web_accessible_resources": [
 		"detector.js"
