@@ -7,12 +7,12 @@
  * @author Evan Solomon (forked from Bao Nguyen)
  * @license GPLv3
  **/
- 
+
 (function () {
 	var _apps = {};
 	var doc = document.documentElement;
-	var a
-	
+	var a;
+
 	// 1: detect by meta tags, the first matching group will be version
 	var metas = doc.getElementsByTagName("meta");
 	var meta_tests = {
@@ -73,11 +73,11 @@
 		var name = m.name ? m.name.toLowerCase() : "";
 
 		if (!meta_tests[name]) continue;
-		
+
 		for (var t in meta_tests[name])
 		{
 			if (t in _apps) continue;
-			
+
 			var r = meta_tests[name][t].exec(m.content);
 			if (r)
 			{
@@ -88,7 +88,7 @@
 
 	// 2: detect by script tags
 	var scripts = doc.getElementsByTagName("script");
-	
+
 	var script_tests = {
 		'Google Analytics': /google-analytics.com\/(ga|urchin).js/i,
 		'Quantcast': /quantserve\.com\/quant\.js/i,
@@ -175,9 +175,9 @@
 			_apps[t] = -1;
 		}
 	}
-	
+
 	// TODO: merge inline detector with version detector
-	
+
 	// 5: detect by inline javascript
 	var js_tests = {
 		'Kissmetrics': function() {
@@ -249,7 +249,7 @@
 		'Woopra': function() {
 			return window.woopraTracker != null;
 		},
-		'RightJS': function() {		
+		'RightJS': function() {
 			return window.RightJS != null;
 		},
 		'OpenWebAnalytics': function() {
@@ -298,14 +298,14 @@
 			return window.Backbone && typeof(window.Backbone.sync) === 'function';
 		},
 		'Underscore.js': function() {
-			return window._ && typeof(window._.identity) === 'function' 
+			return window._ && typeof(window._.identity) === 'function'
 				&& window._.identity('abc') === 'abc';
 		},
 		'Spine': function() {
 			return window.Spine != null;
 		}
 	};
-	
+
 	for (t in js_tests)
 	{
 		if (t in _apps) continue;
@@ -316,14 +316,14 @@
 	}
 
 	// 6: detect some script version when available
-	var js_versions = {		
+	var js_versions = {
 		'Prototype': function() {
 			if('Prototype' in window && Prototype.Version!=undefined)
-				return window.Prototype.Version			
+				return window.Prototype.Version
 		},
 		'script.aculo.us': function() {
 			if('Scriptaculous' in window && Scriptaculous.Version!=undefined)
-				return window.Scriptaculous.Version			
+				return window.Scriptaculous.Version
 		},
 		'jQuery': function() {
 			if(typeof jQuery == 'function' && jQuery.prototype.jquery!=undefined )
@@ -335,7 +335,7 @@
 		},
 		'Dojo': function() {
 			if(typeof dojo == 'object' && dojo.version.toString()!=undefined)
-				return dojo.version				
+				return dojo.version
 		},
 		'YUI': function() {
 			if(typeof YAHOO == 'object' && YAHOO.VERSION!=undefined )
@@ -373,12 +373,12 @@
 		},
 		'Spine': function() {
 			if(window.Spine && window.Spine.version)
-				return window.Spine.version;	
+				return window.Spine.version;
 		}
 	};
-	
+
 	for (a in _apps)
-	{		
+	{
 		if (_apps[a]==-1 && js_versions[a])
 		{
 			var r = js_versions[a]()
@@ -404,7 +404,7 @@
 		for(css in cssClasses[t]) {
 			var act = false;
 			var name = cssClasses[t][css];
-			
+
 			/* Iterate through all registered css classes and check for presence */
 			for(cssFile in document.styleSheets) {
 				for(cssRule in document.styleSheets[cssFile].cssRules) {
