@@ -480,6 +480,11 @@ var appinfo = {
 		url: 'http://batmanjs.org',
 		priority: 1.9
 	},
+	'Knockback.js': {
+		icon: 'knockback.png',
+		url: 'http://kmalakoff.github.com/knockback/',
+		priority: 1.8
+	},
 	
 	// ==== js tools ====
 	'Raphael': {

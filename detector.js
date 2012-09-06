@@ -291,7 +291,11 @@
 		'Webs': function() {
 			return window.webs != null;
 		},
+		'Knockback.js': function() {
+			return window.Knockback != null;
+		},
 		'Backbone.js': function() {
+			console.log('hi there!');
 			return window.Backbone && typeof(window.Backbone.sync) === 'function';
 		},
 		'Underscore.js': function() {
@@ -404,6 +408,10 @@
 		'Batman.js': function() {
 			if (window.Batman && window.Batman.version)
 				return window.Batman.version;
+		},
+		'Knockback.js': function() {
+			if (window.Knockback && window.Knockback.VERSION)
+				return window.Knockback.VERSION;
 		}
 	};
 	
