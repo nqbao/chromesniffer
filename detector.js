@@ -309,6 +309,9 @@
 		},
 		'Ember.js': function() {
 			return window.Ember != null || window.Em != null;
+		},
+		'Batman.js': function() {
+			return window.Batman != null;
 		}
 	};
 	
@@ -397,6 +400,10 @@
 			if (ember && ember.VERSION != undefined) {
 				return ember.VERSION;
 			}
+		},
+		'Batman.js': function() {
+			if (window.Batman && window.Batman.version)
+				return window.Batman.version;
 		}
 	};
 	

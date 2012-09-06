@@ -475,6 +475,11 @@ var appinfo = {
 		url: 'http://emberjs.com',
 		priority: 1.9
 	},
+	'Batman.js': {
+		icon: 'batmanjs.png',
+		url: 'http://batmanjs.org',
+		priority: 1.9
+	},
 	
 	// ==== js tools ====
 	'Raphael': {
