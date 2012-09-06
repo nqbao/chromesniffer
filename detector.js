@@ -295,7 +295,6 @@
 			return window.Knockback != null;
 		},
 		'Backbone.js': function() {
-			console.log('hi there!');
 			return window.Backbone && typeof(window.Backbone.sync) === 'function';
 		},
 		'Underscore.js': function() {
@@ -316,6 +315,9 @@
 		},
 		'Batman.js': function() {
 			return window.Batman != null;
+		},
+		'Agility.js': function() {
+			return window.agility != null;
 		}
 	};
 	

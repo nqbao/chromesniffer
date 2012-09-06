@@ -485,6 +485,11 @@ var appinfo = {
 		url: 'http://kmalakoff.github.com/knockback/',
 		priority: 1.8
 	},
+	'Agility.js': {
+		icon: 'agility.png',
+		url: 'http://agilityjs.com/',
+		priority: 1.9
+	},
 	
 	// ==== js tools ====
 	'Raphael': {
