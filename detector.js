@@ -297,6 +297,9 @@
 		},
 		'Spine': function() {
 			return window.Spine != null;
+		},
+		'AmplifyJS': function () {
+			return window.amplify != null;
 		}
 	};
 	

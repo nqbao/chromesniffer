@@ -464,6 +464,11 @@ var appinfo = {
 		url: 'http://spinejs.com',
 		priority: 1.9
 	},
+	'AmplifyJS': {
+		icon: 'AmplifyJS.ico',
+		url: 'http://amplifyjs.com',
+		priority: 1
+	},
 	
 	// ==== js tools ====
 	'Raphael': {
