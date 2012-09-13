@@ -465,7 +465,7 @@ var appinfo = {
 		priority: 1.9
 	},
 	'AmplifyJS': {
-		icon: 'AmplifyJS.ico',
+		icon: 'AmplifyJS.png',
 		url: 'http://amplifyjs.com',
 		priority: 1
 	},
