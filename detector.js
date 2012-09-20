@@ -311,7 +311,7 @@
 			return window.chrome.loadTimes().wasFetchedViaSpdy;
 		},
 		'Ember.js': function() {
-			return window.Ember != null || window.Em != null;
+			return window.Ember != null;
 		},
 		'Batman.js': function() {
 			return window.Batman != null;
