@@ -297,7 +297,10 @@
 		},
 		'Spine': function() {
 			return window.Spine != null;
-		}
+		},
+        'AngularJS': function() {
+            return window.angular != null;
+        }
 	};
 	
 	for (t in js_tests)
@@ -368,7 +371,11 @@
 		'Spine': function() {
 			if(window.Spine && window.Spine.version)
 				return window.Spine.version;	
-		}
+		},
+        'AngularJS': function() {
+            if (window.angular && window.angular.version)
+                return window.angular.version.full;
+        }
 	};
 	
 	for (a in _apps)
