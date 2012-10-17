@@ -470,6 +470,11 @@ var appinfo = {
 		url: 'http://spinejs.com',
 		priority: 1.9
 	},
+	'AmplifyJS': {
+		icon: 'AmplifyJS.png',
+		url: 'http://amplifyjs.com',
+		priority: 1
+	},
 	'Ember.js': {
 		icon: 'ember.png',
 		url: 'http://emberjs.com',

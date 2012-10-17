@@ -318,6 +318,9 @@
 		},
 		'Agility.js': function() {
 			return window.agility != null;
+		},
+		'AmplifyJS': function () {
+			return window.amplify != null;
 		}
 	};
 	
