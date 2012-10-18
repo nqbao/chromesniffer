@@ -7,12 +7,12 @@
  * @author Bao Nguyen <contact@nqbao.com>
  * @license GPLv3
  **/
- 
+
 (function () {
 	var _apps = {};
 	var doc = document.documentElement;
-	var a
-	
+	var a;
+
 	// 1: detect by meta tags, the first matching group will be version
 	var metas = doc.getElementsByTagName("meta");
 	var meta_tests = {
@@ -51,7 +51,7 @@
 			'Webnode': /Webnode/,
 			'GetSimple': /GetSimple/,
 			'DataLifeEngine': /DataLife Engine/,
-			'ClanSphere': /ClanSphere/,
+			'ClanSphere': /ClanSphere/
 		},
 		'copyright': {
 			'phpBB': /phpBB/i
@@ -60,35 +60,31 @@
 			'Elgg': /.+/
 		},
 		'powered-by': {
-			'Serendipity': /Serendipity/i,
+			'Serendipity': /Serendipity/i
 		},
 		'author': {
 			'Avactis': /Avactis Team/i
 		}
 	};
 
-	for (var idx in metas)
-	{
+	for (var idx in metas) {
 		var m = metas[idx];
 		var name = m.name ? m.name.toLowerCase() : "";
 
 		if (!meta_tests[name]) continue;
-		
-		for (var t in meta_tests[name])
-		{
+
+		for (var t in meta_tests[name]) {
 			if (t in _apps) continue;
-			
+
 			var r = meta_tests[name][t].exec(m.content);
 			if (r)
-			{
 				_apps[t] = r[1] ? r[1] : -1;
-			}
 		}
 	}
 
 	// 2: detect by script tags
 	var scripts = doc.getElementsByTagName("script");
-	
+
 	var script_tests = {
 		'Google Analytics': /google-analytics.com\/(ga|urchin).js/i,
 		'Quantcast': /quantserve\.com\/quant\.js/i,
@@ -114,7 +110,7 @@
 		'Volusion': /a\/j\/javascripts\.js/,
 		'AddThis': /addthis\.com\/js/,
 		'BuySellAds': /buysellads.com\/.*bsa\.js/,
-		'Weebly': /weebly\.com\/weebly\//,
+		'Weebly': /editmysite\.com\/libraries\//,
 		'Bootstrap': /bootstrap-.*\.js/,
 		'Jigsy': /javascripts\/asterion\.js/, // may change later
 		'Yola': /analytics\.yola\.net/, // may change later
@@ -123,19 +119,17 @@
 		'HubSpot': /js\.hubspot\.com.*\.js/
 	};
 
-	for (var idx in scripts)
-	{
+	for (var idx in scripts) {
 		var s = scripts[idx];
-		if (!s.src) continue;
+		if (!s.src)
+			continue;
 		s = s.src;
 
-		for (var t in script_tests)
-		{
-			if (t in _apps) continue;
+		for (var t in script_tests) {
+			if (t in _apps)
+				continue;
 			if (script_tests[t].test(s))
-			{
 				_apps[t] = -1;
-			}
 		}
 	}
 
@@ -147,7 +141,7 @@
 		'SMF': /<script .+\s+var smf_/i,
 		'Magento': /var BLANK_URL = '[^>]+js\/blank\.html'/i,
 		'Tumblr': /<iframe src=("|')http:\/\/\S+\.tumblr\.com/i,
-		'WordPress': /<link rel=("|')stylesheet("|') [^>]+wp-content/i,
+		'WordPress': RegExp( location.host.replace( /^www\./, "" ).replace( /([.?*+^$[\]\\(){}-])/g, "\\$1" ) + '\\S*\/wp-content\\S*\\"', 'i' ),
 		'Closure': /<script[^>]*>.*goog\.require/i,
 		'Liferay': /<script[^>]*>.*LifeRay\.currentURL/i,
 		'vBulletin': /vbmenu_control/i,
@@ -170,19 +164,23 @@
 		'New Relic': /beacon-?\d*\.newrelic\.com/
 	};
 
-	for (t in text_tests)
-	{
-		if (t in _apps) continue;
+	for (t in text_tests) {
+		if (t in _apps)
+			continue;
 		if (text_tests[t].test(text))
-		{
 			_apps[t] = -1;
-		}
 	}
-	
+
 	// TODO: merge inline detector with version detector
-	
+
 	// 5: detect by inline javascript
 	var js_tests = {
+		'Kissmetrics': function() {
+			return window.KM != null && window.KM.cp != null;
+		},
+		'Squarespace': function() {
+			return window.Squarespace != null && window.Squarespace.Constants != null;
+		},
 		'Drupal': function() {
 			return window.Drupal != null;
 		},
@@ -246,7 +244,7 @@
 		'Woopra': function() {
 			return window.woopraTracker != null;
 		},
-		'RightJS': function() {		
+		'RightJS': function() {
 			return window.RightJS != null;
 		},
 		'OpenWebAnalytics': function() {
@@ -298,7 +296,7 @@
 			return window.Backbone && typeof(window.Backbone.sync) === 'function';
 		},
 		'Underscore.js': function() {
-			return window._ && typeof(window._.identity) === 'function' 
+			return window._ && typeof(window._.identity) === 'function'
 				&& window._.identity('abc') === 'abc';
 		},
 		'Spine': function() {
@@ -323,25 +321,23 @@
 			return window.amplify != null;
 		}
 	};
-	
-	for (t in js_tests)
-	{
-		if (t in _apps) continue;
+
+	for (t in js_tests) {
+		if (t in _apps)
+			continue;
 		if (js_tests[t]())
-		{
 			_apps[t] = -1;
-		}
 	}
 
 	// 6: detect some script version when available
-	var js_versions = {		
+	var js_versions = {
 		'Prototype': function() {
 			if('Prototype' in window && Prototype.Version!=undefined)
-				return window.Prototype.Version			
+				return window.Prototype.Version
 		},
 		'script.aculo.us': function() {
 			if('Scriptaculous' in window && Scriptaculous.Version!=undefined)
-				return window.Scriptaculous.Version			
+				return window.Scriptaculous.Version
 		},
 		'jQuery': function() {
 			if(typeof jQuery == 'function' && jQuery.prototype.jquery!=undefined )
@@ -391,7 +387,7 @@
 		},
 		'Spine': function() {
 			if(window.Spine && window.Spine.version)
-				return window.Spine.version;	
+				return window.Spine.version;
 		},
 		'AngularJS': function() {
 			if (window.angular) {
@@ -419,11 +415,9 @@
 				return window.Knockback.VERSION;
 		}
 	};
-	
-	for (a in _apps)
-	{		
-		if (_apps[a]==-1 && js_versions[a])
-		{
+
+	for (a in _apps) {
+		if (_apps[a]==-1 && js_versions[a]) {
 			var r = js_versions[a]()
 			_apps[a] = r?r:-1
 		}
@@ -447,14 +441,16 @@
 		for(css in cssClasses[t]) {
 			var act = false;
 			var name = cssClasses[t][css];
-			
+
 			/* Iterate through all registered css classes and check for presence */
 			for(cssFile in document.styleSheets) {
 				for(cssRule in document.styleSheets[cssFile].cssRules) {
 					var style = document.styleSheets[cssFile].cssRules[cssRule];
 
-					if (typeof style === "undefined") continue;
-					if (typeof style.selectorText === "undefined") continue;
+					if (typeof style === "undefined")
+						continue;
+					if (typeof style.selectorText === "undefined")
+						continue;
 
 					if (style.selectorText.indexOf(name) != -1) {
 						act = true;
@@ -467,11 +463,10 @@
 			found = found & act;
 		}
 
-		if(found == true) {
+		if(found == true)
 			_apps[t] = -1;
-		} else {
+		else
 			break;
-		}
 	}
 
 	// convert to array
