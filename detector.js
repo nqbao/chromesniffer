@@ -395,13 +395,13 @@
 		if (t in _apps) continue;
 
 		var found = true;
-		for(css in cssClasses[t]) {
+		for(var css in cssClasses[t]) {
 			var act = false;
 			var name = cssClasses[t][css];
 			
 			/* Iterate through all registered css classes and check for presence */
-			for(cssFile in document.styleSheets) {
-				for(cssRule in document.styleSheets[cssFile].cssRules) {
+			for(var cssFile in document.styleSheets) {
+				for(var cssRule in document.styleSheets[cssFile].cssRules) {
 					var style = document.styleSheets[cssFile].cssRules[cssRule];
 
 					if (typeof style === "undefined") continue;
