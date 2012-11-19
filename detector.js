@@ -332,49 +332,49 @@
 	// 6: detect some script version when available
 	var js_versions = {
 		'Prototype': function() {
-			if('Prototype' in window && Prototype.Version != undefined)
+			if ('Prototype' in window && Prototype.Version != undefined)
 				return window.Prototype.Version
 		},
 		'script.aculo.us': function() {
-			if('Scriptaculous' in window && Scriptaculous.Version != undefined)
+			if ('Scriptaculous' in window && Scriptaculous.Version != undefined)
 				return window.Scriptaculous.Version
 		},
 		'jQuery': function() {
-			if(typeof jQuery == 'function' && jQuery.prototype.jquery != undefined )
+			if (typeof jQuery == 'function' && jQuery.prototype.jquery != undefined)
 				return jQuery.prototype.jquery
 		},
 		'jQuery UI': function() {
-			if(typeof jQuery == 'function' && jQuery.ui && jQuery.ui.version != undefined )
+			if (typeof jQuery == 'function' && jQuery.ui && jQuery.ui.version != undefined)
 				return jQuery.ui.version
 		},
 		'Dojo': function() {
-			if(typeof dojo == 'object' && dojo.version.toString() != undefined)
+			if (typeof dojo == 'object' && dojo.version.toString() != undefined)
 				return dojo.version.toString()
 		},
 		'YUI': function() {
-			if(typeof YAHOO == 'object' && YAHOO.VERSION!=undefined )
+			if (typeof YAHOO == 'object' && YAHOO.VERSION != undefined)
 				return YAHOO.VERSION
-			if('YUI' in window && typeof YUI == 'function' && YUI().version!=undefined)
+			if ('YUI' in window && typeof YUI == 'function' && YUI().version != undefined)
 				return YUI().version
 		},
 		'MooTools': function() {
-			 if(typeof MooTools == 'object' && MooTools.version!=undefined)
+			if (typeof MooTools == 'object' && MooTools.version != undefined)
 				return MooTools.version
 		},
 		'ExtJS': function() {
-			if(typeof Ext === 'object' && Ext.version!=undefined)
+			if (typeof Ext === 'object' && Ext.version != undefined)
 				return Ext.version
 		},
 		'RightJS': function() {
-			if('RightJS' in window && RightJS.version!=undefined)
+			if ('RightJS' in window && RightJS.version != undefined)
 				return RightJS.version
 		},
 		'Modernizr': function() {
-			if(window.Modernizr != null && Modernizr._version!=undefined)
+			if (window.Modernizr != null && Modernizr._version != undefined)
 				return Modernizr._version
 		},
 		'Raphael': function() {
-			if(window.Raphael != null && Raphael.version!=undefined)
+			if (window.Raphael != null && Raphael.version != undefined)
 				return Raphael.version
 		},
 		'Backbone.js': function() {
@@ -390,9 +390,9 @@
 				return window.Spine.version;
 		},
 		'AngularJS': function() {
-            if (window.angular && window.angular.version)
-                return window.angular.version.full;
-        },
+			if (window.angular && window.angular.version)
+				return window.angular.version.full;
+		},
 		'Ember.js': function() {
 			var ember = window.Ember || window.Em;
 			if (ember && ember.VERSION != undefined) {
@@ -436,8 +436,8 @@
 			name = cssClasses[t][css];
 
 			/* Iterate through all registered css classes and check for presence */
-			for(var cssFile in document.styleSheets) {
-				for(var cssRule in document.styleSheets[cssFile].cssRules) {
+			for (var cssFile in document.styleSheets) {
+				for (var cssRule in document.styleSheets[cssFile].cssRules) {
 					var style = document.styleSheets[cssFile].cssRules[cssRule];
 
 					if (typeof style === "undefined")
@@ -456,7 +456,7 @@
 			found = found & act;
 		}
 
-		if(found == true)
+		if (found == true)
 			_apps[t] = -1;
 		else
 			break;
