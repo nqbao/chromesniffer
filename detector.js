@@ -11,7 +11,7 @@
 (function () {
 	var _apps = {};
 	var doc = document.documentElement;
-	var a;
+	var name;
 
 	// 1: detect by meta tags, the first matching group will be version
 	var metas = doc.getElementsByTagName("meta");
@@ -69,7 +69,7 @@
 
 	for (var idx in metas) {
 		var m = metas[idx];
-		var name = m.name ? m.name.toLowerCase() : "";
+		name = m.name ? m.name.toLowerCase() : "";
 
 		if (!meta_tests[name]) continue;
 
@@ -164,7 +164,7 @@
 		'New Relic': /beacon-?\d*\.newrelic\.com/
 	};
 
-	for (t in text_tests) {
+	for (var t in text_tests) {
 		if (t in _apps)
 			continue;
 		if (text_tests[t].test(text))
@@ -296,8 +296,8 @@
 			return window.Backbone && typeof(window.Backbone.sync) === 'function';
 		},
 		'Underscore.js': function() {
-			return window._ && typeof(window._.identity) === 'function'
-				&& window._.identity('abc') === 'abc';
+			return window._ && typeof(window._.identity) === 'function' &&
+				window._.identity('abc') === 'abc';
 		},
 		'Spine': function() {
 			return window.Spine != null;
@@ -322,7 +322,7 @@
 		}
 	};
 
-	for (t in js_tests) {
+	for (var t in js_tests) {
 		if (t in _apps)
 			continue;
 		if (js_tests[t]())
@@ -332,23 +332,23 @@
 	// 6: detect some script version when available
 	var js_versions = {
 		'Prototype': function() {
-			if('Prototype' in window && Prototype.Version!=undefined)
+			if('Prototype' in window && Prototype.Version != undefined)
 				return window.Prototype.Version
 		},
 		'script.aculo.us': function() {
-			if('Scriptaculous' in window && Scriptaculous.Version!=undefined)
+			if('Scriptaculous' in window && Scriptaculous.Version != undefined)
 				return window.Scriptaculous.Version
 		},
 		'jQuery': function() {
-			if(typeof jQuery == 'function' && jQuery.prototype.jquery!=undefined )
+			if(typeof jQuery == 'function' && jQuery.prototype.jquery != undefined )
 				return jQuery.prototype.jquery
 		},
 		'jQuery UI': function() {
-			if(typeof jQuery == 'function' && jQuery.ui && jQuery.ui.version!=undefined )
+			if(typeof jQuery == 'function' && jQuery.ui && jQuery.ui.version != undefined )
 				return jQuery.ui.version
 		},
 		'Dojo': function() {
-			if(typeof dojo == 'object' && dojo.version.toString()!=undefined)
+			if(typeof dojo == 'object' && dojo.version.toString() != undefined)
 				return dojo.version.toString()
 		},
 		'YUI': function() {
@@ -416,7 +416,7 @@
 		}
 	};
 
-	for (a in _apps) {
+	for (var a in _apps) {
 		if (_apps[a]==-1 && js_versions[a]) {
 			var r = js_versions[a]()
 			_apps[a] = r?r:-1
@@ -434,17 +434,17 @@
 		'Bootstrap': ['hero-unit', '.carousel-control', '[class^="icon-"]:last-child']
 	};
 
-	for (t in cssClasses) {
+	for (var t in cssClasses) {
 		if (t in _apps) continue;
 
 		var found = true;
-		for(css in cssClasses[t]) {
+		for (var css in cssClasses[t]) {
 			var act = false;
-			var name = cssClasses[t][css];
+			name = cssClasses[t][css];
 
 			/* Iterate through all registered css classes and check for presence */
-			for(cssFile in document.styleSheets) {
-				for(cssRule in document.styleSheets[cssFile].cssRules) {
+			for(var cssFile in document.styleSheets) {
+				for(var cssRule in document.styleSheets[cssFile].cssRules) {
 					var style = document.styleSheets[cssFile].cssRules[cssRule];
 
 					if (typeof style === "undefined")
