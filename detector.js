@@ -386,20 +386,13 @@
 				return window._.VERSION;
 		},
 		'Spine': function() {
-			if(window.Spine && window.Spine.version)
+			if (window.Spine && window.Spine.version)
 				return window.Spine.version;
 		},
 		'AngularJS': function() {
-			if (window.angular) {
-				function checkVersion() {
-					if (!window.angular.version) {
-						return setTimeout(checkVersion, 0);
-					}
-					return window.angular.version.full;
-				}
-				checkVersion();
-			}
-		},
+            if (window.angular && window.angular.version)
+                return window.angular.version.full;
+        },
 		'Ember.js': function() {
 			var ember = window.Ember || window.Em;
 			if (ember && ember.VERSION != undefined) {
