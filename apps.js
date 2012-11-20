@@ -579,6 +579,11 @@ var appinfo = {
 		icon: 'meteor.ico',
 		url: 'http://www.meteor.com',
 		priority: 1.9
+	},
+	'MarionetteJS': {
+		icon: 'marionette.png',
+		url: 'http://www.marionettejs.com',
+		priority: 1.89
 	},	
 	'Head JS': {
 		icon: 'headjs.gif',

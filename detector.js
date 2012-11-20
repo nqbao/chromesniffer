@@ -322,6 +322,9 @@
 		},
 		'Meteor': function () {
 			return window.Meteor && window.Meteor.status != null;
+		},
+		'MarionetteJS': function () {
+			return window.Backbone && window.Backbone.Marionette != null;
 		}
 	};
 
