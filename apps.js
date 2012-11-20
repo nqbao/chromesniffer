@@ -574,6 +574,11 @@ var appinfo = {
 		icon: 'AngularJS.ico',
 		url: 'http://www.angularjs.org',
 		priority: 1.9
+	},
+	'Meteor': {
+		icon: 'meteor.ico',
+		url: 'http://www.meteor.com',
+		priority: 1.9
 	},	
 	'Head JS': {
 		icon: 'headjs.gif',

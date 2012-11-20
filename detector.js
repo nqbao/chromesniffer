@@ -319,6 +319,9 @@
 		},
 		'AmplifyJS': function () {
 			return window.amplify != null;
+		},
+		'Meteor': function () {
+			return window.Meteor && window.Meteor.status != null;
 		}
 	};
 
