@@ -585,6 +585,11 @@ var appinfo = {
 		url: 'http://www.marionettejs.com',
 		priority: 1.89
 	},	
+	'Handlebars': {
+		icon: 'handlebars.png',
+		url: 'http://handlebars',
+		priority: 1.91
+	},
 	'Head JS': {
 		icon: 'headjs.gif',
 		url: 'http://headjs.com',

@@ -325,6 +325,9 @@
 		},
 		'MarionetteJS': function () {
 			return window.Backbone && window.Backbone.Marionette != null;
+		},
+		'Handlebars': function () {
+			return window.Handlebars != null;
 		}
 	};
 
@@ -412,6 +415,10 @@
 		'Knockback.js': function() {
 			if (window.Knockback && window.Knockback.VERSION)
 				return window.Knockback.VERSION;
+		},
+		'Handlebars': function() {
+			if (window.Handlebars && window.Handlebars.VERSION)
+				return window.Handlebars.VERSION;
 		}
 	};
 
