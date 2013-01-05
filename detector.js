@@ -297,6 +297,12 @@
 		},
 		'Spine': function() {
 			return window.Spine !== null;
+		},
+		'Ember': function() {
+			return window.Ember !== null;
+		},
+		'Handlebars': function() {
+			return window.Handlebars !== null;
 		}
 	};
 
@@ -368,6 +374,14 @@
 		'Spine': function() {
 			if(window.Spine && window.Spine.version)
 				return window.Spine.version;
+		},
+		'Ember': function() {
+			if(window.Ember && window.Ember.VERSION)
+				return window.Ember.VERSION;
+		},
+		'Handlebars': function() {
+			if(window.Handlebars && window.Handlebars.VERSION)
+				return window.Handlebars.VERSION;
 		}
 	};
 

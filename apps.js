@@ -464,6 +464,16 @@ var appinfo = {
 		url: 'http://spinejs.com',
 		priority: 1.9
 	},
+	'Ember': {
+		icon: 'ember.ico',
+		url: 'http://emberjs.com',
+		priority: 1.9
+	},
+	'Handlebars': {
+		icon: 'handlebars.ico',
+		url: 'http://handlebarsjs.com',
+		priority: 1.9
+	},
 	
 	// ==== js tools ====
 	'Raphael': {
