@@ -8,7 +8,7 @@
 var bg = chrome.extension.getBackgroundPage();
 
 chrome.tabs.getSelected(null,function(tab){
-	chrome.extension.sendRequest({msg: "get",tab: tab.id}, function(response){
+	chrome.extension.sendMessage({msg: "get",tab: tab.id}, function(response){
 		var display = document.getElementById('app_list');
 	
 		var apps = response.apps;
