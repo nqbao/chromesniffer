@@ -236,6 +236,9 @@
 		'Clicky': function() {
 			return isDefined(window.clicky);
 		},
+		'CoffeeScript': function() {
+			return wGetChainValue('CoffeeScript.VERSION');
+		},
 		'Coremetrics': function() {
 			return isDefined(window.cmCreatePageviewTag);
 		},

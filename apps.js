@@ -491,6 +491,11 @@ var appinfo = {
 	},
 	
 	// ==== js tools ====
+	'CoffeeScript': {
+		icon: 'CoffeeScript.ico',
+		url: 'http://coffeescript.org',
+		priority: 1.9,
+	},
 	'Raphael': {
 		icon: 'raphael.ico',
 		url: 'http://raphaeljs.com/',
