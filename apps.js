@@ -531,7 +531,7 @@ var appinfo = {
 		priority: 2.9
 	},
 	'Backbone.js': {
-		icon: 'Backbone.png',
+		icon: 'Backbone.ico',
 		url: 'http://documentcloud.github.com/backbone/',
 		priority: 1.9
 	},
