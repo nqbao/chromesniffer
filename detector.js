@@ -266,7 +266,7 @@
 			return wGetChainValue('FB.api');
 		},
 		'Google Loader': function() {
-			return wGetChainValue('google.loader');
+			return isDefined('google.load');
 		},
 		'GoogleMapApi': function() {
 			return wGetChainValue('google.maps');
@@ -389,6 +389,7 @@
 			_apps[t] = -1;
 		}
 		else if(typeof versionOrFound === "object") {
+			_apps[t] = -1;
 		}
 		else if (versionOrFound) {
 			_apps[t] = versionOrFound;
