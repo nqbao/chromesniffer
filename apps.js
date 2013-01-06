@@ -479,6 +479,11 @@ var appinfo = {
 		url: 'http://handlebarsjs.com',
 		priority: 1.9
 	},
+	'Angular.js': {
+		icon: 'Angular.ico',
+		url: 'http://angularjs.org',
+		priority: 1.9
+	},
 	
 	// ==== js tools ====
 	'Raphael': {

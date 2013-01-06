@@ -221,6 +221,9 @@
 
 	// 5: detect by inline javascript
 	var js_tests = {
+		'Angular.js': function() {
+			return  wGetChainValue('angular.version.full');
+		},
 		'Backbone.js': function() {
 			return wGetChainValue('Backbone.VERSION');
 		},
