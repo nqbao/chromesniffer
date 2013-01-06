@@ -298,6 +298,9 @@
 		'MooTools': function() {
 			return wGetChainValue('MooTools.version');
 		},
+		'Mustache': function() {
+			return wGetChainValue('Mustache.version');
+		},
 		'MyBB': function() {
 			return isDefined(window.MyBB);
 		},
