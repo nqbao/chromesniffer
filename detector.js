@@ -277,11 +277,14 @@
 		'Jimdo': function() {
 			return isDefined(window.jimdoData);
 		},
+		'jQuery': function() {
+			return wGetChainValue('jQuery.prototype.jquery');
+		},
 		'jQuery UI': function() {
 			return wGetChainValue('jQuery.ui.version');
 		},
-		'jQuery': function() {
-			return wGetChainValue('jQuery.prototype.jquery');
+		'Knockout': function() {
+			return wGetChainValue('ko.version');
 		},
 		'Modernizr': function() {
 			return wGetChainValue('Modernizr._version');

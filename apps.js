@@ -469,6 +469,11 @@ var appinfo = {
 		url: 'http://emberjs.com',
 		priority: 1.9
 	},
+	'Knockout' : {
+		icon: 'Knockout.ico',
+		url: 'http://knockoutjs.com',
+		priority: 1.9
+	},
 	'Handlebars': {
 		icon: 'handlebars.ico',
 		url: 'http://handlebarsjs.com',
