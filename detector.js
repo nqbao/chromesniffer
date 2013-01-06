@@ -266,7 +266,7 @@
 			return wGetChainValue('FB.api');
 		},
 		'Google Loader': function() {
-			return isDefined('google.load');
+			return isDefined(window.google) && wGetChainValue('google.load');
 		},
 		'GoogleMapApi': function() {
 			return wGetChainValue('google.maps');
