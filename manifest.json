@@ -1,5 +1,6 @@
 {
 	"name": "Chrome Sniffer",
+	"manifest_version": 2,
 	"icons": {
 		"48": "icon48.png",
 		"128": "icon128.png"
@@ -21,9 +22,12 @@
 			"js": ["main.js"]
 		}
 	],
+	"web_accessible_resources": [
+		"detector.js"
+	],
 	"permissions": [
 		"tabs",
-        "http://*/*",
-        "https://*/*"
+		"http://*/*",
+		"https://*/*"
 	]
 }
