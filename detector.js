@@ -9,13 +9,52 @@
  **/
 
 (function () {
-	var _apps = {};
-	var doc = document.documentElement;
-	var name;
+	var isDefined = function(attr) {
+		return attr !== void 0;
+	}
+
+	var allDefined = function() {
+		for (var i = 0; i < arguments.length; i++) {
+			if (!isDefined(arguments[i])) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	var anyDefined = function() {
+		for (var i = 0; i < arguments.length; i++) {
+			if (isDefined(arguments[i])) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	var getChainValue = function(context, path) {
+		var obj = context,
+			attrs = path.split('.');
+
+		for (var i = 0; i < attrs.length; i++) {
+			obj = obj[attrs[i]];
+			if(obj == undefined) {
+				break;
+			}
+		}
+		return obj;
+	}
+
+	var wGetChainValue = function(path) {
+		return getChainValue(window, path);
+	}
+
+	var _apps = {},
+		doc = document.documentElement,
+		name,
 
 	// 1: detect by meta tags, the first matching group will be version
-	var metas = doc.getElementsByTagName("meta");
-	var meta_tests = {
+		metas = doc.getElementsByTagName("meta"),
+		meta_tests = {
 		'generator': {
 			'Joomla': /joomla!?\s*([\d\.]+)?/i,
 			'vBulletin': /vBulletin\s*(.*)/i,
@@ -74,13 +113,12 @@
 
 		if (!meta_tests[name]) continue;
 
-		for (var t in meta_tests[name])
-		{
-			if (t in _apps) continue;
+		for (var t in meta_tests[name]) {
+			if (t in _apps)
+				continue;
 
 			r = meta_tests[name][t].exec(m.content);
-			if (r)
-			{
+			if (r) {
 				_apps[t] = r[1] ? r[1] : -1;
 			}
 		}
@@ -121,17 +159,21 @@
 		'Alfresco': /(alfresco)+(-min)?(\/scripts\/menu)?\.js/ // both Alfresco Share and Explorer apps
 	};
 
-	for (var idx in scripts)
-	{
+	for (var idx in scripts) {
 		var s = scripts[idx];
-		if (!s.src) continue;
+
+		if (!s.src) {
+			continue;
+		}
+
 		s = s.src;
 
-		for (var t in script_tests)
-		{
-			if (t in _apps) continue;
-			if (script_tests[t].test(s))
-			{
+		for (var t in script_tests) {
+			if (t in _apps) {
+				continue;
+			}
+
+			if (script_tests[t].test(s)) {
 				_apps[t] = -1;
 			}
 		}
@@ -167,252 +209,240 @@
 		'Shibboleth': /<form action="\/idp\/Authn\/UserPassword" method="post">/
 	};
 
-	for (var t in text_tests)
-	{
-		if (t in _apps) continue;
-		if (text_tests[t].test(text))
-		{
+	for (var t in text_tests) {
+		if (t in _apps) {
+			continue;
+		}
+
+		if (text_tests[t].test(text)) {
 			_apps[t] = -1;
 		}
 	}
-
-	// TODO: merge inline detector with version detector
 
 	// 5: detect by inline javascript
 	var js_tests = {
-		'Drupal': function() {
-			return window.Drupal !== null;
+		'Angular.js': function() {
+			return  wGetChainValue('angular.version.full');
 		},
-		'TomatoCMS': function() {
-			return window.Tomato !== null;
-		},
-		'MojoMotor': function() {
-			return window.Mojo !== null;
-		},
-		'ErainCart': function() {
-			return window.fn_register_hooks !== null;
-		},
-		'SugarCRM': function() {
-			return window.SUGAR !== null;
-		},
-		'YUI': function() {
-			return window.YAHOO|window.YUI !== null;
-		},
-		'jQuery': function() {
-			return window.jQuery !== null;
-		},
-		'jQuery UI': function() {
-			return window.jQuery !== null && window.jQuery.ui !== null;
-		},
-		'Typekit': function() {
-			return window.Typekit !== null;
-		},
-		'Facebook': function() {
-			return window.FB !== null && window.FB.api !== null;
-		},
-		'ExtJS': function() {
-			return window.Ext !== null;
-		},
-		'Modernizr': function() {
-			return window.Modernizr !== null;
-		},
-		'Raphael': function() {
-			return window.Raphael !== null;
-		},
-		'Cufon': function() {
-			return window.Cufon !== null;
-		},
-		'sIFR': function() {
-			return window.sIFR !== null;
-		},
-		'Xiti': function() {
-			return window.xtsite !== null && window.xtpage !== null;
-		},
-		'Piwik': function() {
-			return window.Piwik !== null;
-		},
-		'IPB': function() {
-			return window.IPBoard !== null;
-		},
-		'MyBB': function() {
-			return window.MyBB !== null;
-		},
-		'Clicky': function() {
-			return window.clicky !== null;
-		},
-		'Woopra': function() {
-			return window.woopraTracker !== null;
-		},
-		'RightJS': function() {
-			return window.RightJS !== null;
-		},
-		'OpenWebAnalytics': function() {
-			return window.owa_baseUrl !== null;
-		},
-		'Prettify': function() {
-			return window.prettyPrint !== null;
-		},
-		'SiteCatalyst': function() {
-			return window.s_account !== null;
-		},
-		'Twitter': function() {
-			return window.twttr !== null;
-		},
-		'Coremetrics': function() {
-			return window.cmCreatePageviewTag !== null;
+		'Backbone.js': function() {
+			return wGetChainValue('Backbone.VERSION');
 		},
 		'Buzz': function() {
-			return window.google_buzz__base_url !== null;
-		},
-		'Plus1': function() {
-			return window.gapi && window.gapi.plusone;
-		},
-		'Google Loader': function() {
-			return window.google && window.google.load !== null;
-		},
-		'GoogleMapApi': function() {
-			return window.google && window.google.maps !== null;
-		},
-		'Head JS': function() {
-			return window.head && window.head.js !== null;
-		},
-		'SWFObject': function() {
-			return window.swfobject !== null;
+			return isDefined(window.google_buzz__base_url);
 		},
 		'Chitika': function() {
-			return window.ch_client && window.ch_write_iframe;
+			return allDefined(window.ch_client, window.ch_write_iframe);
 		},
-		'Jimdo': function() {
-			return window.jimdoData !== null;
+		'Clicky': function() {
+			return isDefined(window.clicky);
 		},
-		'Webs': function() {
-			return window.webs !== null;
+		'CoffeeScript': function() {
+			return wGetChainValue('CoffeeScript.VERSION');
 		},
-		'Backbone.js': function() {
-			return window.Backbone && typeof(window.Backbone.sync) === 'function';
+		'Coremetrics': function() {
+			return isDefined(window.cmCreatePageviewTag);
 		},
-		'Underscore.js': function() {
-			return window._ && typeof(window._.identity) === 'function' &&
-				window._.identity('abc') === 'abc';
-		},
-		'Spine': function() {
-			return window.Spine !== null;
-		}
-	};
-
-	for (var t in js_tests)
-	{
-		if (t in _apps) continue;
-		if (js_tests[t]())
-		{
-			_apps[t] = -1;
-		}
-	}
-
-	// 6: detect some script version when available
-	var js_versions = {
-		'Prototype': function() {
-			if('Prototype' in window && Prototype.Version!==undefined)
-				return window.Prototype.Version;
-		},
-		'script.aculo.us': function() {
-			if('Scriptaculous' in window && Scriptaculous.Version!==undefined)
-				return window.Scriptaculous.Version;
-		},
-		'jQuery': function() {
-			if(typeof jQuery === 'function' && jQuery.prototype.jquery!==undefined )
-				return jQuery.prototype.jquery;
-		},
-		'jQuery UI': function() {
-			if(typeof jQuery === 'function' && jQuery.ui && jQuery.ui.version!==undefined )
-				return jQuery.ui.version;
+		'Cufon': function() {
+			return isDefined(window.Cufon);
 		},
 		'Dojo': function() {
-			if(typeof dojo === 'object' && dojo.version.toString()!==undefined)
-				return dojo.version;
+			var version = wGetChainValue('dojo.version');
+			if(version)
+				return version.toString();
 		},
-		'YUI': function() {
-			if(typeof YAHOO === 'object' && YAHOO.VERSION!==undefined )
-				return YAHOO.VERSION;
-			if('YUI' in window && typeof YUI === 'function' && YUI().version!==undefined)
-				return YUI().version;
+		'Drupal': function() {
+			return isDefined(window.Drupal);
 		},
-		'MooTools': function() {
-			if(typeof MooTools === 'object' && MooTools.version!==undefined)
-				return MooTools.version;
+		'Ember': function() {
+			return wGetChainValue('Ember.VERSION');
+		},
+		'ErainCart': function() {
+			return isDefined(window.fn_register_hooks);
 		},
 		'ExtJS': function() {
-			if(typeof Ext === 'object' && Ext.version!==undefined)
-				return Ext.version;
+			return wGetChainValue('Ext.version');
 		},
-		'RightJS': function() {
-			if('RightJS' in window && RightJS.version!==undefined)
-				return RightJS.version;
+		'Facebook': function() {
+			return wGetChainValue('FB.api');
+		},
+		'Google Loader': function() {
+			return isDefined(window.google) && wGetChainValue('google.load');
+		},
+		'GoogleMapApi': function() {
+			return wGetChainValue('google.maps');
+		},
+		'Handlebars': function() {
+			return wGetChainValue('Handlebars.VERSION');
+		},
+		'Head JS': function() {
+			return wGetChainValue('head.js');
+		},
+		'IPB': function() {
+			return isDefined(window.IPBoard);
+		},
+		'Jimdo': function() {
+			return isDefined(window.jimdoData);
+		},
+		'jQuery': function() {
+			return wGetChainValue('jQuery.prototype.jquery');
+		},
+		'jQuery UI': function() {
+			return wGetChainValue('jQuery.ui.version');
+		},
+		'Knockout': function() {
+			return wGetChainValue('ko.version');
 		},
 		'Modernizr': function() {
-			if(window.Modernizr !== null && Modernizr._version!==undefined)
-				return Modernizr._version;
+			return wGetChainValue('Modernizr._version');
+		},
+		'MojoMotor': function() {
+			return isDefined(window.Mojo);
+		},
+		'MooTools': function() {
+			return wGetChainValue('MooTools.version');
+		},
+		'Mustache': function() {
+			return wGetChainValue('Mustache.version');
+		},
+		'MyBB': function() {
+			return isDefined(window.MyBB);
+		},
+		'OpenWebAnalytics': function() {
+			return isDefined(window.owa_baseUrl);
+		},
+		'Piwik': function() {
+			return isDefined(window.Piwik);
+		},
+		'Plus1': function() {
+			return wGetChainValue('gapi.plusone');
+		},
+		'Prettify': function() {
+			return isDefined(window.prettyPrint);
+		},
+		'Prototype': function() {
+			return wGetChainValue('Prototype.Version');
 		},
 		'Raphael': function() {
-			if(window.Raphael !== null && Raphael.version!==undefined)
-				return Raphael.version;
+			return wGetChainValue('Raphael.version');
 		},
-		'Backbone.js': function() {
-			if (window.Backbone && window.Backbone.VERSION)
-				return window.Backbone.VERSION;
+		'RightJS': function() {
+			return wGetChainValue('RightJS.version');
 		},
-		'Underscore.js': function() {
-			if (window._ && window._.VERSION)
-				return window._.VERSION;
+		'script.aculo.us': function() {
+			return wGetChainValue('Scriptaculous.Version');
+		},
+		'sIFR': function() {
+			return isDefined(window.sIFR);
+		},
+		'SiteCatalyst': function() {
+			return isDefined(window.s_account);
 		},
 		'Spine': function() {
-			if(window.Spine && window.Spine.version)
-				return window.Spine.version;
+			return wGetChainValue('Spine.version');
+		},
+		'SugarCRM': function() {
+			return isDefined(window.SUGAR);
+		},
+		'SWFObject': function() {
+			return isDefined(window.swfobject);
+		},
+		'TomatoCMS': function() {
+			return isDefined(window.Tomato);
+		},
+		'Twitter': function() {
+			return isDefined(window.twttr);
+		},
+		'Typekit': function() {
+			return isDefined(window.Typekit);
+		},
+		'Underscore.js': function() {
+			return wGetChainValue('_.VERSION');
+		},
+		'Webs': function() {
+			return isDefined(window.webs);
+		},
+		'Woopra': function() {
+			return isDefined(window.woopraTracker);
+		},
+		'Xiti': function() {
+			return allDefined(window.xtsite, window.xtpage);
+		},
+		'YUI': function() {
+			var version = wGetChainValue('YAHOO.VERSION');
+			if (version) {
+				return version;
+			}
+
+			if(typeof window.YUI === 'function') {
+				return YUI().version;
+			}
 		}
 	};
 
-	for (var a in _apps)
-	{
-		if (_apps[a] === -1 && js_versions[a])
-		{
-			r = js_versions[a]();
-			_apps[a] = r?r:-1;
+	for (var t in js_tests) {
+		if (t in _apps) {
+			continue;
+		}
+		var versionOrFound = js_tests[t]();
+
+		if (versionOrFound === true) {
+			_apps[t] = -1;
+		}
+		else if(typeof versionOrFound === "object") {
+			_apps[t] = -1;
+		}
+		else if (versionOrFound) {
+			_apps[t] = versionOrFound;
 		}
 	}
 
-	// 7: detect by header
+	// 6: detect by header
 	// @todo
 
-	// 8: detect based on built-in database
+	// 7: detect based on built-in database
 	// @todo
 
-	// 9: detect based on defined css classes
+	// 8: detect based on defined css classes
 	var cssClasses = {
-		'Bootstrap': ['hero-unit', '.carousel-control', '[class^="icon-"]:last-child']
+		'Bootstrap': [ 
+			'hero-unit',
+			'.carousel-control',
+			'[class^="icon-"]:last-child'
+			]
 	};
 
 	for (var t in cssClasses) {
-		if (t in _apps) continue;
+		if (t in _apps) {
+			continue;
+		}
 
 		var found = true;
 		for(var css in cssClasses[t]) {
 			var act = false;
 			name = cssClasses[t][css];
 
-			/* Iterate through all registered css classes and check for presence */
+			// Iterate through all registered css classes and check for presence
 			for(var cssFile in document.styleSheets) {
 				for(var cssRule in document.styleSheets[cssFile].cssRules) {
 					var style = document.styleSheets[cssFile].cssRules[cssRule];
 
-					if (typeof style === "undefined") continue;
-					if (typeof style.selectorText === "undefined") continue;
+					if (typeof style === "undefined") {
+						continue;
+					}
+
+					if (typeof style.selectorText === "undefined") {
+						continue;
+					}
 
 					if (style.selectorText.indexOf(name) !== -1) {
 						act = true;
 						break;
 					}
 				}
-				if (act === true) break;
+
+				if(act === true) {
+					break;
+				}
 			}
 
 			found = found & act;
@@ -420,7 +450,8 @@
 
 		if(found === true) {
 			_apps[t] = -1;
-		} else {
+		}
+		else {
 			break;
 		}
 	}

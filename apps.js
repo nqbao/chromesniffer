@@ -464,8 +464,38 @@ var appinfo = {
 		url: 'http://spinejs.com',
 		priority: 1.9
 	},
+	'Ember': {
+		icon: 'ember.ico',
+		url: 'http://emberjs.com',
+		priority: 1.9
+	},
+	'Knockout' : {
+		icon: 'Knockout.ico',
+		url: 'http://knockoutjs.com',
+		priority: 1.9
+	},
+	'Handlebars': {
+		icon: 'handlebars.ico',
+		url: 'http://handlebarsjs.com',
+		priority: 1.9
+	},
+	'Mustache': {
+		icon: 'Mustache.ico',
+		url: 'http://mustache.github.com/',
+		priority: 1.9
+	},
+	'Angular.js': {
+		icon: 'Angular.ico',
+		url: 'http://angularjs.org',
+		priority: 1.9
+	},
 	
 	// ==== js tools ====
+	'CoffeeScript': {
+		icon: 'CoffeeScript.ico',
+		url: 'http://coffeescript.org',
+		priority: 1.9,
+	},
 	'Raphael': {
 		icon: 'raphael.ico',
 		url: 'http://raphaeljs.com/',
@@ -521,7 +551,7 @@ var appinfo = {
 		priority: 2.9
 	},
 	'Backbone.js': {
-		icon: 'Backbone.png',
+		icon: 'Backbone.ico',
 		url: 'http://documentcloud.github.com/backbone/',
 		priority: 1.9
 	},
