@@ -546,6 +546,13 @@ SNIFFER.apps = [
     url: 'https://www.google.com/adsense',
     match_script_src: /pagead\/show_ads\.js/,
     group: 'js_tools',
+  },
+  {
+    name: 'KISSmetrics',
+    icon: 'KISSmetrics.ico',
+    url: 'http://kissmetrics.com/',
+    match_script_src: /i.kissmetrics.com\/i.js/,
+    group: 'js_tools',
   }
 ];
 
