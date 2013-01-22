@@ -328,6 +328,9 @@
 		},
 		'Handlebars': function () {
 			return window.Handlebars != null;
+		},
+		'Sammy.js': function() {
+			return window.Sammy != null;
 		}
 	};
 
@@ -419,6 +422,11 @@
 		'Handlebars': function() {
 			if (window.Handlebars && window.Handlebars.VERSION)
 				return window.Handlebars.VERSION;
+		},
+		'Sammy.js': function() {
+			if (window.Sammy && window.Sammy.VERSION) {
+				return window.Sammy.VERSION;
+			}
 		}
 	};
 

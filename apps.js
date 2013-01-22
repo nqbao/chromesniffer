@@ -499,6 +499,11 @@ var appinfo = {
 		url: 'http://agilityjs.com/',
 		priority: 1.9
 	},
+	'Sammy.js': {
+		icon: 'sammyjs.ico',
+		url: 'http://sammyjs.org',
+		priority: 1.9
+	},
 	
 	// ==== js tools ====
 	'Kissmetrics': {
