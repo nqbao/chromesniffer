@@ -296,7 +296,10 @@
 				window._.identity('abc') === 'abc';
 		},
 		'Spine': function() {
-			return window.Spine !== null;
+			return window.Spine != null;
+		},
+		'SPDY': function() {
+			return window.chrome.loadTimes().wasFetchedViaSpdy;
 		}
 	};
 
