@@ -7,12 +7,12 @@
  * @author Bao Nguyen <contact@nqbao.com>
  * @license GPLv3
  **/
- 
+
 (function () {
 	var _apps = {};
 	var doc = document.documentElement;
-	var a
-	
+	var name;
+
 	// 1: detect by meta tags, the first matching group will be version
 	var metas = doc.getElementsByTagName("meta");
 	var meta_tests = {
@@ -51,7 +51,7 @@
 			'Webnode': /Webnode/,
 			'GetSimple': /GetSimple/,
 			'DataLifeEngine': /DataLife Engine/,
-			'ClanSphere': /ClanSphere/,
+			'ClanSphere': /ClanSphere/
 		},
 		'copyright': {
 			'phpBB': /phpBB/i
@@ -60,7 +60,7 @@
 			'Elgg': /.+/
 		},
 		'powered-by': {
-			'Serendipity': /Serendipity/i,
+			'Serendipity': /Serendipity/i
 		},
 		'author': {
 			'Avactis': /Avactis Team/i
@@ -70,15 +70,15 @@
 	for (var idx in metas)
 	{
 		var m = metas[idx];
-		var name = m.name ? m.name.toLowerCase() : "";
+		name = m.name ? m.name.toLowerCase() : "";
 
 		if (!meta_tests[name]) continue;
-		
+
 		for (var t in meta_tests[name])
 		{
 			if (t in _apps) continue;
-			
-			var r = meta_tests[name][t].exec(m.content);
+
+			r = meta_tests[name][t].exec(m.content);
 			if (r)
 			{
 				_apps[t] = r[1] ? r[1] : -1;
@@ -88,7 +88,7 @@
 
 	// 2: detect by script tags
 	var scripts = doc.getElementsByTagName("script");
-	
+
 	var script_tests = {
 		'Google Analytics': /google-analytics.com\/(ga|urchin).js/i,
 		'Quantcast': /quantserve\.com\/quant\.js/i,
@@ -167,7 +167,7 @@
 		'Shibboleth': /<form action="\/idp\/Authn\/UserPassword" method="post">/
 	};
 
-	for (t in text_tests)
+	for (var t in text_tests)
 	{
 		if (t in _apps) continue;
 		if (text_tests[t].test(text))
@@ -175,125 +175,125 @@
 			_apps[t] = -1;
 		}
 	}
-	
+
 	// TODO: merge inline detector with version detector
-	
+
 	// 5: detect by inline javascript
 	var js_tests = {
 		'Drupal': function() {
-			return window.Drupal != null;
+			return window.Drupal !== null;
 		},
 		'TomatoCMS': function() {
-			return window.Tomato != null;
+			return window.Tomato !== null;
 		},
 		'MojoMotor': function() {
-			return window.Mojo != null;
+			return window.Mojo !== null;
 		},
 		'ErainCart': function() {
-			return window.fn_register_hooks != null;
+			return window.fn_register_hooks !== null;
 		},
 		'SugarCRM': function() {
-			return window.SUGAR != null;
+			return window.SUGAR !== null;
 		},
 		'YUI': function() {
-			return window.YAHOO|window.YUI != null;
+			return window.YAHOO|window.YUI !== null;
 		},
 		'jQuery': function() {
-			return window.jQuery != null;
+			return window.jQuery !== null;
 		},
 		'jQuery UI': function() {
-			return window.jQuery != null && window.jQuery.ui != null;
+			return window.jQuery !== null && window.jQuery.ui !== null;
 		},
 		'Typekit': function() {
-			return window.Typekit != null;
+			return window.Typekit !== null;
 		},
 		'Facebook': function() {
-			return window.FB != null && window.FB.api != null;
+			return window.FB !== null && window.FB.api !== null;
 		},
 		'ExtJS': function() {
-			return window.Ext != null;
+			return window.Ext !== null;
 		},
 		'Modernizr': function() {
-			return window.Modernizr != null;
+			return window.Modernizr !== null;
 		},
 		'Raphael': function() {
-			return window.Raphael != null;
+			return window.Raphael !== null;
 		},
 		'Cufon': function() {
-			return window.Cufon != null;
+			return window.Cufon !== null;
 		},
 		'sIFR': function() {
-			return window.sIFR != null;
+			return window.sIFR !== null;
 		},
 		'Xiti': function() {
-			return window.xtsite != null && window.xtpage != null;
+			return window.xtsite !== null && window.xtpage !== null;
 		},
 		'Piwik': function() {
-			return window.Piwik != null;
+			return window.Piwik !== null;
 		},
 		'IPB': function() {
-			return window.IPBoard != null;
+			return window.IPBoard !== null;
 		},
 		'MyBB': function() {
-			return window.MyBB != null;
+			return window.MyBB !== null;
 		},
 		'Clicky': function() {
-			return window.clicky != null;
+			return window.clicky !== null;
 		},
 		'Woopra': function() {
-			return window.woopraTracker != null;
+			return window.woopraTracker !== null;
 		},
-		'RightJS': function() {		
-			return window.RightJS != null;
+		'RightJS': function() {
+			return window.RightJS !== null;
 		},
 		'OpenWebAnalytics': function() {
-			return window.owa_baseUrl != null;
+			return window.owa_baseUrl !== null;
 		},
 		'Prettify': function() {
-			return window.prettyPrint != null;
+			return window.prettyPrint !== null;
 		},
 		'SiteCatalyst': function() {
-			return window.s_account != null;
+			return window.s_account !== null;
 		},
 		'Twitter': function() {
-			return window.twttr != null;
+			return window.twttr !== null;
 		},
 		'Coremetrics': function() {
-			return window.cmCreatePageviewTag != null;
+			return window.cmCreatePageviewTag !== null;
 		},
 		'Buzz': function() {
-			return window.google_buzz__base_url != null;
+			return window.google_buzz__base_url !== null;
 		},
 		'Plus1': function() {
 			return window.gapi && window.gapi.plusone;
 		},
 		'Google Loader': function() {
-			return window.google && window.google.load != null;
+			return window.google && window.google.load !== null;
 		},
 		'GoogleMapApi': function() {
-			return window.google && window.google.maps != null;
+			return window.google && window.google.maps !== null;
 		},
 		'Head JS': function() {
-			return window.head && window.head.js != null;
+			return window.head && window.head.js !== null;
 		},
 		'SWFObject': function() {
-			return window.swfobject != null;
+			return window.swfobject !== null;
 		},
 		'Chitika': function() {
 			return window.ch_client && window.ch_write_iframe;
 		},
 		'Jimdo': function() {
-			return window.jimdoData != null;
+			return window.jimdoData !== null;
 		},
 		'Webs': function() {
-			return window.webs != null;
+			return window.webs !== null;
 		},
 		'Backbone.js': function() {
 			return window.Backbone && typeof(window.Backbone.sync) === 'function';
 		},
 		'Underscore.js': function() {
-			return window._ && typeof(window._.identity) === 'function' 
-				&& window._.identity('abc') === 'abc';
+			return window._ && typeof(window._.identity) === 'function' &&
+				window._.identity('abc') === 'abc';
 		},
 		'Spine': function() {
 			return window.Spine != null;
@@ -302,8 +302,8 @@
 			return window.chrome.loadTimes().wasFetchedViaSpdy;
 		}
 	};
-	
-	for (t in js_tests)
+
+	for (var t in js_tests)
 	{
 		if (t in _apps) continue;
 		if (js_tests[t]())
@@ -313,52 +313,52 @@
 	}
 
 	// 6: detect some script version when available
-	var js_versions = {		
+	var js_versions = {
 		'Prototype': function() {
-			if('Prototype' in window && Prototype.Version!=undefined)
-				return window.Prototype.Version			
+			if('Prototype' in window && Prototype.Version!==undefined)
+				return window.Prototype.Version;
 		},
 		'script.aculo.us': function() {
-			if('Scriptaculous' in window && Scriptaculous.Version!=undefined)
-				return window.Scriptaculous.Version			
+			if('Scriptaculous' in window && Scriptaculous.Version!==undefined)
+				return window.Scriptaculous.Version;
 		},
 		'jQuery': function() {
-			if(typeof jQuery == 'function' && jQuery.prototype.jquery!=undefined )
-				return jQuery.prototype.jquery
+			if(typeof jQuery === 'function' && jQuery.prototype.jquery!==undefined )
+				return jQuery.prototype.jquery;
 		},
 		'jQuery UI': function() {
-			if(typeof jQuery == 'function' && jQuery.ui && jQuery.ui.version!=undefined )
-				return jQuery.ui.version
+			if(typeof jQuery === 'function' && jQuery.ui && jQuery.ui.version!==undefined )
+				return jQuery.ui.version;
 		},
 		'Dojo': function() {
-			if(typeof dojo == 'object' && dojo.version.toString()!=undefined)
-				return dojo.version				
+			if(typeof dojo === 'object' && dojo.version.toString()!==undefined)
+				return dojo.version;
 		},
 		'YUI': function() {
-			if(typeof YAHOO == 'object' && YAHOO.VERSION!=undefined )
-				return YAHOO.VERSION
-			if('YUI' in window && typeof YUI == 'function' && YUI().version!=undefined)
-				return YUI().version
+			if(typeof YAHOO === 'object' && YAHOO.VERSION!==undefined )
+				return YAHOO.VERSION;
+			if('YUI' in window && typeof YUI === 'function' && YUI().version!==undefined)
+				return YUI().version;
 		},
 		'MooTools': function() {
-			 if(typeof MooTools == 'object' && MooTools.version!=undefined)
-				return MooTools.version
+			if(typeof MooTools === 'object' && MooTools.version!==undefined)
+				return MooTools.version;
 		},
 		'ExtJS': function() {
-			if(typeof Ext === 'object' && Ext.version!=undefined)
-				return Ext.version
+			if(typeof Ext === 'object' && Ext.version!==undefined)
+				return Ext.version;
 		},
 		'RightJS': function() {
-			if('RightJS' in window && RightJS.version!=undefined)
-				return RightJS.version
+			if('RightJS' in window && RightJS.version!==undefined)
+				return RightJS.version;
 		},
 		'Modernizr': function() {
-			if(window.Modernizr != null && Modernizr._version!=undefined)
-				return Modernizr._version
+			if(window.Modernizr !== null && Modernizr._version!==undefined)
+				return Modernizr._version;
 		},
 		'Raphael': function() {
-			if(window.Raphael != null && Raphael.version!=undefined)
-				return Raphael.version
+			if(window.Raphael !== null && Raphael.version!==undefined)
+				return Raphael.version;
 		},
 		'Backbone.js': function() {
 			if (window.Backbone && window.Backbone.VERSION)
@@ -370,16 +370,16 @@
 		},
 		'Spine': function() {
 			if(window.Spine && window.Spine.version)
-				return window.Spine.version;	
+				return window.Spine.version;
 		}
 	};
-	
-	for (a in _apps)
-	{		
-		if (_apps[a]==-1 && js_versions[a])
+
+	for (var a in _apps)
+	{
+		if (_apps[a] === -1 && js_versions[a])
 		{
-			var r = js_versions[a]()
-			_apps[a] = r?r:-1
+			r = js_versions[a]();
+			_apps[a] = r?r:-1;
 		}
 	}
 
@@ -394,23 +394,23 @@
 		'Bootstrap': ['hero-unit', '.carousel-control', '[class^="icon-"]:last-child']
 	};
 
-	for (t in cssClasses) {
+	for (var t in cssClasses) {
 		if (t in _apps) continue;
 
 		var found = true;
-		for(css in cssClasses[t]) {
+		for(var css in cssClasses[t]) {
 			var act = false;
-			var name = cssClasses[t][css];
-			
+			name = cssClasses[t][css];
+
 			/* Iterate through all registered css classes and check for presence */
-			for(cssFile in document.styleSheets) {
-				for(cssRule in document.styleSheets[cssFile].cssRules) {
+			for(var cssFile in document.styleSheets) {
+				for(var cssRule in document.styleSheets[cssFile].cssRules) {
 					var style = document.styleSheets[cssFile].cssRules[cssRule];
 
 					if (typeof style === "undefined") continue;
 					if (typeof style.selectorText === "undefined") continue;
 
-					if (style.selectorText.indexOf(name) != -1) {
+					if (style.selectorText.indexOf(name) !== -1) {
 						act = true;
 						break;
 					}
@@ -421,7 +421,7 @@
 			found = found & act;
 		}
 
-		if(found == true) {
+		if(found === true) {
 			_apps[t] = -1;
 		} else {
 			break;
