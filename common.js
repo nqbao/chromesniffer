@@ -1,10 +1,12 @@
 /**
- * Chrome AppSniffer
+ * Chrome AppSniffer by Chieffancypants (forked from Bao Nguyen)
  *
- * Shared functions among scripts
+ * Project : https://github.com/chieffancypants/chromesniffer
+ * Issues  : https://github.com/chieffancypants/chromesniffer/issues
  *
- * @author Evan Solomon (forked from Bao Nguyen)
+ * @author chieffancypants <chieffancypants@gmail.com>
  * @license GPLv3
- **/
+ *
+ */
 
 // to be added ...

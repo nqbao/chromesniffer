@@ -1,11 +1,14 @@
 /**
- * Chrome AppSniffer
+ * Chrome AppSniffer by Chieffancypants (forked from Bao Nguyen)
  *
- * Web Application definition
+ * Project : https://github.com/chieffancypants/chromesniffer
+ * Issues  : https://github.com/chieffancypants/chromesniffer/issues
  *
- * @author Bao Nguyen <contact@nqbao.com>
+ * @author chieffancypants <chieffancypants@gmail.com>
  * @license GPLv3
- **/
+ *
+ */
+
 
 var appinfo = {
 	// ==== services ====

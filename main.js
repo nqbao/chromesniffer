@@ -1,12 +1,13 @@
 /**
- * Chrome AppSniffer
+ * Chrome AppSniffer by Chieffancypants (forked from Bao Nguyen)
  *
- * Detect apps run on current page and send back to background page.
- * Some part of this script was refered from Wappalyzer Firefox Addon.
+ * Project : https://github.com/chieffancypants/chromesniffer
+ * Issues  : https://github.com/chieffancypants/chromesniffer/issues
  *
- * @author Evan Solomon (forked from Bao Nguyen)
+ * @author chieffancypants <chieffancypants@gmail.com>
  * @license GPLv3
- **/
+ *
+ */
 
 (function(){
 	var head = document.getElementsByTagName('head')[0];
