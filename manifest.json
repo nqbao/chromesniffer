@@ -5,7 +5,7 @@
 		"48": "icon48.png",
 		"128": "icon128.png"
 	},
-	"version": "0.3",
+	"version": "0.4",
 	"description": "Detect web applications and javascript libraries run on browsing website.",
 	"background": {
 		"page": "background.html"
@@ -23,8 +23,9 @@
 	],
 	"permissions": [
 		"tabs",
-    "http://*/*",
-    "https://*/*"
+		"webRequest",
+		"http://*/*",
+		"https://*/*"
 	],
 	"web_accessible_resources": [
 		"detector.js"

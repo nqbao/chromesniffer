@@ -23,13 +23,17 @@
 		head.appendChild(meta);
 		head.appendChild(script);
 	}
+
+	// 'ready' event issued by detector.js
 	meta.addEventListener('ready', function(){
 		if (meta) {
 			var apps = JSON.parse(meta.content);
 
 			if (Object.keys(apps).length > 0) {
-				chrome.extension.sendMessage({msg: "result",apps: apps});
+				// send 'result' event to the background page with the list of apps
+				chrome.extension.sendMessage({msg: "result", apps: apps});
 			}
 		}
 	});
+
 })();

@@ -11,8 +11,10 @@
 
 var bg = chrome.extension.getBackgroundPage();
 
-chrome.tabs.getSelected(null,function(tab) {
-	chrome.extension.sendMessage({msg: "get",tab: tab.id}, function(response) {
+chrome.tabs.getSelected(null, function (tab) {
+	// Request the applications from the background page:
+	chrome.extension.sendMessage({msg: "get", tab: tab.id}, function (response) {
+		console.log(response);
 		var display = document.getElementById('app_list');
 		var apps = response.apps;
 		var html = '';
@@ -27,8 +29,9 @@ chrome.tabs.getSelected(null,function(tab) {
 			if (!app.url) app.url = appinfo[''].url.replace('%s',appid); // it's google one
 			if (!app.icon) app.icon = appinfo[''].icon;
 
-			if( apps[appid] != "-1")
+			if (apps[appid] != "-1") {
 				app.title = appid + ' ' + apps[appid];
+			}
 
 			// use DOM to avoid error
 			var link = document.createElement('a');

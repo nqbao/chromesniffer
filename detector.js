@@ -490,7 +490,7 @@
 	var meta = document.getElementById('chromesniffer_meta');
 	meta.content = jsonString;
 
-	//Notify Background Page
+	// notify "main.js", which will notify background.js
 	var done = document.createEvent('Event');
 	done.initEvent('ready', true, true);
 	meta.dispatchEvent(done);

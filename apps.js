@@ -748,6 +748,11 @@ var appinfo = {
 		url: 'http://www.chromium.org/spdy',
 		priority: 5
 	},
+	'Express.js': {
+		icon: 'expressjs.png',
+		url: 'http://expressjs.com/',
+		priority: 1
+	},
 
 	// ==== misc ====
 	'': { // default
