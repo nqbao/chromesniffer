@@ -19,7 +19,8 @@
 			// 'Ruby on Rails': /Phusion Passenger/,
 			'Express.js': /Express/,
 			'PHP': /PHP\/?(.*)/,
-			'ASP.NET': /ASP\.NET/
+			'ASP.NET': /ASP\.NET/,
+			'Nette': /Nette Framework/,
 		},
 		'server': {
 			'Apache': /Apache\/?(.*)/,

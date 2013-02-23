@@ -783,6 +783,11 @@ var appinfo = {
 		url: 'http://www.asp.net/',
 		priority: 2
 	},
+	'Nette': {
+		icon: 'nette.ico',
+		url: 'http://nette.org/',
+		priority: 2
+	},
 
 	// ==== misc ====
 	'': { // default
