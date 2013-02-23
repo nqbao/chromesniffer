@@ -15,9 +15,19 @@
 
 	// initial list of header detection.  will move this to a separate file later.
 	var knownHeaders = {
-		'X-Powered-By': {
-			'Ruby on Rails': /Phusion Passenger/,
-			'Express.js': /Express/
+		'x-powered-by': {
+			// 'Ruby on Rails': /Phusion Passenger/,
+			'Express.js': /Express/,
+			'PHP': /PHP\/?(.*)/,
+			'ASP.NET': /ASP\.NET/
+		},
+		'server': {
+			'Apache': /Apache\/?(.*)/,
+			'nginx': /nginx\/?(.*)/,
+			'IIS': /Microsoft-IIS\/?(.*)/,
+		},
+		'via': {
+			'Varnish': /(.*) varnish/
 		}
 	}
 
@@ -27,14 +37,15 @@
 
 		// loop through all the headers received
 		for (var i = headers.length - 1; i >= 0; i--) {
-			var apps = knownHeaders[headers[i].name];
+			var apps = knownHeaders[headers[i].name.toLowerCase()];
 			if (!apps) {
 				continue;
 			}
 			for (app in apps) {
-				if (apps[app].test(app)) {
-					// store the app with -1 as the version
-					appsFound[app] = -1;
+				var matches = headers[i].value.match(apps[app]);
+				if (matches) {
+					var version = matches[1] || -1;
+					appsFound[app] = version;
 				}
 			}
 		};

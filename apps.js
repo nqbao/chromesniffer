@@ -753,10 +753,40 @@ var appinfo = {
 		url: 'http://expressjs.com/',
 		priority: 1
 	},
+	'PHP': {
+		icon: 'php.ico',
+		url: 'http://php.net/',
+		priority: 2
+	},
+	'Apache': {
+		icon: 'apache.ico',
+		url: 'http://httpd.apache.org/',
+		priority: 2
+	},
+	'nginx': {
+		icon: 'nginx.ico',
+		url: 'http://nginx.org/en/',
+		priority: 2
+	},
+	'Varnish': {
+		icon: 'varnish.ico',
+		url: 'https://www.varnish-cache.org/',
+		priority: 2
+	},
+	'IIS': {
+		icon: 'iis.ico',
+		url: 'http://www.iis.net/',
+		priority: 2
+	},
+	'ASP.NET': {
+		icon: 'asp.net.ico',
+		url: 'http://www.asp.net/',
+		priority: 2
+	},
 
 	// ==== misc ====
 	'': { // default
 		icon: 'unknown.jpg',
 		url: 'http://google.com/search?q=%s'
-	}
+	}, 
 };
