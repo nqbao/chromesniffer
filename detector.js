@@ -1,12 +1,13 @@
 /**
- * Chrome AppSniffer
+ * Chrome AppSniffer by Chieffancypants (forked from Bao Nguyen)
  *
- * Detect apps run on current page and send back to background page.
- * Some part of this script was refered from Wappalyzer Firefox Addon.
+ * Project : https://github.com/chieffancypants/chromesniffer
+ * Issues  : https://github.com/chieffancypants/chromesniffer/issues
  *
- * @author Bao Nguyen <contact@nqbao.com>
+ * @author chieffancypants <chieffancypants@gmail.com>
  * @license GPLv3
- **/
+ *
+ */
 
 (function () {
 	var _apps = {};
@@ -67,22 +68,18 @@
 		}
 	};
 
-	for (var idx in metas)
-	{
+	for (var idx in metas) {
 		var m = metas[idx];
 		name = m.name ? m.name.toLowerCase() : "";
 
 		if (!meta_tests[name]) continue;
 
-		for (var t in meta_tests[name])
-		{
+		for (var t in meta_tests[name]) {
 			if (t in _apps) continue;
 
-			r = meta_tests[name][t].exec(m.content);
+			var r = meta_tests[name][t].exec(m.content);
 			if (r)
-			{
 				_apps[t] = r[1] ? r[1] : -1;
-			}
 		}
 	}
 
@@ -114,26 +111,26 @@
 		'Volusion': /a\/j\/javascripts\.js/,
 		'AddThis': /addthis\.com\/js/,
 		'BuySellAds': /buysellads.com\/.*bsa\.js/,
-		'Weebly': /weebly\.com\/weebly\//,
+		'Weebly': /editmysite\.com\/libraries\//,
 		'Bootstrap': /bootstrap-.*\.js/,
 		'Jigsy': /javascripts\/asterion\.js/, // may change later
 		'Yola': /analytics\.yola\.net/, // may change later
-		'Alfresco': /(alfresco)+(-min)?(\/scripts\/menu)?\.js/ // both Alfresco Share and Explorer apps
+		'Alfresco': /(alfresco)+(-min)?(\/scripts\/menu)?\.js/, // both Alfresco Share and Explorer apps
+		'UserVoice': /widget\.uservoice\.com.*\.js/,
+		'HubSpot': /js\.hubspot\.com.*\.js/
 	};
 
-	for (var idx in scripts)
-	{
+	for (var idx in scripts) {
 		var s = scripts[idx];
-		if (!s.src) continue;
+		if (!s.src)
+			continue;
 		s = s.src;
 
-		for (var t in script_tests)
-		{
-			if (t in _apps) continue;
+		for (var t in script_tests) {
+			if (t in _apps)
+				continue;
 			if (script_tests[t].test(s))
-			{
 				_apps[t] = -1;
-			}
 		}
 	}
 
@@ -145,7 +142,7 @@
 		'SMF': /<script .+\s+var smf_/i,
 		'Magento': /var BLANK_URL = '[^>]+js\/blank\.html'/i,
 		'Tumblr': /<iframe src=("|')http:\/\/\S+\.tumblr\.com/i,
-		'WordPress': /<link rel=("|')stylesheet("|') [^>]+wp-content/i,
+		'WordPress': RegExp( location.host.replace( /^www\./, "" ).replace( /([.?*+^$[\]\\(){}-])/g, "\\$1" ) + '\\S*\/wp-content\\S*\\"', 'i' ),
 		'Closure': /<script[^>]*>.*goog\.require/i,
 		'Liferay': /<script[^>]*>.*LifeRay\.currentURL/i,
 		'vBulletin': /vbmenu_control/i,
@@ -164,129 +161,137 @@
 		'Prostores' : /-legacycss\/Asset">/,
 		'osCommerce': /(product_info\.php\?products_id|_eof \/\/-->)/,
 		'OpenCart': /index.php\?route=product\/product/,
-		'Shibboleth': /<form action="\/idp\/Authn\/UserPassword" method="post">/
+		'Shibboleth': /<form action="\/idp\/Authn\/UserPassword" method="post">/,
+		'New Relic': /beacon-?\d*\.newrelic\.com/
 	};
 
-	for (var t in text_tests)
-	{
-		if (t in _apps) continue;
+	for (var t in text_tests) {
+		if (t in _apps)
+			continue;
 		if (text_tests[t].test(text))
-		{
 			_apps[t] = -1;
-		}
 	}
 
 	// TODO: merge inline detector with version detector
 
 	// 5: detect by inline javascript
 	var js_tests = {
+		'Kissmetrics': function() {
+			return window.KM != null && window.KM.cp != null;
+		},
+		'Squarespace': function() {
+			return window.Squarespace != null && window.Squarespace.Constants != null;
+		},
 		'Drupal': function() {
-			return window.Drupal !== null;
+			return window.Drupal != null;
 		},
 		'TomatoCMS': function() {
-			return window.Tomato !== null;
+			return window.Tomato != null;
 		},
 		'MojoMotor': function() {
-			return window.Mojo !== null;
+			return window.Mojo != null;
 		},
 		'ErainCart': function() {
-			return window.fn_register_hooks !== null;
+			return window.fn_register_hooks != null;
 		},
 		'SugarCRM': function() {
-			return window.SUGAR !== null;
+			return window.SUGAR != null;
 		},
 		'YUI': function() {
-			return window.YAHOO|window.YUI !== null;
+			return window.YAHOO|window.YUI != null;
 		},
 		'jQuery': function() {
-			return window.jQuery !== null;
+			return window.jQuery != null;
 		},
 		'jQuery UI': function() {
-			return window.jQuery !== null && window.jQuery.ui !== null;
+			return window.jQuery != null && window.jQuery.ui != null;
 		},
 		'Typekit': function() {
-			return window.Typekit !== null;
+			return window.Typekit != null;
 		},
 		'Facebook': function() {
-			return window.FB !== null && window.FB.api !== null;
+			return window.FB != null && window.FB.api != null;
 		},
 		'ExtJS': function() {
-			return window.Ext !== null;
+			return window.Ext != null;
 		},
 		'Modernizr': function() {
-			return window.Modernizr !== null;
+			return window.Modernizr != null;
 		},
 		'Raphael': function() {
-			return window.Raphael !== null;
+			return window.Raphael != null;
 		},
 		'Cufon': function() {
-			return window.Cufon !== null;
+			return window.Cufon != null;
 		},
 		'sIFR': function() {
-			return window.sIFR !== null;
+			return window.sIFR != null;
 		},
 		'Xiti': function() {
-			return window.xtsite !== null && window.xtpage !== null;
+			return window.xtsite != null && window.xtpage != null;
 		},
 		'Piwik': function() {
-			return window.Piwik !== null;
+			return window.Piwik != null;
 		},
 		'IPB': function() {
-			return window.IPBoard !== null;
+			return window.IPBoard != null;
 		},
 		'MyBB': function() {
-			return window.MyBB !== null;
+			return window.MyBB != null;
 		},
 		'Clicky': function() {
-			return window.clicky !== null;
+			return window.clicky != null;
 		},
 		'Woopra': function() {
-			return window.woopraTracker !== null;
+			return window.woopraTracker != null;
 		},
 		'RightJS': function() {
-			return window.RightJS !== null;
+			return window.RightJS != null;
 		},
 		'OpenWebAnalytics': function() {
-			return window.owa_baseUrl !== null;
+			return window.owa_baseUrl != null;
 		},
 		'Prettify': function() {
-			return window.prettyPrint !== null;
+			return window.prettyPrint != null;
 		},
 		'SiteCatalyst': function() {
-			return window.s_account !== null;
+			return window.s_account != null;
 		},
 		'Twitter': function() {
-			return window.twttr !== null;
+			return window.twttr != null;
 		},
 		'Coremetrics': function() {
-			return window.cmCreatePageviewTag !== null;
+			return window.cmCreatePageviewTag != null;
 		},
 		'Buzz': function() {
-			return window.google_buzz__base_url !== null;
+			return window.google_buzz__base_url != null;
 		},
 		'Plus1': function() {
 			return window.gapi && window.gapi.plusone;
 		},
 		'Google Loader': function() {
-			return window.google && window.google.load !== null;
+			return window.google && window.google.load != null;
 		},
 		'GoogleMapApi': function() {
-			return window.google && window.google.maps !== null;
+			return window.google && window.google.maps != null;
 		},
 		'Head JS': function() {
-			return window.head && window.head.js !== null;
+			return window.head && window.head.js != null;
 		},
 		'SWFObject': function() {
-			return window.swfobject !== null;
+			return window.swfobject != null;
 		},
 		'Chitika': function() {
 			return window.ch_client && window.ch_write_iframe;
 		},
 		'Jimdo': function() {
-			return window.jimdoData !== null;
+			return window.jimdoData != null;
 		},
 		'Webs': function() {
-			return window.webs !== null;
+			return window.webs != null;
+		},
+		'Knockback.js': function() {
+			return window.Knockback != null;
 		},
 		'Backbone.js': function() {
 			return window.Backbone && typeof(window.Backbone.sync) === 'function';
@@ -296,66 +301,94 @@
 				window._.identity('abc') === 'abc';
 		},
 		'Spine': function() {
-			return window.Spine !== null;
+			return window.Spine != null;
+		},
+		'AngularJS': function() {
+			return window.angular != null;
+		},
+		'SPDY': function() {
+			return window.chrome.loadTimes().wasFetchedViaSpdy;
+		},
+		'Ember.js': function() {
+			return window.Ember != null;
+		},
+		'Batman.js': function() {
+			return window.Batman != null;
+		},
+		'Agility.js': function() {
+			return window.agility != null;
+		},
+		'AmplifyJS': function () {
+			return window.amplify != null;
+		},
+		'Meteor': function () {
+			return window.Meteor && window.Meteor.status != null;
+		},
+		'MarionetteJS': function () {
+			return window.Backbone && window.Backbone.Marionette != null;
+		},
+		'Handlebars': function () {
+			return window.Handlebars != null;
+		},
+		'Sammy.js': function() {
+			return window.Sammy != null;
 		}
 	};
 
-	for (var t in js_tests)
-	{
-		if (t in _apps) continue;
+	for (var t in js_tests) {
+		if (t in _apps)
+			continue;
 		if (js_tests[t]())
-		{
 			_apps[t] = -1;
-		}
 	}
 
 	// 6: detect some script version when available
 	var js_versions = {
 		'Prototype': function() {
-			if('Prototype' in window && Prototype.Version!==undefined)
-				return window.Prototype.Version;
+			if ('Prototype' in window && Prototype.Version != undefined)
+				return window.Prototype.Version
 		},
 		'script.aculo.us': function() {
-			if('Scriptaculous' in window && Scriptaculous.Version!==undefined)
-				return window.Scriptaculous.Version;
+			if ('Scriptaculous' in window && Scriptaculous.Version != undefined)
+				return window.Scriptaculous.Version
 		},
 		'jQuery': function() {
-			if(typeof jQuery === 'function' && jQuery.prototype.jquery!==undefined )
-				return jQuery.prototype.jquery;
+			if (typeof jQuery == 'function' && jQuery.prototype.jquery != undefined)
+				return jQuery.prototype.jquery
 		},
 		'jQuery UI': function() {
-			if(typeof jQuery === 'function' && jQuery.ui && jQuery.ui.version!==undefined )
-				return jQuery.ui.version;
+			if (typeof jQuery == 'function' && jQuery.ui && jQuery.ui.version != undefined)
+				return jQuery.ui.version
 		},
 		'Dojo': function() {
-			if(typeof dojo === 'object' && dojo.version.toString()!==undefined)
-				return dojo.version;
+			if (typeof dojo == 'object' && dojo.version.toString() != undefined)
+				return dojo.version.toString()
 		},
 		'YUI': function() {
-			if(typeof YAHOO === 'object' && YAHOO.VERSION!==undefined )
-				return YAHOO.VERSION;
-			if('YUI' in window && typeof YUI === 'function' && YUI().version!==undefined)
-				return YUI().version;
+			if (typeof YAHOO == 'object' && YAHOO.VERSION != undefined)
+				return YAHOO.VERSION
+			if ('YUI' in window && typeof YUI == 'function' && YUI().version != undefined)
+				return YUI().version
 		},
 		'MooTools': function() {
-			if(typeof MooTools === 'object' && MooTools.version!==undefined)
-				return MooTools.version;
+			if (typeof MooTools == 'object' && MooTools.version != undefined)
+				return MooTools.version
 		},
 		'ExtJS': function() {
-			if(typeof Ext === 'object' && Ext.version!==undefined)
-				return Ext.version;
+			if (typeof Ext === 'object' && Ext.version != undefined)
+				return Ext.version
 		},
 		'RightJS': function() {
-			if('RightJS' in window && RightJS.version!==undefined)
-				return RightJS.version;
+			if ('RightJS' in window && RightJS.version != undefined)
+				return RightJS.version
 		},
 		'Modernizr': function() {
-			if(window.Modernizr !== null && Modernizr._version!==undefined)
-				return Modernizr._version;
+			if (window.Modernizr != null && Modernizr._version != undefined)
+				return Modernizr._version
 		},
 		'Raphael': function() {
-			if(window.Raphael !== null && Raphael.version!==undefined)
-				return Raphael.version;
+			if (window.Raphael != null && Raphael.version != undefined)
+				return Raphael.version
 		},
 		'Backbone.js': function() {
 			if (window.Backbone && window.Backbone.VERSION)
@@ -366,17 +399,42 @@
 				return window._.VERSION;
 		},
 		'Spine': function() {
-			if(window.Spine && window.Spine.version)
+			if (window.Spine && window.Spine.version)
 				return window.Spine.version;
+		},
+		'AngularJS': function() {
+			if (window.angular && window.angular.version)
+				return window.angular.version.full;
+		},
+		'Ember.js': function() {
+			var ember = window.Ember || window.Em;
+			if (ember && ember.VERSION != undefined) {
+				return ember.VERSION;
+			}
+		},
+		'Batman.js': function() {
+			if (window.Batman && window.Batman.version)
+				return window.Batman.version;
+		},
+		'Knockback.js': function() {
+			if (window.Knockback && window.Knockback.VERSION)
+				return window.Knockback.VERSION;
+		},
+		'Handlebars': function() {
+			if (window.Handlebars && window.Handlebars.VERSION)
+				return window.Handlebars.VERSION;
+		},
+		'Sammy.js': function() {
+			if (window.Sammy && window.Sammy.VERSION) {
+				return window.Sammy.VERSION;
+			}
 		}
 	};
 
-	for (var a in _apps)
-	{
-		if (_apps[a] === -1 && js_versions[a])
-		{
-			r = js_versions[a]();
-			_apps[a] = r?r:-1;
+	for (var a in _apps) {
+		if (_apps[a]==-1 && js_versions[a]) {
+			var r = js_versions[a]()
+			_apps[a] = r?r:-1
 		}
 	}
 
@@ -395,19 +453,21 @@
 		if (t in _apps) continue;
 
 		var found = true;
-		for(var css in cssClasses[t]) {
+		for (var css in cssClasses[t]) {
 			var act = false;
 			name = cssClasses[t][css];
 
 			/* Iterate through all registered css classes and check for presence */
-			for(var cssFile in document.styleSheets) {
-				for(var cssRule in document.styleSheets[cssFile].cssRules) {
+			for (var cssFile in document.styleSheets) {
+				for (var cssRule in document.styleSheets[cssFile].cssRules) {
 					var style = document.styleSheets[cssFile].cssRules[cssRule];
 
-					if (typeof style === "undefined") continue;
-					if (typeof style.selectorText === "undefined") continue;
+					if (typeof style === "undefined")
+						continue;
+					if (typeof style.selectorText === "undefined")
+						continue;
 
-					if (style.selectorText.indexOf(name) !== -1) {
+					if (style.selectorText.indexOf(name) != -1) {
 						act = true;
 						break;
 					}
@@ -418,11 +478,10 @@
 			found = found & act;
 		}
 
-		if(found === true) {
+		if (found == true)
 			_apps[t] = -1;
-		} else {
+		else
 			break;
-		}
 	}
 
 	// convert to array
@@ -431,7 +490,7 @@
 	var meta = document.getElementById('chromesniffer_meta');
 	meta.content = jsonString;
 
-	//Notify Background Page
+	// notify "main.js", which will notify background.js
 	var done = document.createEvent('Event');
 	done.initEvent('ready', true, true);
 	meta.dispatchEvent(done);

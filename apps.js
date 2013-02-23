@@ -1,14 +1,22 @@
 /**
- * Chrome AppSniffer
+ * Chrome AppSniffer by Chieffancypants (forked from Bao Nguyen)
  *
- * Web Application definition
+ * Project : https://github.com/chieffancypants/chromesniffer
+ * Issues  : https://github.com/chieffancypants/chromesniffer/issues
  *
- * @author Bao Nguyen <contact@nqbao.com>
+ * @author chieffancypants <chieffancypants@gmail.com>
  * @license GPLv3
- **/
+ *
+ */
+
 
 var appinfo = {
 	// ==== services ====
+	'Squarespace': {
+		icon: 'squarespace.ico',
+		url: 'http://squarespace.com',
+		priority: 0.9
+	},
 	'Tumblr': {
 		icon: 'Tumblr.ico',
 		url: 'http://tumblr.com',
@@ -24,7 +32,7 @@ var appinfo = {
 		url: 'http://blogger.com',
 		priority: 0.9
 	},
-	
+
 	'Webs': {
 		icon: 'webs.ico',
 		url: 'http://www.webs.com/',
@@ -105,7 +113,7 @@ var appinfo = {
 		url: 'http://www.ubercart.org/',
 		priority: 0.9 // higher priority compared with Drupal
 	},
-	
+
 	'AlphaCMS': {
 		icon: 'alphacms.ico',
 		url: 'http://www.mego.com.vn',
@@ -116,7 +124,7 @@ var appinfo = {
 		url: 'http://www.tomatocms.com/',
 		priority: 1
 	},
-	
+
 	'WordPress': {
 		icon: 'WordPress.ico',
 		url: 'http://wordpress.org',
@@ -127,7 +135,7 @@ var appinfo = {
 		url: 'http://wpml.org/',
 		priority: 1.1
 	},
-	
+
 	'bbPress': {
 		icon: 'bbPress.ico',
 		url: 'http://bbpress.org',
@@ -148,7 +156,7 @@ var appinfo = {
 		url: 'http://www.concrete5.org',
 		priority: 1
 	},
-	
+
 	'MediaWiki': {
 		icon: 'MediaWiki.ico',
 		url: 'http://www.mediawiki.org/',
@@ -294,13 +302,13 @@ var appinfo = {
 		url: 'http://dle-news.ru/',
 		priority: 1,
 	},
-	
+
 	'Elgg': {
 		icon: 'Elgg.ico',
 		url: 'http://www.elgg.org/',
 		priority: 1
 	},
-	
+
 	'DotNetNuke': {
 		icon: 'DotNetNuke.ico',
 		url: 'http://www.dotnetnuke.com/',
@@ -317,7 +325,7 @@ var appinfo = {
 		priority: 1,
 		title: 'Microsoft SharePoint'
 	},
-	
+
 	'ZenPhoto': {
 		icon: 'ZenPhoto.ico',
 		url: 'http://www.zenphoto.org',
@@ -328,7 +336,7 @@ var appinfo = {
 		url: 'http://gallery.menalto.com/',
 		priority: 1
 	},
-	
+
 	'Avactis': {
 		icon: 'avactis.ico',
 		url: 'http://www.avactis.com',
@@ -384,8 +392,7 @@ var appinfo = {
 		icon: 'pivotx.ico',
 		url: 'http://pivotx.net',
 		priority: 1
-	},	
-	
+	},
 	'Shibboleth': {
 		icon: 'shibboleth.png',
 		url:  'http://shibboleth.internet2.edu/',
@@ -400,6 +407,12 @@ var appinfo = {
 	'ClanSphere': {
 		icon: 'ClanSphere.png',
 		url:  'http://csphere.eu',
+		priority: 1
+	},
+
+	'HubSpot': {
+		icon: 'hubspot.ico',
+		url: 'http://www.hubspot.com',
 		priority: 1
 	},
 	
@@ -464,8 +477,43 @@ var appinfo = {
 		url: 'http://spinejs.com',
 		priority: 1.9
 	},
+	'AmplifyJS': {
+		icon: 'AmplifyJS.png',
+		url: 'http://amplifyjs.com',
+		priority: 1
+	},
+	'Ember.js': {
+		icon: 'ember.png',
+		url: 'http://emberjs.com',
+		priority: 1.9
+	},
+	'Batman.js': {
+		icon: 'batmanjs.png',
+		url: 'http://batmanjs.org',
+		priority: 1.9
+	},
+	'Knockback.js': {
+		icon: 'knockback.png',
+		url: 'http://kmalakoff.github.com/knockback/',
+		priority: 1.8
+	},
+	'Agility.js': {
+		icon: 'agility.png',
+		url: 'http://agilityjs.com/',
+		priority: 1.9
+	},
+	'Sammy.js': {
+		icon: 'sammyjs.ico',
+		url: 'http://sammyjs.org',
+		priority: 1.9
+	},
 	
 	// ==== js tools ====
+	'Kissmetrics': {
+		icon: 'Kissmetrics.ico',
+		url: 'http://kissmetrics.com',
+		priority: 2.9
+	},
 	'Raphael': {
 		icon: 'raphael.ico',
 		url: 'http://raphaeljs.com/',
@@ -530,7 +578,26 @@ var appinfo = {
 		url: 'http://documentcloud.github.com/underscore/',
 		priority: 2.9
 	},
-	
+	'AngularJS': {
+		icon: 'AngularJS.ico',
+		url: 'http://www.angularjs.org',
+		priority: 1.9
+	},
+	'Meteor': {
+		icon: 'meteor.ico',
+		url: 'http://www.meteor.com',
+		priority: 1.9
+	},
+	'MarionetteJS': {
+		icon: 'marionette.png',
+		url: 'http://www.marionettejs.com',
+		priority: 1.89
+	},	
+	'Handlebars': {
+		icon: 'handlebars.png',
+		url: 'http://handlebars',
+		priority: 1.91
+	},
 	'Head JS': {
 		icon: 'headjs.gif',
 		url: 'http://headjs.com',
@@ -540,8 +607,7 @@ var appinfo = {
 		icon: 'google.ico',
 		url: 'http://code.google.com/apis/loader',
 		priority: 2.9
-	},
-	
+	},	
 	'Woopra': {
 		icon: 'woopra.ico',
 		url: 'http://www.woopra.com',
@@ -588,7 +654,11 @@ var appinfo = {
 		url: 'http://getclicky.com/',
 		priority: 3
 	},
-	
+	'New Relic': {
+		icon: 'newrelic.ico',
+		url: 'http://newrelic.com/',
+		priority: 3
+	},
 	'Disqus': {
 		icon: 'Disqus.ico',
 		url: 'http://disqus.com/',
@@ -597,6 +667,11 @@ var appinfo = {
 	'GetSatisfaction': {
 		icon: 'GetSatisfaction.gif',
 		url: 'http://getsatisfaction.com',
+		priority: 3
+	},
+	'UserVoice': {
+		icon: 'uservoice.ico',
+		url: 'http://www.uservoice.com',
 		priority: 3
 	},
 	'Wibiya': {
@@ -637,7 +712,7 @@ var appinfo = {
 		url: 'http://code.google.com/p/swfobject/',
 		priority: 4
 	},
-	
+
 	'OpenX': {
 		icon: 'OpenX.ico',
 		url: 'http://openx.org',
@@ -658,22 +733,65 @@ var appinfo = {
 		url: 'http://buysellads.com/',
 		priority: 5
 	},
-	
 	'HumansTxt': {
 		icon: 'humanstxt.ico',
 		url: 'http://humanstxt.org/',
 		priority: 5
 	},
-
 	'Bootstrap': {
-		icon: 'bootstrap.ico',    
+		icon: 'bootstrap.ico',
 		url: 'http://twitter.github.com/bootstrap/',
 		priority: 5
+	},
+	'SPDY': {
+		icon: 'spdy.ico',
+		url: 'http://www.chromium.org/spdy',
+		priority: 5
+	},
+	'Express.js': {
+		icon: 'expressjs.png',
+		url: 'http://expressjs.com/',
+		priority: 1
+	},
+	'PHP': {
+		icon: 'php.ico',
+		url: 'http://php.net/',
+		priority: 2
+	},
+	'Apache': {
+		icon: 'apache.ico',
+		url: 'http://httpd.apache.org/',
+		priority: 2
+	},
+	'nginx': {
+		icon: 'nginx.ico',
+		url: 'http://nginx.org/en/',
+		priority: 2
+	},
+	'Varnish': {
+		icon: 'varnish.ico',
+		url: 'https://www.varnish-cache.org/',
+		priority: 2
+	},
+	'IIS': {
+		icon: 'iis.ico',
+		url: 'http://www.iis.net/',
+		priority: 2
+	},
+	'ASP.NET': {
+		icon: 'asp.net.ico',
+		url: 'http://www.asp.net/',
+		priority: 2
+	},
+	'Nette': {
+		icon: 'nette.ico',
+		url: 'http://nette.org/',
+		priority: 2
 	},
 
 	// ==== misc ====
 	'': { // default
 		icon: 'unknown.jpg',
 		url: 'http://google.com/search?q=%s'
-	}
+	}, 
 };
