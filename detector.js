@@ -164,7 +164,7 @@
 		'Prostores' : /-legacycss\/Asset">/,
 		'osCommerce': /(product_info\.php\?products_id|_eof \/\/-->)/,
 		'OpenCart': /index.php\?route=product\/product/,
-		'Shibboleth': /<form action="\/idp\/Authn\/UserPassword" method="post">/
+		'Shibboleth': /<form action="\/idp\/Authn\/UserPassword" method="post">/,
 	};
 
 	for (var t in text_tests)
@@ -297,6 +297,9 @@
 		},
 		'Spine': function() {
 			return window.Spine !== null;
+		},
+		'LiveStreet': function() {
+			return window.LIVESTREET_SECURITY_KEY;
 		}
 	};
 
