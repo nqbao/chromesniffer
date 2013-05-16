@@ -403,6 +403,12 @@ var appinfo = {
 		priority: 1
 	},
 	
+	'LiveStreet': {
+		icon: 'LiveStreet.png',
+		url: 'http://livestreetcms.com/',
+		prioruty: 1
+	}
+	
 	// ==== js framework ====
 	'jQuery': {
 		icon: 'jQuery.ico',
@@ -464,11 +470,6 @@ var appinfo = {
 		url: 'http://spinejs.com',
 		priority: 1.9
 	},
-	'Twitter Flight': {
-		icon: 'twitter.ico',
-		url: 'http://twitter.github.com/flight/',
-		priority: 2
-	}
 	// ==== js tools ====
 	'Raphael': {
 		icon: 'raphael.ico',
