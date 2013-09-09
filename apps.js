@@ -464,6 +464,11 @@ var appinfo = {
 		url: 'http://spinejs.com',
 		priority: 1.9
 	},
+	'Angular': {
+		icon: 'angular.ico',
+		url: 'http://angularjs.org/',
+		priority: 1.5
+	},
 	
 	// ==== js tools ====
 	'Raphael': {
