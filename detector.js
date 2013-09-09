@@ -297,6 +297,9 @@
 		},
 		'Spine': function() {
 			return window.Spine !== null;
+		},
+		'Angular': function() {
+			return window.angular !== null;
 		}
 	};
 
@@ -368,6 +371,10 @@
 		'Spine': function() {
 			if(window.Spine && window.Spine.version)
 				return window.Spine.version;
+		},
+		'Angular': function() {
+			if(window.angular && window.angular.version && 'full' in window.angular.version)
+				return window.angular.version.full;
 		}
 	};
 
