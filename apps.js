@@ -292,7 +292,7 @@ var appinfo = {
 		title: 'DataLife Engine',
 		icon: 'datalife.ico',
 		url: 'http://dle-news.ru/',
-		priority: 1,
+		priority: 1
 	},
 	
 	'Elgg': {
@@ -597,7 +597,7 @@ var appinfo = {
 	'Disqus': {
 		icon: 'Disqus.ico',
 		url: 'http://disqus.com/',
-		priority: 3
+		priority: 1
 	},
 	'GetSatisfaction': {
 		icon: 'GetSatisfaction.gif',
@@ -663,18 +663,27 @@ var appinfo = {
 		url: 'http://buysellads.com/',
 		priority: 5
 	},
-	
 	'HumansTxt': {
 		icon: 'humanstxt.ico',
 		url: 'http://humanstxt.org/',
 		priority: 5
 	},
-
 	'Bootstrap': {
 		icon: 'bootstrap.ico',    
 		url: 'http://twitter.github.com/bootstrap/',
 		priority: 5
 	},
+  'Ning': {
+		icon: 'ning.ico',
+		url: 'http://www.ning.com/',
+		priority: 1
+	},
+  'ektron': {
+		icon: 'ektron.ico',
+		url: 'http://www.ektron.com/',
+		priority: 1
+	},
+
 
 	// ==== misc ====
 	'': { // default
