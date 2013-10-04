@@ -100,7 +100,7 @@
 		'MooTools': /mootools/i,
 		'Dojo': /dojo(\.xd)?\.js/i,
 		'script.aculo.us': /scriptaculous\.js/i,
-		'Disqus': /disqus.com\/forums/i,
+		'Disqus': /disqus.com\//i,
 		'GetSatisfaction': /getsatisfaction\.com\/feedback/i,
 		'Wibiya': /wibiya\.com\/Loaders\//i,
 		'reCaptcha': /(google\.com\/recaptcha|api\.recaptcha\.net\/)/i,
