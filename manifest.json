@@ -1,12 +1,15 @@
 {
 	"name": "Chrome Sniffer",
+  "manifest_version": 2,
 	"icons": {
 		"48": "icon48.png",
 		"128": "icon128.png"
 	},
 	"version": "0.2.13",
 	"description": "Detect web applications and javascript libraries run on browsing website.",
-	"background_page": "background.html",
+	"background": {
+    "page": "background.html"
+  },
 	"page_action": {
 		"default_icon": "icon.png",
 		"default_title": "Click for more details.",
@@ -22,5 +25,6 @@
 		"tabs",
         "http://*/*",
         "https://*/*"
-	]
+	],
+  "web_accessible_resources": ["detector.js"]
 }

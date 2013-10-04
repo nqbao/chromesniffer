@@ -181,112 +181,112 @@
 	// 5: detect by inline javascript
 	var js_tests = {
 		'Drupal': function() {
-			return window.Drupal !== null;
+			return window.Drupal;
 		},
 		'TomatoCMS': function() {
-			return window.Tomato !== null;
+			return window.Tomato;
 		},
 		'MojoMotor': function() {
-			return window.Mojo !== null;
+			return window.Mojo;
 		},
 		'ErainCart': function() {
-			return window.fn_register_hooks !== null;
+			return window.fn_register_hooks;
 		},
 		'SugarCRM': function() {
-			return window.SUGAR !== null;
+			return window.SUGAR;
 		},
 		'YUI': function() {
-			return window.YAHOO|window.YUI !== null;
+			return window.YAHOO|window.YUI;
 		},
 		'jQuery': function() {
-			return window.jQuery !== null;
+			return window.jQuery;
 		},
 		'jQuery UI': function() {
-			return window.jQuery !== null && window.jQuery.ui !== null;
+			return window.jQuery && window.jQuery.ui;
 		},
 		'Typekit': function() {
-			return window.Typekit !== null;
+			return window.Typekit;
 		},
 		'Facebook': function() {
-			return window.FB !== null && window.FB.api !== null;
+			return window.FB && window.FB.api;
 		},
 		'ExtJS': function() {
-			return window.Ext !== null;
+			return window.Ext;
 		},
 		'Modernizr': function() {
-			return window.Modernizr !== null;
+			return window.Modernizr;
 		},
 		'Raphael': function() {
-			return window.Raphael !== null;
+			return window.Raphael;
 		},
 		'Cufon': function() {
-			return window.Cufon !== null;
+			return window.Cufon;
 		},
 		'sIFR': function() {
-			return window.sIFR !== null;
+			return window.sIFR;
 		},
 		'Xiti': function() {
-			return window.xtsite !== null && window.xtpage !== null;
+			return window.xtsite && window.xtpage;
 		},
 		'Piwik': function() {
-			return window.Piwik !== null;
+			return window.Piwik;
 		},
 		'IPB': function() {
-			return window.IPBoard !== null;
+			return window.IPBoard;
 		},
 		'MyBB': function() {
-			return window.MyBB !== null;
+			return window.MyBB;
 		},
 		'Clicky': function() {
-			return window.clicky !== null;
+			return window.clicky;
 		},
 		'Woopra': function() {
-			return window.woopraTracker !== null;
+			return window.woopraTracker;
 		},
 		'RightJS': function() {
-			return window.RightJS !== null;
+			return window.RightJS;
 		},
 		'OpenWebAnalytics': function() {
-			return window.owa_baseUrl !== null;
+			return window.owa_baseUrl;
 		},
 		'Prettify': function() {
-			return window.prettyPrint !== null;
+			return window.prettyPrint;
 		},
 		'SiteCatalyst': function() {
-			return window.s_account !== null;
+			return window.s_account;
 		},
 		'Twitter': function() {
-			return window.twttr !== null;
+			return window.twttr;
 		},
 		'Coremetrics': function() {
-			return window.cmCreatePageviewTag !== null;
+			return window.cmCreatePageviewTag;
 		},
 		'Buzz': function() {
-			return window.google_buzz__base_url !== null;
+			return window.google_buzz__base_url;
 		},
 		'Plus1': function() {
 			return window.gapi && window.gapi.plusone;
 		},
 		'Google Loader': function() {
-			return window.google && window.google.load !== null;
+			return window.google && window.google.load;
 		},
 		'GoogleMapApi': function() {
-			return window.google && window.google.maps !== null;
+			return window.google && window.google.maps;
 		},
 		'Head JS': function() {
-			return window.head && window.head.js !== null;
+			return window.head && window.head.js;
 		},
 		'SWFObject': function() {
-			return window.swfobject !== null;
+			return window.swfobject;
 		},
 		'Chitika': function() {
 			return window.ch_client && window.ch_write_iframe;
 		},
 		'Jimdo': function() {
-			return window.jimdoData !== null;
+			return window.jimdoData;
 		},
 		'Webs': function() {
-			return window.webs !== null;
+			return window.webs;
 		},
 		'Backbone.js': function() {
 			return window.Backbone && typeof(window.Backbone.sync) === 'function';
@@ -296,10 +296,10 @@
 				window._.identity('abc') === 'abc';
 		},
 		'Spine': function() {
-			return window.Spine !== null;
+			return window.Spine;
 		},
 		'Angular': function() {
-			return window.angular !== null;
+			return window.angular;
 		}
 	};
 
@@ -353,11 +353,11 @@
 				return RightJS.version;
 		},
 		'Modernizr': function() {
-			if(window.Modernizr !== null && Modernizr._version!==undefined)
+			if(window.Modernizr && Modernizr._version!==undefined)
 				return Modernizr._version;
 		},
 		'Raphael': function() {
-			if(window.Raphael !== null && Raphael.version!==undefined)
+			if(window.Raphael && Raphael.version!==undefined)
 				return Raphael.version;
 		},
 		'Backbone.js': function() {
