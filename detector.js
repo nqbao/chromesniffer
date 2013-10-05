@@ -51,7 +51,8 @@
 			'Webnode': /Webnode/,
 			'GetSimple': /GetSimple/,
 			'DataLifeEngine': /DataLife Engine/,
-			'ClanSphere': /ClanSphere/
+			'ClanSphere': /ClanSphere/,
+      'Mura CMS': /Mura CMS\s*(.*)/i
 		},
 		'copyright': {
 			'phpBB': /phpBB/i
@@ -118,7 +119,8 @@
 		'Bootstrap': /bootstrap-.*\.js/,
 		'Jigsy': /javascripts\/asterion\.js/, // may change later
 		'Yola': /analytics\.yola\.net/, // may change later
-		'Alfresco': /(alfresco)+(-min)?(\/scripts\/menu)?\.js/ // both Alfresco Share and Explorer apps
+		'Alfresco': /(alfresco)+(-min)?(\/scripts\/menu)?\.js/, // both Alfresco Share and Explorer apps
+    'Mura CMS': /mura\/js/
 	};
 
 	for (var idx in scripts)
