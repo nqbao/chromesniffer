@@ -120,7 +120,8 @@
     'Alfresco': /(alfresco)+(-min)?(\/scripts\/menu)?\.js/, // both Alfresco Share and Explorer apps
     'Mura CMS': /mura\/js/,
     'Tiki Wiki CMS Groupware': /tiki-js/,
-    'OpenTag': /opentag.*\.js/
+    'OpenTag': /opentag.*\.js/,
+    'KISSmetrics': /i.kissmetrics.com\/i.js/
   };
 
   for (var idx in scripts) {

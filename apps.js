@@ -711,6 +711,17 @@ var appinfo = {
     url: 'http://www.chromium.org/spdy',
     priority: 5
   },
+  'Nette': {
+    icon: 'nette.ico',
+    url: 'http://nette.org/',
+    priority: 2
+  },
+  'KISSmetrics': {
+    icon: 'kissmetrics.ico',
+    url: 'http://kissmetrics.com/',
+    priority: 1
+  },
+
 
   // ==== misc ====
   '': { // default
