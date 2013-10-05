@@ -226,7 +226,7 @@ var appinfo = {
   'TYPO3': {
     icon: 'TYPO3.ico',
     url: 'http://typo3.org/',
-    priority: 1.2
+    priority: 1
   },
   'Contao': {
     icon: 'contao.ico',
@@ -701,7 +701,11 @@ var appinfo = {
     url: 'http://etracker.com/',
     priority: 1
   },
-
+  'OpenTag': {
+    icon: 'OpenTag.ico',
+    url: 'http://opentag.qubitproducts.com',
+    priority: 1
+  },
 
   // ==== misc ====
   '': { // default
