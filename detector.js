@@ -310,7 +310,10 @@
 		},
     'ektron': function() {
 			return window.Ektron;
-		}
+		},
+    'etracker': function() {
+      return window.et_params;
+    }
 	};
 
 	for (var t in js_tests)

@@ -226,7 +226,7 @@ var appinfo = {
   'TYPO3': {
     icon: 'TYPO3.ico',
     url: 'http://typo3.org/',
-    priority: 1
+    priority: 1.2
   },
   'Contao': {
     icon: 'contao.ico',
@@ -693,6 +693,12 @@ var appinfo = {
     title: 'Tiki Wiki CMS Groupware',
     icon: 'TikiWikiCms.ico',
     url: 'http://info.tiki.org/',
+    priority: 1
+  },
+  'etracker': {
+    title: 'etracker',
+    icon: 'etracker.ico',
+    url: 'http://etracker.com/',
     priority: 1
   },
 
