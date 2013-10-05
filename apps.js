@@ -699,12 +699,17 @@ var appinfo = {
     title: 'etracker',
     icon: 'etracker.ico',
     url: 'http://etracker.com/',
-    priority: 1
+    priority: 1.2
   },
   'OpenTag': {
     icon: 'OpenTag.ico',
     url: 'http://opentag.qubitproducts.com',
-    priority: 1
+    priority: 1.2
+  },
+  'SPDY': {
+    icon: 'spdy.ico',
+    url: 'http://www.chromium.org/spdy',
+    priority: 5
   },
 
   // ==== misc ====
