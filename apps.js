@@ -689,6 +689,12 @@ var appinfo = {
     url: 'http://www.getmura.com/',
     priority: 1
   },
+  'Tiki Wiki CMS Groupware': {
+    title: 'Tiki Wiki CMS Groupware',
+    icon: 'TikiWikiCms.ico',
+    url: 'http://info.tiki.org/',
+    priority: 1
+  },
 
 
   // ==== misc ====

@@ -52,7 +52,8 @@
 			'GetSimple': /GetSimple/,
 			'DataLifeEngine': /DataLife Engine/,
 			'ClanSphere': /ClanSphere/,
-      'Mura CMS': /Mura CMS\s*(.*)/i
+      'Mura CMS': /Mura CMS\s*(.*)/i,
+      'Tiki Wiki CMS Groupware': /Tiki/i
 		},
 		'copyright': {
 			'phpBB': /phpBB/i
@@ -120,7 +121,8 @@
 		'Jigsy': /javascripts\/asterion\.js/, // may change later
 		'Yola': /analytics\.yola\.net/, // may change later
 		'Alfresco': /(alfresco)+(-min)?(\/scripts\/menu)?\.js/, // both Alfresco Share and Explorer apps
-    'Mura CMS': /mura\/js/
+    'Mura CMS': /mura\/js/,
+    'Tiki Wiki CMS Groupware': /tiki-js/
 	};
 
 	for (var idx in scripts)
