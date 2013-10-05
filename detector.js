@@ -310,6 +310,9 @@
     },
     'SPDY': function () {
       return window.chrome.loadTimes().wasFetchedViaSpdy;
+    },
+    'LiveStreet': function () {
+      return window.LIVESTREET_SECURITY_KEY;
     }
   };
 

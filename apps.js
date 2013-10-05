@@ -721,6 +721,11 @@ var appinfo = {
     url: 'http://kissmetrics.com/',
     priority: 1
   },
+  'LiveStreet': {
+    icon: 'LiveStreetCms.ico',
+    url: 'http://livestreetcms.com/',
+    priority: 1
+  },
 
 
   // ==== misc ====
