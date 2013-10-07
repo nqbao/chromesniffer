@@ -21,10 +21,11 @@
 			"js": ["main.js"]
 		}
 	],
-	"permissions": [
-		"tabs",
-        "http://*/*",
-        "https://*/*"
-	],
+  "permissions": [
+    "tabs",
+    "webRequest",
+    "http://*/*",
+    "https://*/*"
+  ],
   "web_accessible_resources": ["detector.js"]
 }

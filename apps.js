@@ -711,11 +711,6 @@ var appinfo = {
     url: 'http://www.chromium.org/spdy',
     priority: 5
   },
-  'Nette': {
-    icon: 'nette.ico',
-    url: 'http://nette.org/',
-    priority: 2
-  },
   'KISSmetrics': {
     icon: 'kissmetrics.ico',
     url: 'http://kissmetrics.com/',
@@ -726,7 +721,41 @@ var appinfo = {
     url: 'http://livestreetcms.com/',
     priority: 1
   },
-
+  'PHP': {
+    icon: 'php.ico',
+    url: 'http://php.net/',
+    priority: 1.5
+  },
+  'Apache': {
+    icon: 'apache.ico',
+    url: 'http://httpd.apache.org/',
+    priority: 1.5
+  },
+  'nginx': {
+    icon: 'nginx.ico',
+    url: 'http://nginx.org/en/',
+    priority: 1.5
+  },
+  'Varnish': {
+    icon: 'varnish.ico',
+    url: 'https://www.varnish-cache.org/',
+    priority: 1.5
+  },
+  'IIS': {
+    icon: 'iis.ico',
+    url: 'http://www.iis.net/',
+    priority: 1.5
+  },
+  'ASP.NET': {
+    icon: 'asp.net.ico',
+    url: 'http://www.asp.net/',
+    priority: 1.5
+  },
+  'Nette': {
+    icon: 'nette.ico',
+    url: 'http://nette.org/',
+    priority: 1.5
+  },
 
   // ==== misc ====
   '': { // default
