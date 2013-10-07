@@ -441,15 +441,8 @@
       break;
     }
   }
-
-  // convert to array
-  var jsonString = JSON.stringify(_apps);
-  // send back to background page
-  var meta = document.getElementById('chromesniffer_meta');
-  meta.content = jsonString;
-
-  //Notify Background Page
-  var done = document.createEvent('Event');
-  done.initEvent('ready', true, true);
-  meta.dispatchEvent(done);
+  
+  if (Object.keys(_apps).length > 0) {
+	chrome.extension.sendMessage({msg: "result", apps: _apps});
+  }
 })();
