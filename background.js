@@ -121,4 +121,3 @@ chrome.extension.onMessage.addListener(function (request, sender, sendResponse) 
     sendResponse( tabinfo[request.tab] );
   }
 });
-

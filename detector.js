@@ -442,7 +442,11 @@
     }
   }
   
-  if (Object.keys(_apps).length > 0) {
-	chrome.extension.sendMessage({msg: "result", apps: _apps});
-  }
+	var meta = document.getElementById('chromesniffer_meta');
+	meta.content = JSON.stringify(_apps);
+
+	var done = document.createEvent('Event');
+	done.initEvent('ready', true, true);
+	meta.dispatchEvent(done);
+
 })();
