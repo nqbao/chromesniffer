@@ -13,7 +13,6 @@
 
   if (head) {
     var script = document.createElement('script');
-    script.type = 'text/javascript';
     script.src = chrome.extension.getURL('detector.js');
 
     var meta = document.createElement('meta');
@@ -28,6 +27,8 @@
       if (Object.keys(apps).length > 0) {
         chrome.extension.sendMessage({msg: "result", apps: apps});
       }
+	  head.removeChild(meta);
+	  head.removeChild(script);
     });
   }
 })();

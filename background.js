@@ -6,11 +6,6 @@
  * To change this template use File | Settings | File Templates.
  */
 
-window.dd = function(msg)
-{
-  console.log(msg);
-};
-
 var tabinfo = [];
 
 // initial list of header detection.  will move this to a separate file later.
@@ -75,6 +70,7 @@ chrome.tabs.onRemoved.addListener(function (tabId) {
 });
 
 chrome.extension.onMessage.addListener(function (request, sender, sendResponse) {
+
   // 'result' event issued by main.js once app identification is complete
   if (request.msg == 'result') {
     var thisTab = tabinfo[sender.tab.id];
@@ -120,10 +116,8 @@ chrome.extension.onMessage.addListener(function (request, sender, sendResponse) 
     sendResponse({});
   }
   else if (request.msg == 'get') {
+  
     // Request for 'get' comes from the popup page, asking for the list of apps
-    var apps = tabinfo[request.tab];
-    sendResponse(apps);
+    sendResponse( tabinfo[request.tab] );
   }
 });
-
-

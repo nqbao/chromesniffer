@@ -441,15 +441,12 @@
       break;
     }
   }
+  
+	var meta = document.getElementById('chromesniffer_meta');
+	meta.content = JSON.stringify(_apps);
 
-  // convert to array
-  var jsonString = JSON.stringify(_apps);
-  // send back to background page
-  var meta = document.getElementById('chromesniffer_meta');
-  meta.content = jsonString;
+	var done = document.createEvent('Event');
+	done.initEvent('ready', true, true);
+	meta.dispatchEvent(done);
 
-  //Notify Background Page
-  var done = document.createEvent('Event');
-  done.initEvent('ready', true, true);
-  meta.dispatchEvent(done);
 })();
