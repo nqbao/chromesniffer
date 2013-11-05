@@ -11,7 +11,7 @@ window.dd = function(msg)
   console.log(msg);
 };
 
-var tabinfo = [];
+var tabinfo = {};
 
 // initial list of header detection.  will move this to a separate file later.
 var knownHeaders = {
