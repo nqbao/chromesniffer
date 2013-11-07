@@ -12,6 +12,7 @@
   var _apps = {};
   var doc = document.documentElement;
   var name;
+  var r;
 
   // 1: detect by meta tags, the first matching group will be version
   var metas = doc.getElementsByTagName("meta");
