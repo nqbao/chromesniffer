@@ -459,6 +459,11 @@ var appinfo = {
     url: 'http://RightJS.org/',
     priority: 2
   },
+  'OpenLayers': {
+    icon: 'OpenLayers.ico',
+    url: 'http://openlayers.org/',
+    priority: 1.9
+  },
   'Spine': {
     icon: 'spine.ico',
     url: 'http://spinejs.com',
@@ -469,6 +474,7 @@ var appinfo = {
     url: 'http://angularjs.org/',
     priority: 1.5
   },
+  
 
   // ==== js tools ====
   'Raphael': {

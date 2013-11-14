@@ -314,6 +314,9 @@
     },
     'LiveStreet': function () {
       return window.LIVESTREET_SECURITY_KEY;
+    },
+	'OpenLayers': function () {
+      return window.OpenLayers;
     }
   };
 
@@ -387,6 +390,10 @@
     'Angular': function () {
       if (window.angular && window.angular.version && 'full' in window.angular.version)
         return window.angular.version.full;
+    },
+	'OpenLayers': function () {
+      if( window.OpenLayers && window.OpenLayers.VERSION_NUMBER )
+	  return window.OpenLayers.VERSION_NUMBER;
     }
   };
 
