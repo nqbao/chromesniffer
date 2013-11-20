@@ -172,6 +172,8 @@
     'Dailymotion': /iframe[^>]*www.dailymotion.com\/embed.*>/,
     'Vimeo': /<iframe[^>]*player.vimeo.com\/video.*>/,
     'FlickR': /<(a|img)[^>]*.flickr.com.*>/,
+    'Optimizely': /<script[^>]*cdn.optimizely.com.*>/,
+    'Typography': /<link[^>]*cloud.typography.com.*>/,
  };
 
   for (var t in text_tests) {
@@ -320,7 +322,13 @@
     },
     'LiveStreet': function () {
       return window.LIVESTREET_SECURITY_KEY;
-    }
+    },
+    'Olark': function () {
+      return window.olark;
+    },
+    'SegmentIO': function () {
+      return window.Segment;
+    },
   };
 
   for (var t in js_tests) {

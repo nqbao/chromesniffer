@@ -786,6 +786,26 @@ var appinfo = {
     url: 'http://www.flickr.com/',
     priority: 1
   },
+  'Olark': {
+    icon: 'Olark.png',
+    url: 'http://www.olark.com/',
+    priority: 1
+  },
+  'SegmentIO': {
+    icon: 'SegmentIO.ico',
+    url: 'https://segment.io',
+    priority: 1
+  },
+  'Optimizely': {
+    icon: 'Optimizely.ico',
+    url: 'https://www.optimizely.com/',
+    priority: 1
+  },
+  'Typography': {
+    icon: 'Typography.ico',
+    url: 'https://www.typography.com/',
+    priority: 1
+  },
 
   // ==== misc ====
   '': { // default
