@@ -756,6 +756,36 @@ var appinfo = {
     url: 'http://nette.org/',
     priority: 1.5
   },
+  'AwsCloudFront': {
+    icon: 'AwsCloudFront.png',
+    url: 'http://aws.amazon.com/cloudfront/',
+    priority: 1
+  },
+  'AwsS3': {
+    icon: 'AwsS3.png',
+    url: 'http://aws.amazon.com/s3/',
+    priority: 1
+  },
+  'Youtube': {
+    icon: 'Youtube.ico',
+    url: 'http://www.youtube.com/',
+    priority: 1
+  },
+  'Dailymotion': {
+    icon: 'Dailymotion.ico',
+    url: 'http://www.dailymotion.com/',
+    priority: 1
+  },
+  'Vimeo': {
+    icon: 'Vimeo.ico',
+    url: 'https://vimeo.com/',
+    priority: 1
+  },
+  'FlickR': {
+    icon: 'FlickR.ico',
+    url: 'http://www.flickr.com/',
+    priority: 1
+  },
 
   // ==== misc ====
   '': { // default
