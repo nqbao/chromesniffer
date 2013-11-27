@@ -414,6 +414,11 @@ var appinfo = {
     url: 'http://jqueryui.com/',
     priority: 1.9
   },
+  'jQuery Mobile': {
+    icon: 'jQuery_Mobile.png',
+    url: 'http://jquerymobile.com/',
+    priority: 1.9
+  },
   'ExtJS': {
     icon: 'ExtJS.ico',
     url: 'http://www.extjs.com/',
@@ -755,6 +760,56 @@ var appinfo = {
     icon: 'nette.ico',
     url: 'http://nette.org/',
     priority: 1.5
+  },
+  'AwsCloudFront': {
+    icon: 'AwsCloudFront.png',
+    url: 'http://aws.amazon.com/cloudfront/',
+    priority: 1
+  },
+  'AwsS3': {
+    icon: 'AwsS3.png',
+    url: 'http://aws.amazon.com/s3/',
+    priority: 1
+  },
+  'Youtube': {
+    icon: 'Youtube.ico',
+    url: 'http://www.youtube.com/',
+    priority: 1
+  },
+  'Dailymotion': {
+    icon: 'Dailymotion.ico',
+    url: 'http://www.dailymotion.com/',
+    priority: 1
+  },
+  'Vimeo': {
+    icon: 'Vimeo.ico',
+    url: 'https://vimeo.com/',
+    priority: 1
+  },
+  'FlickR': {
+    icon: 'FlickR.ico',
+    url: 'http://www.flickr.com/',
+    priority: 1
+  },
+  'Olark': {
+    icon: 'Olark.png',
+    url: 'http://www.olark.com/',
+    priority: 1
+  },
+  'SegmentIO': {
+    icon: 'SegmentIO.ico',
+    url: 'https://segment.io',
+    priority: 1
+  },
+  'Optimizely': {
+    icon: 'Optimizely.ico',
+    url: 'https://www.optimizely.com/',
+    priority: 1
+  },
+  'Typography': {
+    icon: 'Typography.ico',
+    url: 'https://www.typography.com/',
+    priority: 1
   },
 
   // ==== misc ====
