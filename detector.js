@@ -203,6 +203,9 @@
     'jQuery UI': function () {
       return window.jQuery && window.jQuery.ui;
     },
+    'jQuery Mobile': function () {
+      return window.jQuery && window.jQuery.mobile;
+    },
     'Typekit': function () {
       return window.Typekit;
     },
@@ -341,6 +344,10 @@
     'jQuery UI': function () {
       if (typeof jQuery === 'function' && jQuery.ui && jQuery.ui.version !== undefined)
         return jQuery.ui.version;
+    },
+    'jQuery Mobile': function () {
+      if (typeof jQuery === 'function' && jQuery.ui && jQuery.mobile.version !== undefined)
+        return jQuery.mobile.version;
     },
     'Dojo': function () {
       if (typeof dojo === 'object' && dojo.version.toString() !== undefined)
