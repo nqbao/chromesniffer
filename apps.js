@@ -414,6 +414,11 @@ var appinfo = {
     url: 'http://jqueryui.com/',
     priority: 1.9
   },
+  'jQuery Mobile': {
+    icon: 'jQuery_Mobile.png',
+    url: 'http://jquerymobile.com/',
+    priority: 1.9
+  },
   'ExtJS': {
     icon: 'ExtJS.ico',
     url: 'http://www.extjs.com/',
