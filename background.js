@@ -15,13 +15,6 @@ var tabinfo = {};
 
 // initial list of header detection.  will move this to a separate file later.
 var knownHeaders = {
-  'x-powered-by': {
-    // 'Ruby on Rails': /Phusion Passenger/,
-    'Express.js': /Express/,
-    'PHP': /PHP\/?(.*)/,
-    'ASP.NET': /ASP\.NET/,
-    'Nette': /Nette Framework/
-  },
   'server': {
     'Apache': /Apache\/?(.*)/,
     'nginx': /nginx\/?(.*)/,
@@ -29,6 +22,16 @@ var knownHeaders = {
   },
   'via': {
     'Varnish': /(.*) varnish/
+  },
+  'x-mod-pagespeed': {
+    'PageSpeed': /(.*)/
+  },
+  'x-powered-by': {
+    // 'Ruby on Rails': /Phusion Passenger/,
+    'Express.js': /Express/,
+    'PHP': /PHP\/?(.*)/,
+    'ASP.NET': /ASP\.NET/,
+    'Nette': /Nette Framework/
   }
 };
 
