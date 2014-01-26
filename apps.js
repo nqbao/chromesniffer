@@ -756,6 +756,11 @@ var appinfo = {
     url: 'http://nette.org/',
     priority: 1.5
   },
+  'PageSpeed': {
+    icon: 'PageSpeed.ico',
+    url: 'http://code.google.com/p/modpagespeed/',
+    priority: 1.5
+  },
 
   // ==== misc ====
   '': { // default
