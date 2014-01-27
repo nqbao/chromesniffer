@@ -122,6 +122,11 @@ var appinfo = {
     url: 'http://wordpress.org',
     priority: 1
   },
+  'WP Engine': {
+    icon: 'wpengine.ico',
+    url: 'http://wpengine.com',
+    priority: 1
+  },
   'WPML': {
     icon: 'WPML.ico',
     url: 'http://wpml.org/',

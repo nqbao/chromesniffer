@@ -14,6 +14,20 @@
   var name;
   var r;
 
+  function ready() {
+    // convert to array
+    var jsonString = JSON.stringify(_apps);
+
+    // send back to background page
+    var meta = document.getElementById('chromesniffer_meta');
+    meta.content = jsonString;
+
+    // notify background page
+    var done = document.createEvent('Event');
+    done.initEvent('ready', true, true);
+    meta.dispatchEvent(done);
+  }
+
   // 1: detect by meta tags, the first matching group will be version
   var metas = doc.getElementsByTagName("meta");
   var meta_tests = {
@@ -443,14 +457,36 @@
     }
   }
 
-  // convert to array
-  var jsonString = JSON.stringify(_apps);
-  // send back to background page
-  var meta = document.getElementById('chromesniffer_meta');
-  meta.content = jsonString;
+  // 10: detect based on other files on the server
 
-  //Notify Background Page
-  var done = document.createEvent('Event');
-  done.initEvent('ready', true, true);
-  meta.dispatchEvent(done);
+  var xhr_tests = {
+    'WP Engine': {
+      'uri': '/wp-content/mu-plugins/wpengine-common/changelog.txt',
+      'require': 'WordPress'
+    }
+  }
+
+  for (var t in xhr_tests) {
+    if (_apps[xhr_tests[t].require]) {
+      var request = new XMLHttpRequest;
+
+      request.open("HEAD", window.location.origin + xhr_tests[t].uri);
+
+      request.addEventListener(
+        "load",
+        function() {
+          if (request.status == 200) {
+            _apps[t] = -1;
+
+            ready();
+          }
+        },
+        false
+      );
+
+      request.send();
+    }
+  }
+
+  ready();
 })();
