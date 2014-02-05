@@ -314,6 +314,9 @@
     },
     'LiveStreet': function () {
       return window.LIVESTREET_SECURITY_KEY;
+    },
+    'SiteKreator': function () {
+      return window.SK && SK.Singletons && [ 'sitekreator.com' ].contains( SK.Singletons.env.get('admin_domain') );
     }
   };
 

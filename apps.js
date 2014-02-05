@@ -402,6 +402,11 @@ var appinfo = {
     url: 'http://csphere.eu',
     priority: 1
   },
+  'SiteKreator': {
+    icon: 'SiteKreator.ico',
+    url: 'http://sitekreator.com',
+    priority: 1
+  },
 
   // ==== js framework ====
   'jQuery': {
