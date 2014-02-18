@@ -115,7 +115,7 @@
     'AddThis': /addthis\.com\/js/,
     'BuySellAds': /buysellads.com\/.*bsa\.js/,
     'Weebly': /weebly\.com\/weebly\//,
-    'Bootstrap': /bootstrap-.*\.js/,
+    'Bootstrap': /bootstrap.*\.js/,
     'Jigsy': /javascripts\/asterion\.js/, // may change later
     'Yola': /analytics\.yola\.net/, // may change later
     'Alfresco': /(alfresco)+(-min)?(\/scripts\/menu)?\.js/, // both Alfresco Share and Explorer apps
