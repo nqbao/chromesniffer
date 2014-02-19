@@ -756,6 +756,11 @@ var appinfo = {
     url: 'http://nette.org/',
     priority: 1.5
   },
+  'Dinkly': {
+    icon: 'dinkly.ico',
+    url: 'https://github.com/lewsid/dinkly/',
+    priority: 1.5
+  },
 
   // ==== misc ====
   '': { // default
