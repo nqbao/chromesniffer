@@ -1,12 +1,12 @@
 {
-	"name": "Chrome Sniffer, Updated By James Nadeau",
+	"name": "Web Application/Tool Sniffer, Updated By James Nadeau",
   "manifest_version": 2,
 	"icons": {
 		"48": "icon48.png",
 		"128": "icon128.png"
 	},
 	"version": "0.4",
-	"description": "Detect web applications and javascript libraries run on browsing website. from: https://github.com/jamesjnadeau/chromesniffer",
+	"description": "Detect web applications, tools, and javascript libraries running on the websites you browse. Source Code: https://github.com/jamesjnadeau/chromesniffer",
 	"background": {
     "page": "background.html"
   },
