@@ -469,7 +469,11 @@ var appinfo = {
     url: 'http://angularjs.org/',
     priority: 1.5
   },
-
+  'Zepto': {
+    icon: 'zepto.png',
+    url: 'http://zeptojs.com/',
+    priority: 1.5
+  },
   // ==== js tools ====
   'Raphael': {
     icon: 'raphael.ico',
