@@ -317,7 +317,7 @@
     },
     'Zepto': function () {
       return window.Zepto;
-    },
+    }
   };
 
   for (var t in js_tests) {
