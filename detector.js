@@ -317,6 +317,9 @@
     },
 	'OpenLayers': function () {
       return window.OpenLayers;
+    },
+    'Zepto': function () {
+      return window.Zepto;
     }
   };
 
