@@ -1,11 +1,11 @@
 {
-	"name": "Chrome Sniffer",
+  "name": "Appspector",
   "manifest_version": 2,
 	"icons": {
 		"48": "icon48.png",
 		"128": "icon128.png"
 	},
-	"version": "0.3.1",
+	"version": "0.3.2",
 	"description": "Detect web applications and javascript libraries run on browsing website.",
 	"background": {
     "page": "background.html"
