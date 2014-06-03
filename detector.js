@@ -314,6 +314,9 @@
     },
     'LiveStreet': function () {
       return window.LIVESTREET_SECURITY_KEY;
+    },
+    'Zepto': function () {
+      return window.Zepto;
     }
   };
 
