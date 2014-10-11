@@ -115,7 +115,7 @@
     'AddThis': /addthis\.com\/js/,
     'BuySellAds': /buysellads.com\/.*bsa\.js/,
     'Weebly': /weebly\.com\/weebly\//,
-    'Bootstrap': /bootstrap.*\.js/,
+    'Bootstrap': /bootstrap-.*\.js/,
     'Jigsy': /javascripts\/asterion\.js/, // may change later
     'Yola': /analytics\.yola\.net/, // may change later
     'Alfresco': /(alfresco)+(-min)?(\/scripts\/menu)?\.js/, // both Alfresco Share and Explorer apps
@@ -326,7 +326,13 @@
     'LiveStreet': function () {
       return window.LIVESTREET_SECURITY_KEY;
     },
-    'Olark': function () {
+	'OpenLayers': function () {
+      return window.OpenLayers;
+    },
+    'Zepto': function () {
+      return window.Zepto;
+    }
+	'Olark': function () {
       return window.olark;
     },
     'SegmentIO': function () {
@@ -408,6 +414,10 @@
     'Angular': function () {
       if (window.angular && window.angular.version && 'full' in window.angular.version)
         return window.angular.version.full;
+    },
+	'OpenLayers': function () {
+      if( window.OpenLayers && window.OpenLayers.VERSION_NUMBER )
+	  return window.OpenLayers.VERSION_NUMBER;
     }
   };
 

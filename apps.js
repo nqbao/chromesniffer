@@ -464,6 +464,11 @@ var appinfo = {
     url: 'http://RightJS.org/',
     priority: 2
   },
+  'OpenLayers': {
+    icon: 'OpenLayers.ico',
+    url: 'http://openlayers.org/',
+    priority: 1.9
+  },
   'Spine': {
     icon: 'spine.ico',
     url: 'http://spinejs.com',
@@ -474,7 +479,11 @@ var appinfo = {
     url: 'http://angularjs.org/',
     priority: 1.5
   },
-
+  'Zepto': {
+    icon: 'zepto.png',
+    url: 'http://zeptojs.com/',
+    priority: 1.5
+  },
   // ==== js tools ====
   'Raphael': {
     icon: 'raphael.ico',
@@ -759,6 +768,11 @@ var appinfo = {
   'Nette': {
     icon: 'nette.ico',
     url: 'http://nette.org/',
+    priority: 1.5
+  },
+  'Dinkly': {
+    icon: 'dinkly.ico',
+    url: 'https://github.com/lewsid/dinkly/',
     priority: 1.5
   },
   'AwsCloudFront': {
