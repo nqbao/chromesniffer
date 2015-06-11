@@ -357,7 +357,7 @@
     },
     'Dojo': function () {
       if (typeof dojo === 'object' && dojo.version.toString() !== undefined)
-        return dojo.version;
+        return dojo.version.toString();
     },
     'YUI': function () {
       if (typeof YAHOO === 'object' && YAHOO.VERSION !== undefined)
