@@ -484,6 +484,11 @@ var appinfo = {
     url: 'http://zeptojs.com/',
     priority: 1.5
   },
+  'riot': {
+    icon: 'zepto.png',
+    url: 'http://riotjs.com/',
+    priority: 1.5
+  },
   // ==== js tools ====
   'Raphael': {
     icon: 'raphael.ico',

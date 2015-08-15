@@ -324,6 +324,9 @@
     'Zepto': function () {
       return window.Zepto;
     }
+    'riot': function () {
+      return window.riot;
+    }
   };
 
   for (var t in js_tests) {
