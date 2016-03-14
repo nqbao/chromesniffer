@@ -512,7 +512,7 @@ var appinfo = {
   },
   'Facebook': {
     title: 'Facebook Social plugins',
-    icon: 'facebook.ico',
+    icon: 'facebook.svg',
     url: 'http://developers.facebook.com/',
     priority: 2.9
   },
