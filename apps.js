@@ -20,7 +20,7 @@ var appinfo = {
     priority: 0.9
   },
   'Blogger': {
-    icon: 'Blogger.ico',
+    icon: 'blogger.svg',
     url: 'http://blogger.com',
     priority: 0.9
   },
@@ -75,7 +75,7 @@ var appinfo = {
   },
   'IPB': {
     title: 'Invision Power Board',
-    icon: 'IPB.ico',
+    icon: 'ipboard.svg',
     url: 'http://invisionpower.com/',
     priority: 1
   },
@@ -96,7 +96,7 @@ var appinfo = {
   },
 
   'Drupal': {
-    icon: 'Drupal.ico',
+    icon: 'drupal.svg',
     url: 'http://drupal.org',
     priority: 1
   },
@@ -150,12 +150,12 @@ var appinfo = {
   },
 
   'MediaWiki': {
-    icon: 'MediaWiki.ico',
+    icon: 'mediawiki.svg',
     url: 'http://www.mediawiki.org/',
     priority: 1
   },
   'DokuWiki': {
-    icon: 'DokuWiki.ico',
+    icon: 'docuwiki.svg',
     url: 'http://www.dokuwiki.org/',
     priority: 1
   },
@@ -167,12 +167,12 @@ var appinfo = {
   },
 
   'Joomla': {
-    icon: 'Joomla.ico',
+    icon: 'joomla.svg',
     url: 'http://joomla.org',
     priority: 1
   },
   'Magento': {
-    icon: 'Magento.ico',
+    icon: 'magento.svg',
     url: 'http://www.magentocommerce.com/',
     priority: 1
   },
@@ -203,7 +203,7 @@ var appinfo = {
     priority: 1
   },
   'Amiro.CMS': {
-    icon: 'Amiro.CMS.ico',
+    icon: 'amiro-cms.svg',
     url: 'http://www.amirocms.com/',
     priority: 1
   },
@@ -269,7 +269,7 @@ var appinfo = {
     priority: 1
   },
   '1c-bitrix': {
-    icon: '1c-bitrix.ico',
+    icon: '1c-bitrix.svg',
     url: 'http://www.1c-bitrix.ru/',
     priority: 1
   },
@@ -296,7 +296,7 @@ var appinfo = {
   },
 
   'Elgg': {
-    icon: 'Elgg.ico',
+    icon: 'elgg.svg',
     url: 'http://www.elgg.org/',
     priority: 1
   },
@@ -392,7 +392,7 @@ var appinfo = {
     priority: 1
   },
   'Alfresco': {
-    icon: 'Alfresco.png',
+    icon: 'alfresco.svg',
     url: 'http://www.alfresco.com',
     priority: 1
   },
@@ -405,22 +405,22 @@ var appinfo = {
 
   // ==== js framework ====
   'jQuery': {
-    icon: 'jQuery.ico',
+    icon: 'jquery.svg',
     url: 'http://jquery.com',
     priority: 2
   },
   'jQuery UI': {
-    icon: 'jQuery_UI.ico',
+    icon: 'jquery-ui.svg',
     url: 'http://jqueryui.com/',
     priority: 1.9
   },
   'jQuery Mobile': {
-    icon: 'jQuery_Mobile.png',
+    icon: 'jquery-mobile.svg',
     url: 'http://jquerymobile.com/',
     priority: 1.9
   },
   'ExtJS': {
-    icon: 'ExtJS.ico',
+    icon: 'extjs.svg',
     url: 'http://www.extjs.com/',
     priority: 2
   },
@@ -430,12 +430,12 @@ var appinfo = {
     priority: 2
   },
   'Closure': {
-    icon: 'Closure.png',
+    icon: 'closure.svg',
     url: 'http://code.google.com/closure/',
     priority: 2
   },
   'MooTools': {
-    icon: 'MooTools.ico',
+    icon: 'mootools.svg',
     url: 'http://mootools.net/',
     priority: 2
   },
@@ -475,7 +475,7 @@ var appinfo = {
     priority: 1.9
   },
   'Angular': {
-    icon: 'angular.ico',
+    icon: 'angular.svg',
     url: 'http://angularjs.org/',
     priority: 1.5
   },
@@ -506,7 +506,7 @@ var appinfo = {
     priority: 2.9
   },
   'Modernizr': {
-    icon: 'modernizr.ico',
+    icon: 'modernizr.svg',
     url: 'http://www.modernizr.com/',
     priority: 2.9
   },
@@ -518,7 +518,7 @@ var appinfo = {
   },
   'Twitter': {
     title: 'Twitter plugins',
-    icon: 'twitter.ico',
+    icon: 'twitter.svg',
     url: 'http://dev.twitter.com',
     priority: 2.9
   },
@@ -530,22 +530,22 @@ var appinfo = {
   },
   'Plus1': {
     title: 'Google Plus 1',
-    icon: 'plus1.png',
+    icon: 'google-plus.svg',
     url: 'http://www.google.com/+1/button/',
     priority: 2.9
   },
   'AddThis': {
-    icon: 'addthis.ico',
+    icon: 'addthis.svg',
     url: 'http://www.addthis.com',
     priority: 2.9
   },
   'Backbone.js': {
-    icon: 'Backbone.png',
+    icon: 'backbone.svg',
     url: 'http://documentcloud.github.com/backbone/',
     priority: 1.9
   },
   'Underscore.js': {
-    icon: 'Underscore.png',
+    icon: 'lodash.svg',
     url: 'http://documentcloud.github.com/underscore/',
     priority: 2.9
   },
@@ -556,7 +556,7 @@ var appinfo = {
     priority: 2.9
   },
   'Google Loader': {
-    icon: 'google.ico',
+    icon: 'google.svg',
     url: 'http://code.google.com/apis/loader',
     priority: 2.9
   },
@@ -572,7 +572,7 @@ var appinfo = {
     priority: 3
   },
   'Google Analytics': {
-    icon: 'Google_Analytics.ico',
+    icon: 'analytics.svg',
     url: 'http://www.google.com/analytics/',
     priority: 3
   },
@@ -587,7 +587,7 @@ var appinfo = {
     priority: 3
   },
   'Quantcast': {
-    icon: 'Quantcast.ico',
+    icon: 'quantcast.svg',
     url: 'http://www.quantcast.com/',
     priority: 3
   },
@@ -609,7 +609,7 @@ var appinfo = {
   },
 
   'Disqus': {
-    icon: 'Disqus.ico',
+    icon: 'disqus.svg',
     url: 'http://disqus.com/',
     priority: 1
   },
@@ -625,7 +625,7 @@ var appinfo = {
   },
   'Prettify': {
     title: 'Google Code Prettify',
-    icon: 'google.ico',
+    icon: 'google.svg',
     url: 'http://code.google.com/p/google-code-prettify/',
     priority: 3
   },
@@ -641,7 +641,7 @@ var appinfo = {
   },
   'GoogleFontApi': {
     title: 'Google Font API',
-    icon: 'google-font-api.gif',
+    icon: 'google-fonts.png',
     url: 'http://code.google.com/apis/webfonts/',
     priority: 4
   },
@@ -683,7 +683,7 @@ var appinfo = {
     priority: 5
   },
   'Bootstrap': {
-    icon: 'bootstrap.ico',
+    icon: 'bootstrap.svg',
     url: 'http://twitter.github.com/bootstrap/',
     priority: 5
   },
@@ -736,17 +736,17 @@ var appinfo = {
     priority: 1
   },
   'PHP': {
-    icon: 'php.ico',
+    icon: 'php.svg',
     url: 'http://php.net/',
     priority: 1.5
   },
   'Apache': {
-    icon: 'apache.ico',
+    icon: 'apache.svg',
     url: 'http://httpd.apache.org/',
     priority: 1.5
   },
   'nginx': {
-    icon: 'nginx.ico',
+    icon: 'nginx.svg',
     url: 'http://nginx.org/en/',
     priority: 1.5
   },
