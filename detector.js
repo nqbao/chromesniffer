@@ -234,7 +234,7 @@
       return window.Piwik;
     },
     'IPB': function () {
-      return window.IPBoard;
+      return ( window.IPBoard || window.ipsSettings );
     },
     'MyBB': function () {
       return window.MyBB;
