@@ -1,5 +1,7 @@
 # AppSpector
 
+*DEPRECATED: this extension has been renamed and development is moved to [this repo](https://github.com/nqbao/framework-inspector)*
+
 Detect web applications and javascript libraries run on browsing website.
 
 This is a chrome extension will help web developer to inspect web framework / CMS and javascript library running on current browsing website. An icon will appear on address bar indicates the detected framework. Version detecting is being implemented.
