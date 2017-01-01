@@ -1,6 +1,6 @@
 # AppSpector
 
-*DEPRECATED: this extension has been renamed and development is moved to [this repo](https://github.com/nqbao/framework-inspector)*
+**DEPRECATED: this extension has been renamed and development is moved to [this repo](https://github.com/nqbao/framework-inspector)**
 
 Detect web applications and javascript libraries run on browsing website.
 
