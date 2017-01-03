@@ -460,6 +460,25 @@
     }
   }
 
+  // 10: detect by cookie
+  var cookies = document.cookie.split(/;\s+/);
+
+  var cookie_tests = {
+    'Craft': /CraftSessionId/,
+    'ExpressionEngine': /exp_tracker/,
+  };
+
+  for (var i = 0; i < cookies.length; i++) {
+    var c = cookies[i].split('=')[0];
+
+    for (var t in cookie_tests) {
+      if (t in _apps) continue;
+      if (cookie_tests[t].test(c)) {
+        _apps[t] = -1;
+      }
+    }
+  }
+
   // convert to array
   var jsonString = JSON.stringify(_apps);
   // send back to background page

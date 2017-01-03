@@ -403,6 +403,17 @@ var appinfo = {
     priority: 1
   },
 
+  'Craft': {
+    icon: 'craft.ico',
+    url: 'http://buildwithcraft.com/',
+    priority: 1
+  },
+  'ExpressionEngine': {
+    icon: 'expressionengine.png',
+    url: 'http://ellislab.com/expressionengine',
+    priority: 1
+  },
+
   // ==== js framework ====
   'jQuery': {
     icon: 'jQuery.ico',
