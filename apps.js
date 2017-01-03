@@ -57,6 +57,11 @@ var appinfo = {
   },
 
   // ==== cms or framework ====
+  'HubSpot': {
+    icon: 'hubspot.ico',
+    url: 'http://www.hubspot.com/',
+    priority: 1
+  }
   'vBulletin': {
     icon: 'vBulletin.ico',
     url: 'http://www.vbulletin.com/',
