@@ -755,6 +755,11 @@ var appinfo = {
     url: 'https://www.varnish-cache.org/',
     priority: 1.5
   },
+  'anchorCache': {
+    icon: 'anchorCache.ico',
+    url: 'https://anchorcache.eu/',
+    priority: 1.5
+  },
   'IIS': {
     icon: 'iis.ico',
     url: 'http://www.iis.net/',
